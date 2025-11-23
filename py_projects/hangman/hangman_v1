@@ -1,14 +1,5 @@
 #Hangman V1 – Playable Core
 
-# 1. If guess length is not 1 OR not alphabetic → tell user & continue
-
-    # 2. If guess already in guessed → tell user & continue
-
-    # 3. If guess is in word → append to guessed and say "Good guess!"
-
-    # 4. Else → reduce attempts by 1 and say "Wrong guess."
-
-    # 5. (For V1) We'll just keep looping until attempts == 0
 
 hangman = {
     "word": "python",
