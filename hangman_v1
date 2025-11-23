@@ -23,7 +23,6 @@ guessed = hangman["guessed_letters"]
 while attempts > 0:
     print(f"\nattempts left: {attempts}")
     print("guessed so far: ", guessed)
-
     guess = input("enter a letter: ").lower()
     
     if len(guess) != 1 or not guess.isalpha():
