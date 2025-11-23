@@ -1,0 +1,65 @@
+#Hangman V1 – Playable Core
+
+# 1. If guess length is not 1 OR not alphabetic → tell user & continue
+
+    # 2. If guess already in guessed → tell user & continue
+
+    # 3. If guess is in word → append to guessed and say "Good guess!"
+
+    # 4. Else → reduce attempts by 1 and say "Wrong guess."
+
+    # 5. (For V1) We'll just keep looping until attempts == 0
+
+hangman = {
+    "word": "python",
+    "attempts_left": 5,
+    "guessed_letters" : []
+}
+
+word = hangman["word"]
+attempts = hangman["attempts_left"]
+guessed = hangman["guessed_letters"]
+
+while attempts > 0:
+    print(f"\nattempts left: {attempts}")
+    print("guessed so far: ", guessed)
+
+    guess = input("enter a letter: ").lower()
+    
+    if len(guess) != 1 or not guess.isalpha():
+           print("type only single alphabet! ")
+           continue
+
+    if guess in guessed:
+        print(f"guessed already....")
+        continue
+
+    if guess in word:
+        guessed.append(guess)
+        print("good guess!")
+
+    else: 
+         attempts -= 1
+         print("wrong guess")
+
+print("\nGame over! You are out of attempts.")
+print("The word was:", word)
+    
+
+   
+
+    
+
+    
+    
+
+    
+
+    
+
+
+
+   
+
+
+
