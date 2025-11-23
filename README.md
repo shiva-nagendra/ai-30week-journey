@@ -13,7 +13,7 @@ This repository tracks my daily progress through a 30-week roadmap to become a m
 
 ## 📂 Structure
 
-- `py projects/` – mini-projects (BMI, Calculator, Converter, etc.)
+- `py_projects/` – mini-projects (BMI, Calculator, Converter, etc.)
 - `day 1` … `day 9` – daily practice files
 
 ## 🚀 Upcoming
