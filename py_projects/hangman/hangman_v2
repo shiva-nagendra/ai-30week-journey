@@ -1,0 +1,77 @@
+#Hangman V1 – Playable Core
+
+
+hangman = {
+    "word": "python",
+    "attempts_left": 5,
+    "guessed_letters" : []
+}
+
+word = hangman["word"]
+attempts = hangman["attempts_left"]
+guessed = hangman["guessed_letters"]
+
+while attempts > 0:
+    print(f"\nattempts left: {attempts}")
+
+    #build and show current word state
+    display_word = ""
+    for char in word:
+        if char in guessed:
+           display_word += char + " "
+        else:
+            display_word += "_ "
+
+    print("word", display_word)
+
+    if all(char in guessed for char in word):
+        print("\nYou guessed the word! you won")
+        break
+
+    print("guessed so far: ", guessed)
+
+    guess = input("enter a letter: ").lower()
+    
+    if len(guess) != 1 or not guess.isalpha():
+           print("type only single alphabet! ")
+           continue
+
+    if guess in guessed:
+        print(f"guessed already....")
+        continue
+
+    if guess in word:
+        guessed.append(guess)
+        print("good guess!")
+
+    else: 
+         attempts -= 1
+         print("wrong guess")
+
+if attempts == 0:
+    print("\nGame over! You are out of attempts.")
+    print("The word was:", word)
+
+
+
+
+
+          
+
+   
+
+    
+
+    
+    
+
+    
+
+    
+
+
+
+   
+
+
+
