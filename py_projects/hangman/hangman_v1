@@ -13,23 +13,6 @@ guessed = hangman["guessed_letters"]
 
 while attempts > 0:
     print(f"\nattempts left: {attempts}")
-
-    #build and show current word state
-    display_word = ""
-    for char in word:
-        if char in guessed:
-           display_word += char + " "
-        else:
-            display_word += "_ "
-
-    print("word", display_word)
-
-    if all(char in guessed for char in word):
-        print("\nYou guessed the word! you won")
-        break
-
-    print("guessed so far: ", guessed)
-
     guess = input("enter a letter: ").lower()
     
     if len(guess) != 1 or not guess.isalpha():
