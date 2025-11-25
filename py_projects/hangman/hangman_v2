@@ -1,4 +1,5 @@
-#Hangman V1 – Playable Core
+#Hangman V2 – Playable Core
+#build and show current word state
 
 
 hangman = {
