@@ -1,0 +1,94 @@
+import os
+import time
+import random
+
+def clear_screen():
+    """clear the terminal screen (works on windows, mac, linux)"""
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+def type_effect(text, delay=0.03):
+    """print text with small delay in characters"""
+    for char in text:
+        print(char, end="", flush=True)
+        time.sleep(delay)
+    print()
+
+WORDS = ["python", "variable", "function", "loop", "hangman", "engineer"]
+
+def play_hangman():
+    """play one round of hangman"""
+    word = random.choice(WORDS)
+    attempts = max(5, len(word) + 1)
+    guessed = []
+
+    total_guesses = 0
+    correct_guesses = 0
+    wrong_guesses = 0
+
+    while attempts > 0:
+        clear_screen()
+        print(f"\nAttempts left: {attempts}")
+
+        # build and show current word state
+        display_word = ""
+        for char in word:
+            if char in guessed:
+                display_word += char + " "
+            else:
+                display_word += "_ "
+        print("Word:", display_word)
+
+        # win condition
+        if all(char in guessed for char in word):
+            type_effect("\nYou guessed the word! You won 🎉")
+            break
+
+        print(f"Guessed so far: {', '.join(guessed) if guessed else 'none'}")
+
+        guess = input("Enter a letter: ").lower().strip()
+
+        # validation
+        if len(guess) != 1 or not guess.isalpha():
+            print("Type only single alphabet!")
+            time.sleep(1)
+            continue
+
+        if guess in guessed:
+            print("Guessed already....")
+            time.sleep(1)
+            continue
+
+        total_guesses += 1
+
+        # correct / wrong logic
+        if guess in word:
+            guessed.append(guess)
+            correct_guesses += 1
+            print("Good guess!")
+        else:
+            attempts -= 1
+            wrong_guesses += 1
+            print("Wrong guess")
+
+        time.sleep(1)
+
+    else:
+        type_effect(f"Game is over! The word is: '{word}'")
+
+    print("\nGame summary:")
+    print(f"Word was          : {word}")
+    print(f"Total guesses     : {total_guesses}")
+    print(f"Correct guesses   : {correct_guesses}")
+    print(f"Wrong guesses     : {wrong_guesses}")
+
+def main():
+    type_effect("Welcome to Hangman V3!")
+    while True:
+        play_hangman()
+        choice = input("\nPlay again Y/N? ").lower().strip()
+        if choice != "y":
+            print("Thanks for playing!!")
+            break
+
+if __name__ == "_main_":
+    main()
