@@ -1,4 +1,5 @@
 #OOP
+#class, attributes, methhods
 
 class Student:
     def __init__(self, name, age):
