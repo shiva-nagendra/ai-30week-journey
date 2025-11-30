@@ -1,0 +1,95 @@
+
+#applying the logic in utility hub by including input function
+
+
+class UtilityHub():
+    def __init__(self):
+        self.expenses={}
+        print("Utility hub initiated")
+    def greet(self):
+        name = input("enter your name: ")
+        print(f"hello {name}, Welcome to utility hub")
+    def add_expense(self, category, amount):
+        if category in self.expenses:
+            self.expenses[category]+= amount
+        else:
+            self.expenses[category]=amount
+        print(f"added rs.{amount} to {category}")
+
+    def show_expenses(self):
+        if not self.expenses:
+            print("No expenses yet")
+        else:
+            for cat, amt in self.expenses.items():
+                print(f"{cat.capitalize()} : rs.{amt}")
+
+    def show_total_expenses(self):
+        if not self.expenses:
+            print("no expenses added yet")
+        else:
+            total = sum(self.expenses.values())
+            print(f"total expenses are: rs.{total}")
+
+
+    def run(self):
+        while True:
+            print("""\t\n===UTILITY HUB===
+                  \t 1. greet
+                  \t 2. Add expenses
+                  \t 3. show expenses
+                  \t 4. total expenses
+                  \t 5. Temperature converter
+                  \t 6. exit""")
+            choice = input("choose options from 1 to 6: \n")
+
+            if choice == "1":
+                self.greet()
+
+            elif choice == "2":
+                cat = input("enter your category = ")
+                amt = float(input("enter your amount = "))
+                self.add_expense(cat, amt)
+
+            elif choice == "3":
+                self.show_expenses()
+
+            elif choice == "4":
+                self.show_total_expenses()
+
+            elif choice == "5":
+                self.temperature_converter()
+
+            elif choice == "6":
+                print("adios amigo")
+                break
+            else:
+                print("invalid input")
+
+    def temperature_converter(self):
+        while True:
+            print("""===TEMPERATURE CONVERTER===
+                  \t 1. celsius to fahrenheit
+                  \t 2. fahrenheit to celsius
+                  \t 3. go to main menu
+                  """)
+            choice = input("choose an option: ")
+            
+            if choice == "1":
+                c = float(input("enter number in celcius: "))
+                f = (c * 9/5) + 32
+                print(f"{c}°C = {round(f, 2)}°F")
+            elif choice == "2":
+                f = float(input("enter number in fahreinheit: "))
+                c = (f - 32) * 5/9
+                print(f"{f}°F = {round(c, 2)}°C")
+            elif choice == "3":
+                break
+            else:
+                print("invalid choice")
+
+  
+if __name__ == "__main__":
+    hub = UtilityHub()
+    hub.run()
+
+ 

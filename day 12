@@ -1,0 +1,36 @@
+#OOP
+
+class Student:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+        self.marks = []
+
+    def introduction (self):
+        print(f"Hi i'm {self.name} and i'm {self.age} years old")
+
+    def add_mark(self, score):
+        self.marks.append(score)
+        print(f"added {score} to {self.name}'s record")
+
+    def average_marks(self):
+        if len(self.marks) == 0:
+            return"No marks added yet"
+        return round(sum(self.marks)/len(self.marks),2)
+
+    
+s1 = Student("shiva", 24)
+print(s1.name)
+print(s1.age)
+
+s2 = Student("Rahul", 30)
+print(s2.name)
+print(s1.name)
+
+s1.introduction()
+s2.introduction()
+
+s1 = Student("shiva", 23)
+s1.add_mark(97)
+s1.add_mark(88)
+print(s1.average_marks())
