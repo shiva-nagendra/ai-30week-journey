@@ -22,7 +22,7 @@ class Hangman:
        elif self.difficulty == "medium":
           self.attempts = len(self.word) 
        elif self.difficulty == "hard":
-          self.attempts = len(self.word) - 1
+          self.attempts = max(1, len(self.word) - 1)
        else:
           self.attempts = max(5, len(self.word) // 2 + 3) 
         
@@ -33,9 +33,10 @@ class Hangman:
             display += char + " "
          else:
             display += "_ "
-      print("Word : ", display)
+      print("Word :", display)
+
       if self.guessed:
-            print("guessed so far : " , ", ".join(sorted(self.guessed)))
+            print("guessed so far :" , ", ".join(sorted(self.guessed)))
 
    def guess_letter(self, letter):
       letter = letter.lower().strip()
@@ -67,24 +68,27 @@ class Hangman:
    def play(self):
       while self.attempts > 0:
          self.display_word()
-         print("wrong guesses:", ", " .join(self.wrong_guessed) or "None")
+
+         print("wrong guesses:", ", ".join(self.wrong_guessed) or "None")
          print("letters remaining: ", self.remaining_letters())
 
+         print(f"Attempts left: ",self.attempts)
          guess = input("Enter a letter: ")
          self.guess_letter(guess)
-         print(f"Attempts left: {self.attempts}")
         
          if self.is_complete():
              print("hurrah!! you have won the game")
              break
+         
       if not self.is_complete():
             print(f"Game over! The word was: {self.word}")
      
       
 if __name__ == "__main__":
+
     difficulty = input("Choose difficulty (easy/medium/hard): ").lower()
     word = random.choice(["python", "variable", "function", "loop", "hangman", "engineer"])
-    print(f" I picked a word with {len(word)} letters.")
+    print(f"I picked a word with {len(word)} letters.")
     print("Let's see if your logic matches mine!")
     game = Hangman(word, difficulty)
     game.play()
