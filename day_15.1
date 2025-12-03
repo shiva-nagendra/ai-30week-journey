@@ -1,0 +1,33 @@
+#binary code
+
+def binary_search_trace(arr, target):
+    left = 0
+    right = len(arr) - 1
+    step = 1
+
+    while left <= right:
+        mid = (left + right) // 2
+        print(f"\nSTEP {step}")
+        print(f"LEFT={left}, RIGHT={right}, MID={mid}, VALUE={arr[mid]}")
+
+        if arr[mid] == target:
+            print("✓ FOUND IT!")
+            return mid
+
+        elif target > arr[mid]:
+            print(f"{target} is greater than {arr[mid]} → go RIGHT")
+            left = mid + 1
+
+        else:
+            print(f"{target} is less than {arr[mid]} → go LEFT")
+            right = mid - 1
+
+        step += 1
+
+    print("✗ NOT FOUND")
+    return -1
+
+
+words = ["ant", "ball", "bat", "cat", "dog", "egg", "fan"]
+
+binary_search_trace(words, "dog")
