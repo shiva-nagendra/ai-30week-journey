@@ -31,3 +31,25 @@ def binary_search_trace(arr, target):
 words = ["ant", "ball", "bat", "cat", "dog", "egg", "fan"]
 
 binary_search_trace(words, "dog")
+
+
+
+def find_insert_position(arr, target):
+    left = 0
+    right = len(arr) - 1
+    pos = len(arr)   # default position = end
+
+    while left <= right:
+        mid = (left + right) // 2
+        
+        if arr[mid] >= target:
+            pos = mid          # possible insert position
+            right = mid - 1    # search left for earlier place
+        else:
+            left = mid + 1     # go right
+    return pos
+
+arr = [2, 4, 6, 10]
+print(find_insert_position(arr, 7))  # expected 3
+print(find_insert_position(arr, 1))  # expected 0
+print(find_insert_position(arr, 20)) # expected 4
