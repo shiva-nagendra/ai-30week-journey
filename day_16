@@ -26,6 +26,25 @@ nums = [6, 7, 8, 1, 2, 3, 4]
 target = 3
 print(search_rotated(nums,3))
                 
+
+
+#O(1) – Constant
+
+# return arr[3]          # fixed index
+# x = x + 1              # just a calculation
+
+# O(n)
+# for i in range(n):
+
+# O(log n)
+# while left <= right:
+#     mid = (left + right) // 2
+
+# O(n²) – Quadratic
+# for i in range(n):
+#     for j in range(n):
+    
+
                 
 
     
