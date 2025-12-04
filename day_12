@@ -43,7 +43,7 @@ print(s2.average_marks())
 
 #class practice
 
-class employee:
+class Employee:
     def __init__(self, name):
         self.name = name
         self.working_days = 0
@@ -66,7 +66,7 @@ class employee:
         return total_salary
 
 name= input("enter employee name: ")
-payday = employee(name)
+payday = Employee(name)
 payday.intro()
 payday.take_attendancee()
 per_day_salary = 1500
