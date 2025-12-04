@@ -77,7 +77,7 @@ class Hangman:
          self.guess_letter(guess)
         
          if self.is_complete():
-             print("hurrah!! you have won the game")
+             print(f"hurrah!! you have won the game.\nYou have guessed it correctly: {self.word}")
              break
          
       if not self.is_complete():

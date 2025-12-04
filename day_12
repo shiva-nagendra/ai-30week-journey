@@ -35,3 +35,54 @@ s1 = Student("shiva", 23)
 s1.add_mark(97)
 s1.add_mark(88)
 print(s1.average_marks())
+
+s2 = Student("SHIV", 22)
+s2.add_mark(88)
+s2.add_mark(89.3)
+print(s2.average_marks())
+
+#class practice
+
+class employee:
+    def __init__(self, name):
+        self.name = name
+        self.working_days = 0
+    def intro(self):
+        print(f"hello {name}, welcome to payday.")
+    def take_attendancee(self):
+        total_working_days= 28
+        days = int(input("enter num of days you were attended: "))
+        self.working_days=days
+
+        if self.working_days<total_working_days:
+            print("you didn't achieve 100% attendance")
+        elif self.working_days==total_working_days:
+            print("congrats you have achieved 100% attendance")
+        else:
+            print("YOU ARE WORKING OVERTIME, KEEP IT UP")
+  
+    def pay_calc(self,per_day_salary):
+        total_salary = per_day_salary*self.working_days
+        return total_salary
+
+name= input("enter employee name: ")
+payday = employee(name)
+payday.intro()
+payday.take_attendancee()
+per_day_salary = 1500
+total_payout = payday.pay_calc(1500)
+print(f"{name}, your salary for this month is {total_payout}")
+        
+    
+
+        
+
+
+        
+    
+        
+
+            
+
+
+    
