@@ -45,6 +45,36 @@ print(search_rotated(nums,3))
 #     for j in range(n):
     
 
+def search_rot(arr, target):
+    left,right =0, len(arr)-1
+    while left <= right:
+        mid = (left+right)//2
+
+        if arr[mid]==target:
+         return mid
+        
+        if arr[left]<=arr[mid]:
+            if arr[left]<=target<=arr[mid]:
+                left = mid + 1
+            else:
+                right = mid - 1
+                
+        if arr[mid]<=arr[right]:
+            if arr[mid]<=target<=arr[right]:
+                right = mid -1
+            else:
+                left = mid + 1
+    return -1
+
+nums = [6, 7, 8, 1, 2, 3, 4]
+target = 9
+print(search_rotated(nums,9))
+    
+            
+
+
+
+
                 
 
     
