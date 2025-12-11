@@ -90,10 +90,11 @@ def play_hangman():
     print(f"word was.          : {word}")  
     print(f"total guesses      : {total_guesses}")
     print(f"correct guesses.   : {correct_guesses}")
+
     print(f"wrong guesses.     : {wrong_guesses}")
 
 def main():
-   type_effect("wecome to hangman_v3!")
+   type_effect("welcome to hangman_v3!")
    while True:
       play_hangman()
       choice = input("\n play again Y/N? ").lower().strip()

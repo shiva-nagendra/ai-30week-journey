@@ -28,4 +28,3 @@ hub.greet()
 hub.add_expense("food", 93)
 hub.add_expense("fuel", 300)
 hub.show_expenses()
- 

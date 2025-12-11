@@ -18,10 +18,13 @@ class Hangman:
 
    def apply_difficulty(self):
        if self.difficulty == "easy":
+          print("\nyou have picked EASY mode")
           self.attempts = len(self.word) + 2
        elif self.difficulty == "medium":
+          print("\nyou have picked MEDIUM mode")
           self.attempts = len(self.word) 
        elif self.difficulty == "hard":
+          print("\nyou have picked HARD mode")
           self.attempts = max(1, len(self.word) - 1)
        else:
           self.attempts = max(5, len(self.word) // 2 + 3) 
@@ -36,27 +39,27 @@ class Hangman:
       print("Word :", display)
 
       if self.guessed:
-            print("guessed so far :" , ", ".join(sorted(self.guessed)))
+            print("\nguessed so far :" , ", ".join(sorted(self.guessed)))
 
    def guess_letter(self, letter):
       letter = letter.lower().strip()
 
       if len(letter) != 1 or not letter.isalpha():
-         print("Only enter single alphabet!")
+         print("\nOnly enter single alphabet!")
          return False
       
       if letter in self.guessed or letter in self.wrong_guessed:
-         print("You have already guessed that letter")
+         print("\nYou have already guessed that letter")
          return False
 
       if letter in self.word:
          self.guessed.append(letter)
-         print("Good guess!")
+         print("\nGood guess!")
          return True
       else :
         self.wrong_guessed.append(letter)
         self.attempts -= 1
-        print ("wrong guess! try again...")
+        print ("\nwrong guess! try again...")
         return False
       
    def is_complete(self):
@@ -69,27 +72,27 @@ class Hangman:
       while self.attempts > 0:
          self.display_word()
 
-         print("wrong guesses:", ", ".join(self.wrong_guessed) or "None")
-         print("letters remaining: ", self.remaining_letters())
+         print("\nwrong guesses:", ", ".join(self.wrong_guessed) or "None")
+         print("\nletters remaining: ", self.remaining_letters())
 
          print(f"Attempts left: ",self.attempts)
          guess = input("Enter a letter: ")
          self.guess_letter(guess)
         
          if self.is_complete():
-             print(f"hurrah!! you have won the game.\nYou have guessed it correctly: {self.word}")
+             print(f"\nhurrah!! you have won the game.\nYou have guessed it correctly: {self.word}")
              break
          
       if not self.is_complete():
-            print(f"Game over! The word was: {self.word}")
+            print(f"\nGame over! The word was: {self.word}")
      
       
 if __name__ == "__main__":
 
-    difficulty = input("Choose difficulty (easy/medium/hard): ").lower()
+    difficulty = input("\n\tChoose difficulty (easy/medium/hard): ").lower()
     word = random.choice(["python", "variable", "function", "loop", "hangman", "engineer"])
-    print(f"I picked a word with {len(word)} letters.")
-    print("Let's see if your logic matches mine!")
+    print(f"\nI picked a word with {len(word)} letters.")
+    print("\nLet's see if your logic matches mine!")
     game = Hangman(word, difficulty)
     game.play()
     

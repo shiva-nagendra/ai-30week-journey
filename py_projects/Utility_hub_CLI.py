@@ -81,7 +81,7 @@ def expense_tracker():
     
 def main():
     while True:
-        print("1.====Greet me====\n")
+        print("\n1.====Greet me====\n")
         print("2. Temperature converter\n")
         print("3. Expense tracker\n")
         print("4. Exit \n")

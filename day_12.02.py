@@ -5,10 +5,12 @@
 class UtilityHub():
     def __init__(self):
         self.expenses={}
-        print("Utility hub initiated")
+        print("\n===Utility hub initiated===")
+
     def greet(self):
-        name = input("enter your name: ")
-        print(f"hello {name}, Welcome to utility hub")
+        name = input("\nEnter your name: ")
+        print(f"\nHello {name.capitalize()}, Welcome to utility hub. \n\nChoose from the options below: \n")
+
     def add_expense(self, category, amount):
         if category in self.expenses:
             self.expenses[category]+= amount
@@ -33,33 +35,29 @@ class UtilityHub():
 
     def run(self):
         while True:
-            print("""\t\n===UTILITY HUB===
-                  \t 1. greet
-                  \t 2. Add expenses
-                  \t 3. show expenses
-                  \t 4. total expenses
-                  \t 5. Temperature converter
-                  \t 6. exit""")
-            choice = input("choose options from 1 to 6: \n")
+            print("""\t\n===* UTILITY HUB *===
+                  \t 1. Add expenses
+                  \t 2. show expenses
+                  \t 3. total expenses
+                  \t 4. Temperature converter
+                  \t 5. exit""")
+            choice = input("\nchoose options from 1 to 6: \n")
 
             if choice == "1":
-                self.greet()
-
-            elif choice == "2":
                 cat = input("enter your category = ")
                 amt = float(input("enter your amount = "))
                 self.add_expense(cat, amt)
 
-            elif choice == "3":
+            elif choice == "2":
                 self.show_expenses()
 
-            elif choice == "4":
+            elif choice == "3":
                 self.show_total_expenses()
 
-            elif choice == "5":
+            elif choice == "4":
                 self.temperature_converter()
 
-            elif choice == "6":
+            elif choice == "5":
                 print("adios amigo")
                 break
             else:
@@ -90,6 +88,7 @@ class UtilityHub():
   
 if __name__ == "__main__":
     hub = UtilityHub()
+    hub.greet()
     hub.run()
 
  
