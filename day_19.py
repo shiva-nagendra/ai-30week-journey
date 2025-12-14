@@ -19,9 +19,4 @@ sum_l= sum_list([2, 4, 6])
 print("sum is: ", sum_l)
 
 
-def mystery(n):
-    if n == 0:
-        return
-    mystery(n-1)
-    print(n)
-mystery(3)
+
