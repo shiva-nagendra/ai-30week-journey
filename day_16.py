@@ -67,20 +67,3 @@ def search_rot(arr, target):
                 right = mid -1
                 
     return -1
-
-nums = [6, 7, 8, 1, 2, 3, 4]
-target = 9
-print(search_rotated(nums,9))
-
-
-nums1 = sorted[6, 7, 8, 1, 2, 3, 4]
-print(nums1)
-
-            
-
-
-
-
-                
-
-    
