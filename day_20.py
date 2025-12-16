@@ -30,18 +30,44 @@ def detect_gaps(road):
         length_of_finalgap = len(road)-start_index
         gaps.append((start_index,length_of_finalgap))
 
+
     def gap_length(gap_tuple):
      return gap_tuple[1]
+    
 
     sorted_gaps = sorted(gaps, key=gap_length, reverse=True)
     return sorted_gaps
-        
-road = [1, 1, 0, 0, 1, 0, 0, 0,1,0]
+
+def best_gap(road):
+    gaps = detect_gaps(road)
+    
+    if not gaps:
+        return None   
+    return gaps[0]    
+
+
+def insert_car(road):
+    gap = best_gap(road)
+    if not gap:
+        print("No gaps on the route")
+        return road
+    x,y = gap
+    road[x]= [1]
+    return road
+    
+
+           
+road = [1, 1, 0, 0, 1, 0, 0, 0, 1, 0]
         
         
 result = detect_gaps(road)
 print(f"The road status is: {road}")
 print(f"The sorted gaps are: {result}")
+print(best_gap(road))
+
+road = insert_car(road)
+print("Best route for the car:", road)
+
             
 
 
