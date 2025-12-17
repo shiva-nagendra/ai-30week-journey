@@ -120,6 +120,6 @@ print("\npredictions:\n\t",route)
 final_road = control_loop(road, steps=3)
 print("\nFinal road:", final_road)
 
-print("\nhistory:\n", history)
+print("\nHistory:\n", history)
 
 
