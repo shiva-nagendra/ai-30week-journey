@@ -1,4 +1,10 @@
 #System Design Layer
+	# •	Scans an environment (detect_gaps)
+	# •	Evaluates options (risk_track)
+	# •	Makes a decision (decide_and_insert)
+	# •	Runs in steps (control_loop)
+	# •	Keeps history (log_action)
+
 
 
 def detect_gaps(road):
@@ -40,7 +46,7 @@ def insert_car(road):
         print("No gaps on the route")
         return road
     x,y = gap
-    road[x]= [1]
+    road[x]= 1
     return road
 
 def risk_track(gaps):
@@ -91,6 +97,13 @@ def log_action(action, details):
         }
     )
 
+def control_loop(road, steps=3):
+    for step in range(steps):
+        print(f"\n--- Step {step + 1} ---")
+        road = decide_and_insert(road)
+        print("Road state:", road)
+    return road
+
            
 road = [1, 1, 0, 0, 1, 0, 0, 0, 1, 0]
         
@@ -107,7 +120,9 @@ gaps = detect_gaps(road)
 route=risk_track(gaps)
 print("\npredictions:\n\t",route)
 
-best_route = decide_and_insert(road)
-print("\nbest route: ",best_route)
+final_road = control_loop(road, steps=3)
+print("\nFinal road:", final_road)
+
+print("\nhistory:\n", history)
 
 
