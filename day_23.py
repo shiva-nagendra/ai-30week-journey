@@ -101,6 +101,7 @@ def log_action(action, details):
 def recenet_actions(n=2):
     return history[-n:]if len(history)>=n else history
 
+
 def control_loop(road, steps=3):
     for step in range(steps):
         print(f"\n--- Step {step + 1} ---")
