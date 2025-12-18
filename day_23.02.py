@@ -1,15 +1,15 @@
-# =========================
+
 # POLICY (Step 2)
-# =========================
+
 
 POLICY = {
     "block_high_risk": True,
     "min_gap_length": 2
 }
 
-# =========================
+
 # UTILITIES (Step 1)
-# =========================
+
 
 def detect_gaps(road):
     gaps = []
@@ -46,9 +46,9 @@ def risk_track(gaps):
     return predictions
 
 
-# =========================
-# SYSTEM OBJECT (Step 4)
-# =========================
+
+# SYSTEM OBJECT (Step 3 & 4)
+
 
 class TrafficController:
     def __init__(self, road, policy):
@@ -110,9 +110,9 @@ class TrafficController:
         return self.road
 
 
-# =========================
+
 # STEP 4 — OBJECT CALL
-# =========================
+
 
 road = [1, 1, 0, 0, 1, 0, 0, 0, 1, 0]
 
