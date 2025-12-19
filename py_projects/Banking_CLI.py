@@ -76,6 +76,8 @@ acct=Account(cust,1000)
 acct.deposit_amount(500)
 acct.withdraw(53,7006)
 acct.check_balance(7006)
+
+
     
             
             
