@@ -1,4 +1,16 @@
+#sattistics
+
+import numpy as np
+
+errors = np.array([2, 3, 5, 0, 1, 4, 2])
+
+print("Mean error:", np.mean(errors))
+print("Median error:", np.median(errors))
+print("Variance:", np.var(errors))
+print("Std Dev:", np.std(errors))
 import random
+
+#praactice
 
 # define the function (loss)
 def f(x):
