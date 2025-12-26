@@ -42,6 +42,8 @@ apicall = requests.get("https://github.com/shiva-nagendra")
 apicall = requests.get("https://api.github.com/users/shiva-nagendra")
 print(apicall.status_code)
 print(apicall.json())
+joson=response.json()
+print(joson['followers_url'])
 
 print(apicall.headers["Content-Type"])
 
