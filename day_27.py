@@ -48,3 +48,7 @@ print(joson['followers_url'])
 print(apicall.headers["Content-Type"])
 
 
+with open("day_02.py", "r") as test:
+    read = test.read()
+    print(read)
+
