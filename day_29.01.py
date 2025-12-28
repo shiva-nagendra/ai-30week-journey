@@ -8,7 +8,7 @@ headers = {
 response = requests.get(
     "https://api.github.com/users/shiva-nagendra/repos", #repos → list of dictionaries (raw data)
      headers=headers,
-     params={"per_day":5}
+     params={"per_page":5}
 )
 if response.status_code != 200:
     print("API invalid:", response.status_code)
