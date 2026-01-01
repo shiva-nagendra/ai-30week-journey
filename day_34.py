@@ -19,7 +19,7 @@ API_URL = (
 )
 
 payload = {
-    "inputs": "This product is bad.but I have mixed opinions on the service"
+    "inputs": "This product is bad."
 }
 
 headers = {
@@ -70,7 +70,7 @@ else:
     print("Error response:")
     print(response.text)
 
-text = payload["inputs"].lower()
+text = payload["inputs"].lower()    #collecting data for decision
 
 signals = {
     "sentiment": best["label"],
@@ -82,8 +82,8 @@ signals = {
 HIGH_CONF = 0.9
 LOW_CONF = 0.6
 
-if (
-    signals["sentiment"] == "POSITIVE"
+if (                                    
+    signals["sentiment"] == "POSITIVE"          #decssion 
     and signals["confidence"] >= HIGH_CONF
     and signals["text_length"] > 20
     and not signals["has_contrast"]
