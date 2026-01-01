@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 
 load_dotenv(dotenv_path=".env")
 
-HF_TOKEN = os.getenv("HF_TOKEN")
+HF_TOKEN = os.getenv("HF_TOKEN") #HF_TOKE = HF_TOKEN
 if not HF_TOKEN:
     raise RuntimeError("HF_TOKEN is not set")
 
