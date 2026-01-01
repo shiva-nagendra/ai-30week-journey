@@ -1,0 +1,98 @@
+[
+  {
+    "name": "ai-30week-journey",
+    "owner": {
+      "login": "shiva-nagendra",
+      "id": 159792046,
+      "node_id": "U_kgDOCYY7rg",
+      "avatar_url": "https://avatars.githubusercontent.com/u/159792046?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/shiva-nagendra",
+      "html_url": "https://github.com/shiva-nagendra",
+      "followers_url": "https://api.github.com/users/shiva-nagendra/followers",
+      "following_url": "https://api.github.com/users/shiva-nagendra/following{/other_user}",
+      "gists_url": "https://api.github.com/users/shiva-nagendra/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/shiva-nagendra/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/shiva-nagendra/subscriptions",
+      "organizations_url": "https://api.github.com/users/shiva-nagendra/orgs",
+      "repos_url": "https://api.github.com/users/shiva-nagendra/repos",
+      "events_url": "https://api.github.com/users/shiva-nagendra/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/shiva-nagendra/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    }
+  },
+  {
+    "name": "CT1",
+    "owner": {
+      "login": "shiva-nagendra",
+      "id": 159792046,
+      "node_id": "U_kgDOCYY7rg",
+      "avatar_url": "https://avatars.githubusercontent.com/u/159792046?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/shiva-nagendra",
+      "html_url": "https://github.com/shiva-nagendra",
+      "followers_url": "https://api.github.com/users/shiva-nagendra/followers",
+      "following_url": "https://api.github.com/users/shiva-nagendra/following{/other_user}",
+      "gists_url": "https://api.github.com/users/shiva-nagendra/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/shiva-nagendra/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/shiva-nagendra/subscriptions",
+      "organizations_url": "https://api.github.com/users/shiva-nagendra/orgs",
+      "repos_url": "https://api.github.com/users/shiva-nagendra/repos",
+      "events_url": "https://api.github.com/users/shiva-nagendra/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/shiva-nagendra/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    }
+  },
+  {
+    "name": "project-traffic-flow",
+    "owner": {
+      "login": "shiva-nagendra",
+      "id": 159792046,
+      "node_id": "U_kgDOCYY7rg",
+      "avatar_url": "https://avatars.githubusercontent.com/u/159792046?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/shiva-nagendra",
+      "html_url": "https://github.com/shiva-nagendra",
+      "followers_url": "https://api.github.com/users/shiva-nagendra/followers",
+      "following_url": "https://api.github.com/users/shiva-nagendra/following{/other_user}",
+      "gists_url": "https://api.github.com/users/shiva-nagendra/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/shiva-nagendra/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/shiva-nagendra/subscriptions",
+      "organizations_url": "https://api.github.com/users/shiva-nagendra/orgs",
+      "repos_url": "https://api.github.com/users/shiva-nagendra/repos",
+      "events_url": "https://api.github.com/users/shiva-nagendra/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/shiva-nagendra/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    }
+  },
+  {
+    "name": "shiva-nagendra",
+    "owner": {
+      "login": "shiva-nagendra",
+      "id": 159792046,
+      "node_id": "U_kgDOCYY7rg",
+      "avatar_url": "https://avatars.githubusercontent.com/u/159792046?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/shiva-nagendra",
+      "html_url": "https://github.com/shiva-nagendra",
+      "followers_url": "https://api.github.com/users/shiva-nagendra/followers",
+      "following_url": "https://api.github.com/users/shiva-nagendra/following{/other_user}",
+      "gists_url": "https://api.github.com/users/shiva-nagendra/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/shiva-nagendra/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/shiva-nagendra/subscriptions",
+      "organizations_url": "https://api.github.com/users/shiva-nagendra/orgs",
+      "repos_url": "https://api.github.com/users/shiva-nagendra/repos",
+      "events_url": "https://api.github.com/users/shiva-nagendra/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/shiva-nagendra/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    }
+  }
+]

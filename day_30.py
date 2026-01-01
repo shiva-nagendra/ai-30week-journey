@@ -24,8 +24,9 @@ for f in repos:
        "owner": f["owner"]
    })
     
-with open("jsonuser.data","w",newline="") as j:
+with open("jsonuser.data.json","w",newline="") as j:
     json.dump(clean_data, j, indent=2)
+
 
 
 
