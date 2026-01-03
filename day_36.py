@@ -13,7 +13,8 @@ memory = [
     "Sports help maintain mental well-being",
     "AI models work on numerical representations",
     "Embeddings capture semantic meaning of text",
-    "Politics influences public policy"
+    "Politics influences public policy",
+    "Policies are the rules for any system"
 ]
 
 from sentence_transformers import SentenceTransformer
@@ -28,7 +29,7 @@ def cosine_similarity(a, b):
     norm_b = math.sqrt(sum(y*y for y in b))
     return dot/(norm_a*norm_b)
 
-query = "How does exercise affect the mind?"
+query = "what is the role of politics?"
 query_embedding = model.encode([query])[0]
 
 scores = []
@@ -41,6 +42,5 @@ scores.sort(key= lambda x: x[1], reverse=True)
 
 for item, score in scores[:3]:
     print(f"{round(score, 3)}->{item}")
-
 
 
