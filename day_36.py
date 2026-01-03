@@ -9,7 +9,7 @@
 # Decision / response
 
 memory = [
-     "Regular exercise improves physical health",
+    "Regular exercise improves physical health",
     "Sports help maintain mental well-being",
     "AI models work on numerical representations",
     "Embeddings capture semantic meaning of text",
@@ -41,6 +41,4 @@ for text, emb in zip(memory, memory_embeddings):
 scores.sort(key= lambda x: x[1], reverse=True)
 
 for item, score in scores[:3]:
-    print(f"{round(score, 3)}->{item}")
-
-
+    print(f"{round(score,3),}-->{item}")     
