@@ -16,12 +16,10 @@ memory = [
     "Policies are the rules for any system"
 ]
 
-# ----------------------------
 # Model Setup
-# ----------------------------
+
 model = SentenceTransformer("all-MiniLM-L6-v2")
 memory_embeddings = model.encode(memory)
-
 
 # Similarity Function
 
@@ -80,3 +78,4 @@ else:
 
 print("\nFinal Answer:")
 print(answer)
+
