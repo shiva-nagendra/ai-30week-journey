@@ -1,10 +1,5 @@
-# Query
-#  ↓
-# Retrieve relevant info
-#  ↓
-# Use retrieved info as a SIGNAL
-#  ↓
-# Decision / Response
+#Query → Retrieve memory → Decide → CONSTRUCT ANSWER(grounding)
+
 
 memory = [
     "Regular exercise improves physical health",
@@ -33,7 +28,7 @@ scores = []
 
 for text, emb in zip(memory, memory_embeddings):
     sim = cosine_similarity(query_embeddings, emb)
-    scores.append((text, sim))
+    scores.append((text, float(sim)))
 
 scores.sort(key=lambda x: x[1], reverse= True)
 
@@ -42,7 +37,7 @@ for item, score in scores[:3]:
     print(f"{round(score,3),}-->{item}")
 
 
-TOP_SCORE_THRESHOLD =  0.4 #Retrival into signal
+TOP_SCORE_THRESHOLD =  0.4 
 
 top_item, top_score = scores[0]
 
@@ -58,6 +53,13 @@ else:
 
 print("Decision: ", decision)
 
+if decision == "ANSWER_USING_MEMORY":
+    answer = (
+        "Exercise supports both physical health and mental well-being "
+        "based on the retrieved information."
+    )
+else:
+    answer = "I don’t have enough information to answer that confidently."
 
-
-
+print("Final Answer:")
+print(answer)
