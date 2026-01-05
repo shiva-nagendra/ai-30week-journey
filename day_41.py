@@ -23,7 +23,7 @@ def cosine_similarity(a, b):
     norm_b = math.sqrt(sum(y * y for y in b))
     return dot / (norm_a * norm_b)
 
-query = "ferrari specs"
+query = "Artificial intelligence. and AI " #testing the relavnce of the querry
 query_embedding = model.encode([query])[0]
 
 scores = []
