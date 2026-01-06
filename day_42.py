@@ -71,7 +71,7 @@ def answer_query(query):
     return decision, response
 
 if __name__ == "__main__":
-    decision, response = answer_query("macbook ML") 
+    decision, response = answer_query("model embeddings") 
     print("\nDecision:",decision)
     print("\nResponse:",response)
 
