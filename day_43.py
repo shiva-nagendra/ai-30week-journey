@@ -1,4 +1,4 @@
-#Testing multiple querries
+#Testing multiple querries #RAG 
 
 from sentence_transformers import SentenceTransformer
 import math
