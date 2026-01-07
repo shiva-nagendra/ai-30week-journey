@@ -47,9 +47,8 @@ def _should_answer(scores):
         and scores[1][1] >= _SECONDARY_THRESHOLD
     )
 
-# ----------------------------
 # PUBLIC INTERFACE (THIS IS THE SYSTEM)
-# ----------------------------
+
 def ai_system(query):
     """
     Public AI interface.
@@ -79,9 +78,8 @@ def ai_system(query):
 
     return decision, response
 
-# ----------------------------
 # Explicit Entry Point
-# ----------------------------
+
 if __name__ == "__main__":
     test_queries = [
         "How does exercise affect the mind?",
