@@ -1,12 +1,10 @@
-# day_44.py
 # Clean, reusable AI system interface
 
 from sentence_transformers import SentenceTransformer
 import math
 
-# ----------------------------
 # Internal Knowledge (PRIVATE)
-# ----------------------------
+
 _MEMORY = [
     "Regular exercise improves physical health",
     "Sports help maintain mental well-being",
@@ -16,24 +14,19 @@ _MEMORY = [
     "Policies are the rules for any system"
 ]
 
-# ----------------------------
-# Internal Model Setup (PRIVATE)
-# ----------------------------
+# Internal Model Setup 
 _MODEL = SentenceTransformer("all-MiniLM-L6-v2")
 _MEMORY_EMBEDDINGS = _MODEL.encode(_MEMORY)
 
-# ----------------------------
-# Internal Math (PRIVATE)
-# ----------------------------
+# Internal Math
 def _cosine_similarity(a, b):
     dot = sum(x * y for x, y in zip(a, b))
     norm_a = math.sqrt(sum(x * x for x in a))
     norm_b = math.sqrt(sum(y * y for y in b))
     return dot / (norm_a * norm_b)
 
-# ----------------------------
 # Internal Retrieval (PRIVATE)
-# ----------------------------
+
 def _retrieve(query_embedding):
     scores = []
     for text, emb in zip(_MEMORY, _MEMORY_EMBEDDINGS):
@@ -43,9 +36,8 @@ def _retrieve(query_embedding):
     scores.sort(key=lambda x: x[1], reverse=True)
     return scores
 
-# ----------------------------
 # Internal Decision Policy (PRIVATE)
-# ----------------------------
+
 _PRIMARY_THRESHOLD = 0.6
 _SECONDARY_THRESHOLD = 0.5
 
