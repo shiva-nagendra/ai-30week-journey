@@ -7,7 +7,7 @@ def f(x):
 def df(x):
     return x*2
 
-x = random.uniform(-10, 10)
+x = random.uniform(-5, 5)
 learning_rate = 0.1
 steps = 20
 
