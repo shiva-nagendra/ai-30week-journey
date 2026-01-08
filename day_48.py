@@ -86,12 +86,10 @@ def ai_system(query):
 if __name__ == "__main__":
 
     test_queries = [
-        "AI models work on numerical representations",
-        "",
-        "67",
         "Does dopamine related to exercise",
-        "What is an embedding?",
          "Politics influences public policy",
+         "does regular exercise imporve health?",
+         "policies AI models exercise"
         
     ]
 
