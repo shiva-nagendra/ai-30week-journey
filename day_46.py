@@ -1,4 +1,4 @@
-#high_conf primary report
+#Hardened decision policy with safe single-evidence exception
 
 from sentence_transformers import SentenceTransformer
 import math
