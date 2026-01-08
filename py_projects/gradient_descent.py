@@ -19,7 +19,3 @@ for i in range(steps):
     y = f(x)
 
     print(f"step {i+1}: x = {x:.3f}, y = {y:.3f}")
-
-
-
-   
