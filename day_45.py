@@ -9,7 +9,8 @@ _MEMORY = [
     "AI models work on numerical representations",
     "Embeddings capture semantic meaning of text",
     "Politics influences public policy",
-    "Policies are the rules for any system"
+    "Policies are the rules for any system",
+    "Politics influences public policy"
 ]
 
 _MODEL = SentenceTransformer("all-MiniLM-L6-v2")
@@ -56,6 +57,9 @@ def ai_system(query):
         response = "Based on what I know:\n"
         for text, _ in scores[:2]:
             response += f"- {text}\n"
+        print("\n Top retrieval scores:")
+        for text, score in scores[:3]:
+            print(f"{round(score,3)}-->{text}")
     else:
         decision = "INSUFFICIENT_CONTEXT"
         response = "I don’t have enough information to answer that confidently."
