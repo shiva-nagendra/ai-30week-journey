@@ -14,7 +14,5 @@ print("B + C =", B + C)
 
 print("dot product:", np.dot(B, C)) #dot product
 
-d = np.array([43,44,55,66])
-e= np.array([3,2,4,2])
 
-print(np.dot(d,e))
+
