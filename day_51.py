@@ -1,4 +1,5 @@
 #scaling datasets
+#Broadcaasting and batch math
 
 import numpy as np
 
