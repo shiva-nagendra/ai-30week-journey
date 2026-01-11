@@ -4,10 +4,11 @@ import numpy as np
 
 data = np.array([1,2,3,4,5])
 
-A = data * 2
+A = data * 2 #multiply each value
 print("raw data:", data)
 print("scaled data:", A)
-shifted = data + 5
+
+shifted = data + 5 #shifted = add a digit to each value
 print("\nshifted data:",shifted)
 
 B = np.array([
