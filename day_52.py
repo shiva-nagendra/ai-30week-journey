@@ -24,3 +24,4 @@ print("\nHigh scorers:\n", high_scores)
 
 data[:, 1] = data[:, 1]*1.10
 print("\ndata after salary raise:",data)
+
