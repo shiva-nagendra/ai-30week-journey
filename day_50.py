@@ -21,7 +21,7 @@ B = np.array([ #3x2 matrix
     [4,5]
 ])
 
-C = A.dot(B)
+C = A.dot(B) #matix x matrix
 print("B matrix: ", B)
 print("A.B : \n", C)
 
