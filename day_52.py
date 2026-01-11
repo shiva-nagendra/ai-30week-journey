@@ -17,7 +17,7 @@ print("\nFirst person", data[0])#print first row
 scores = data[:, 2] #print a column
 print("\nscores:",scores)
 
-print("\n first three rows:\n",data[:3])
+print("\n first three rows:\n",data[:3]) #rows = data[: ] // columns = data [:, ]
 
 high_scores = data[data[:, 2] > 80]
 print("\nHigh scorers:\n", high_scores)
