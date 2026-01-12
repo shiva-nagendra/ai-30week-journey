@@ -35,3 +35,4 @@ std_score = np.std(clean_data[:, 2])
 print("\nAverage score : \n", avg_score)
 print("\nStandard deviation: \n", std_score)
 
+
