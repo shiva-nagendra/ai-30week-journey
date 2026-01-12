@@ -27,8 +27,8 @@ print("\nTarget Y: \n", y)
 x_min = x_raw.min(axis=0)
 x_max = x_raw.max(axis=0)
 
-x_norm = round(((x_raw - x_min)/(x_max-x_min))*100,2)
-
+x_norm = ((x_raw - x_min)/(x_max-x_min))*100
+x_norm = np.round(x_norm, 2)
 print("\nNormalized X: \n", x_norm)
 
 #create a new feature (income per age)
