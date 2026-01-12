@@ -21,7 +21,7 @@ clean_data = data[data[:, 2] >= 70]
 print("\nClean data: \n", clean_data)
 
 #Normalize income(0-1 range)
-income = clean_data[:, 1]
+income = clean_data[:, 0]
 income_norm = (income - income.min())/(income.max()-income.min())
 clean_data[:, 1] = income_norm*100 #scale to 0-100
 
