@@ -56,7 +56,7 @@ print("\n standard deviation: \n", np.std(y))
 import matplotlib.pyplot as plt
 
 plt.figure()
-plt.plot( x_raw, y, marker = "o", markersize = 9)
+plt.plot( y, x_raw, marker = "o", markersize = 9)
 plt.grid()
 plt.xlabel("age")
 plt.ylabel("score")
