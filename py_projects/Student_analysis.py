@@ -1,4 +1,4 @@
-#day 54 #project #student analysis
+#day 54 #project #student analysis #visualizing graphically
 
 import numpy as np
 
@@ -24,6 +24,9 @@ print("\nFilterd data: \n", filtered)
 x_raw = data[:, :2]
 y = data[:, 2]
 
+x_raw = np.sort(x_raw)
+y = np.sort(y)
+
 print("\nFeatures: \n", x_raw)
 print("\nTarget :\n",y)
 
@@ -32,7 +35,7 @@ print("\nTarget :\n",y)
 x_min = x_raw.min(axis=0)
 x_max = x_raw.max(axis=0)
 X_norm = (x_raw - x_min)/(x_max-x_min)
-X_norm = np.round(X_norm, 3)
+X_norm = np.round(X_norm, 2)
 
 print("\nNormalised features: \n", X_norm)
 
@@ -50,3 +53,11 @@ print("\n Final matrix: \n", X_final)
 print("\n sverage students marks: \n", np.mean(y))
 print("\n standard deviation: \n", np.std(y))
 
+import matplotlib.pyplot as plt
+
+plt.figure()
+plt.plot( y, x_raw, marker = "o", markersize = 9)
+plt.grid()
+plt.xlabel("age")
+plt.ylabel("score")
+plt.show()
