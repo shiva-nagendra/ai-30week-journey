@@ -48,5 +48,5 @@ print("\n Final matrix: \n", X_final)
 #stats
 
 print("\n sverage students marks: \n", np.mean(y))
-print("\n standard deviation: ", np.std(y))
+print("\n standard deviation: \n", np.std(y))
 
