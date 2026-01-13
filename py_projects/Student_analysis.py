@@ -32,7 +32,7 @@ print("\nTarget :\n",y)
 x_min = x_raw.min(axis=0)
 x_max = x_raw.max(axis=0)
 X_norm = (x_raw - x_min)/(x_max-x_min)
-X_norm = np.round(X_norm, 2)
+X_norm = np.round(X_norm, 3)
 
 print("\nNormalised features: \n", X_norm)
 
