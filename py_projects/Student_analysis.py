@@ -21,8 +21,8 @@ filtered = data[data[:, 2]>= 60]
 print("\nFilterd data: \n", filtered)
 
 #seperate features and target
-x_raw = data[:, :2]
-y = data[:, 2]
+x_raw = filtered[:, :2]
+y = filtered[:, 2]
 
 x_raw = np.sort(x_raw)
 y = np.sort(y)
@@ -56,8 +56,12 @@ print("\n standard deviation: \n", np.std(y))
 import matplotlib.pyplot as plt
 
 plt.figure()
-plt.plot( y, x_raw, marker = "o", markersize = 9)
+ages = x_raw[:, 0]
+scores = y
+plt.scatter(ages, scores)
+plt.plot(ages, scores, marker = "o", markersize = 9)
 plt.grid()
-plt.xlabel("age")
-plt.ylabel("score")
+plt.xlabel("Age")
+plt.ylabel("Score")
+plt.title("Age vs Score")
 plt.show()
