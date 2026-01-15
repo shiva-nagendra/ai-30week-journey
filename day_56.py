@@ -28,4 +28,5 @@ df["age"] = df["age"].fillna(df["age"]).median()
 #After filling missing values
 print("\nAfter filling missing values: \n", df)
 
+#data describing using pandas
 print("\ndata about df: \n", df.describe())
