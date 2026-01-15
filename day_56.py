@@ -9,6 +9,7 @@ print("\nRaw_data: \n", df)
 #check missing values
 print("\nMissing values: \n", df.isnull())
 
+#selecting column
 print("income :\n", df["income"])
 
 #count missing
