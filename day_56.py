@@ -28,12 +28,3 @@ df["age"] = df["age"].fillna(df["age"]).median()
 #After filling missing values
 print("\nAfter filling missing values: \n", df)
 
-import matplotlib.pyplot as plt
-
-plt.figure()
-plt.grid()
-plt.xlabel("data")
-plt.ylabel("attributes")
-plt.title("dataf")
-plt.plot(df)
-plt.show()
