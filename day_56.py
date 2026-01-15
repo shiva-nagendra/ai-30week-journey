@@ -9,6 +9,8 @@ print("\nRaw_data: \n", df)
 #check missing values
 print("\nMissing values: \n", df.isnull())
 
+print("income :\n", df["income"])
+
 #count missing
 print("\nMissing count: \n", df.isnull().sum())
 
@@ -30,3 +32,4 @@ print("\nAfter filling missing values: \n", df)
 
 #data describing using pandas
 print("\ndata about df: \n", df.describe())
+
