@@ -15,7 +15,7 @@ grouped = df.groupby("department")
 print("\nAverage score per department:")
 print(grouped["score"].mean())
 
-# 4. Count people per department
+# 4. Count people per 
 print("\nCount per department:")
 print(grouped["score"].count())
 
