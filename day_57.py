@@ -5,7 +5,7 @@ df = pd.read_csv("week8_day3.csv")
 print("Full Data:\n", df)
 
 # 1. Sort by score (highest first)
-sorted_df = df.sort_values(by="score", as)
+sorted_df = df.sort_values(by="score", ascending=True)
 print("\nSorted by score:\n", sorted_df)
 
 # 2. Group by department
