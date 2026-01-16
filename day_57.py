@@ -1,3 +1,14 @@
+# department,age,income,score
+# IT,25,50000,78
+# IT,30,60000,85
+# HR,22,45000,72
+# HR,35,70000,90
+# Sales,28,52000,80
+# Sales,40,80000,95
+# IT,27,55000,82
+# HR,29,48000,75
+
+
 import pandas as pd
 
 df = pd.read_csv("week8_day3.csv")
