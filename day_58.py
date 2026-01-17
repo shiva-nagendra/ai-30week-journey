@@ -13,5 +13,6 @@ print("\nScores: \n", scores)
 merged = pd.merge(employees, scores, on="emp_id")
 print("\nMerged data: \n", merged)
 
+#average scores
 avg_scores = merged.groupby("department")["score"].mean()
 print("\n Average score : \n", avg_scores)
