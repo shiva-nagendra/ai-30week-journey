@@ -18,6 +18,8 @@ sorted_values = merged.sort_values(by="score", ascending=True)
 print("\nSorted values: \n",sorted_values)
 print("\nMax value: ")
 print(merged["score"].max())
+print("\nDepartment count:")
+print(merged["department"].count())
 
 #average scores
 avg_scores = merged.groupby("department")["score"].mean()
