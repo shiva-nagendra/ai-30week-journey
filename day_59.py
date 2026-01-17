@@ -16,7 +16,6 @@ print("\nMerged data: \n", merged_data)
 # check missing data
 print("\nMissing data, \n", merged_data.isnull())
 
-
 #fill missing score with avg
 merged_data["score"] = merged_data["score"].fillna(merged_data["score"].mean())
 
