@@ -42,7 +42,7 @@ print("\nAverage score per dept :\n", average_score)
 average_income = merged_data.groupby("department")["income"].mean()
 print("\nAverage income per dept :\n", average_income)
 
-
+#3
 top_performer = merged_data[merged_data["score"]>=85]
 print("\nTop performers:\n", top_performer)
 
