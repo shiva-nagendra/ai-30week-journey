@@ -38,6 +38,7 @@ print("\nMerged data:\n", merged_data)
 average_score = merged_data.groupby("department")["score"].mean()
 print("\nAverage score per dept :\n", average_score)
 
+#2
 average_income = merged_data.groupby("department")["income"].mean()
 print("\nAverage income per dept :\n", average_income)
 
