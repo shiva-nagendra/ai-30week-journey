@@ -33,3 +33,12 @@ plt.xlabel("income")
 plt.ylabel("score")
 plt.title("income vs score")
 plt.show()
+
+#plotting income vs score
+
+plt.figure()
+plt.plot(df["income"], df["score"], marker = "o", markersize = 10)
+plt.xlabel("income")
+plt.ylabel("score")
+plt.title("income vs score")
+plt.show()
