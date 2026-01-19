@@ -11,10 +11,18 @@ print(df)
 #basic stats
 print("\nDescribe: \n", df.describe())
 
-#Histogram
+#Histogram -score distribution
 plt.figure()
 plt.hist(df["score"], bins=5)
 plt.title("Score distribution")
 plt.xlabel("score")
 plt.ylabel("Frequency")
+plt.show()
+
+#scatter plot - study hours vs score
+plt.figure()
+plt.scatter(df["score"],df["study_hours"])
+plt.xlabel("score")
+plt.ylabel("study hours")
+plt.title("score vs study hours")
 plt.show()
