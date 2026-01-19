@@ -4,7 +4,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 #load data
-
 df = pd.read_csv("day_60.csv")
 print(df)
 
@@ -28,7 +27,6 @@ plt.title("score vs study hours")
 plt.show()
 
 #scatter plot - income vs score
-
 plt.figure()
 plt.scatter(df["income"], df["score"])
 plt.xlabel("income")
