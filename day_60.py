@@ -26,3 +26,12 @@ plt.xlabel("score")
 plt.ylabel("study hours")
 plt.title("score vs study hours")
 plt.show()
+
+#scatter plot - income vs score
+
+plt.figure()
+plt.scatter(df["income"], df["score"])
+plt.xlabel("income")
+plt.ylabel("score")
+plt.title("income vs score")
+plt.show()
