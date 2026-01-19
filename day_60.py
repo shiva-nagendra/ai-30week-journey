@@ -41,3 +41,4 @@ plt.xlabel("income")
 plt.ylabel("score")
 plt.title("income vs score")
 plt.show()
+
