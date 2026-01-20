@@ -24,7 +24,13 @@ plt.xlabel("score")
 plt.ylabel("study_hours")
 plt.show()
 
-
+#score vs age
+plt.figure()
+plt.scatter(df["score"],df["age"])
+plt.xlabel("score")
+plt.ylabel("age")
+plt.title("Age vs Score")
+plt.show()
 
 #score vs income
 plt.figure()
