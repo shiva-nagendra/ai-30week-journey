@@ -32,15 +32,3 @@ plt.ylabel("age")
 plt.title("Age vs Score")
 plt.show()
 
-#score vs income
-plt.figure()
-plt.scatter(df["score"],df["income"])
-plt.xlabel("Score")
-plt.ylabel("income")
-plt.title("Score vs income")
-plt.show()
-
-# git status
-# git add .
-# git commit -m "Day 61: EDA correlation analysis and feature relationships"
-# git push
