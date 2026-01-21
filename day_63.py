@@ -7,7 +7,6 @@ import numpy as np
 df = pd.read_csv("day_62.csv")
 print("\nData:\n",df) 
 
-
 #original distribution
 plt.figure()
 plt.hist(df["income"],bins=6)
@@ -34,3 +33,10 @@ plt.xlabel("income")
 plt.ylabel("Frequency")
 plt.show()
 
+#log distribution
+plt.figure()
+plt.hist(df["income_log"], bins=6)
+plt.title("income(log transformed)")
+plt.xlabel("income")
+plt.ylabel("Frequency")
+plt.show()
