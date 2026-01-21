@@ -14,11 +14,19 @@ plt.ylabel("Score")
 plt.show()
 
 #Histogram to see skewness
-
 plt.figure()
 plt.hist(df["income"], bins=6)
 plt.title("Income distribution")
 plt.xlabel("Income")
 plt.ylabel("Frequency")
+plt.show()
+
+#Scatter plot to see effect of outliers
+
+plt.figure()
+plt.scatter(df["study_hours"], df["score"])
+plt.title("Study hours vs score")
+plt.xlabel("study hours")
+plt.ylabel("score")
 plt.show()
 
