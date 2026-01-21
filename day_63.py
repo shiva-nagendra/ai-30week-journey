@@ -32,11 +32,3 @@ plt.title("income(log transformed)")
 plt.xlabel("income")
 plt.ylabel("Frequency")
 plt.show()
-
-#log distribution
-plt.figure()
-plt.hist(df["income_log"], bins=6)
-plt.title("income(log transformed)")
-plt.xlabel("income")
-plt.ylabel("Frequency")
-plt.show()
