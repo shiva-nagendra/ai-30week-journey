@@ -25,10 +25,3 @@ print(df[["income","score"]].corr())
 print("\ncorrelation with score(log income):\n")
 print(df[["income_log","score"]].corr())
 
-#log distribution
-plt.figure()
-plt.hist(df["income_log"], bins=6)
-plt.title("income(log transformed)")
-plt.xlabel("income")
-plt.ylabel("Frequency")
-plt.show()
