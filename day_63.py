@@ -17,7 +17,7 @@ plt.ylabel("Frequency")
 plt.show()
 
 
-
+#log transformation (fix scew)
 df["income_log"] = np.log(df["income"])
 
 # Compare correlation before and after
@@ -27,7 +27,7 @@ print(df[["income","score"]].corr())
 print("\ncorrelation with score(log income):\n")
 print(df[["income_log","score"]].corr())
 
-#log transformation (fix scew)
+
 plt.figure()
 plt.hist(df["income_log"], bins=6)
 plt.title("income(log transformed)")
