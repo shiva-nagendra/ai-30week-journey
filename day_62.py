@@ -21,3 +21,4 @@ plt.title("Income distribution")
 plt.xlabel("Income")
 plt.ylabel("Frequency")
 plt.show()
+
