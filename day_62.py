@@ -7,9 +7,9 @@ df = pd.read_csv("day_62.csv")
 print("\nData:\n",df) 
 
 #box plot to dataset outliers
-
 plt.figure()
 plt.boxplot(df["score"])
 plt.title("Score Boxplot")
 plt.ylabel("Score")
 plt.show()
+
