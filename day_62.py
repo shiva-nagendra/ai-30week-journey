@@ -13,3 +13,11 @@ plt.title("Score Boxplot")
 plt.ylabel("Score")
 plt.show()
 
+#Histogram to see skewness
+
+plt.figure()
+plt.hist(df["income"], bins=6)
+plt.title("Income distribution")
+plt.xlabel("Income")
+plt.ylabel("Frequency")
+plt.show()
