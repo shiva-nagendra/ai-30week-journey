@@ -5,7 +5,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 #Load data
-
 df = pd.read_csv("DAy_64.csv")
 print("\nData: \n", df)
 
