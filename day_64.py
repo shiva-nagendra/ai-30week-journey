@@ -23,3 +23,27 @@ plt.title("score boxplot")
 plt.ylabel("score")
 plt.show()
 
+#Histogram
+plt.figure()
+plt.hist(df["income"], bins=6)
+plt.title("income distribution")
+plt.ylabel("frequency")
+plt.xlabel("income")
+plt.show()
+
+#scatterplot
+plt.figure()
+plt.scatter(df["study_hours"],df["score"])
+plt.title("study hours vs score")
+plt.xlabel("study hours")
+plt.ylabel("score")
+plt.show()
+
+#remove outlier
+
+df_clean=df[df["income"]<=100000]
+
+print("\nCorrelation after removing the outlier:\n")
+print(df_clean.corr(numeric_only=True)["score"])
+
+
