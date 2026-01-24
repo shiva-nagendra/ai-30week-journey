@@ -69,4 +69,4 @@ print("\nsenior citizen impact on churn:\n",
 # FINAL CONCLUSION:
 # - Key churn drivers observed: MonthlyCharges, tenure, Contract type.
 # - Customers with high monthly charges, short tenure, and month-to-month contracts churn more.
-# - This dataset is suitable for visualization in Week 10 (Matplotlib & Seaborn).
+# - This dataset is suitable for visualization.
