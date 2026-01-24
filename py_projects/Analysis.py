@@ -46,6 +46,3 @@ print("\nChurn by Contract:\n",
 #sr.citizen impact
 print("\nsenior citizen impact on churn:\n",
       pd.crosstab(df["SeniorCitizen"],df["Churn"], normalize= "index"))
-
-
-
