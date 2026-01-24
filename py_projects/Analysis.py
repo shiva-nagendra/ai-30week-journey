@@ -40,9 +40,12 @@ print("\nAvg tenure by churn:\n",
 print("\nContract analysis:\n",
       df.groupby("Churn")["Contract"].value_counts())
 
-#internet service analysis
+print("\nChurn by Contract:\n",
+      pd.crosstab(df["Contract"], df["Churn"], normalize="index"))
 
-print("\nChurn rates across internet service types:\n",
-      df.groupby("Churn")["InternetService"].value_counts())
+#sr.citizen impact
+print("\nsenior citizen impact on churn:\n",
+      pd.crosstab(df["SeniorCitizen"],df["Churn"], normalize= "index"))
+
 
 
