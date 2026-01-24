@@ -1,6 +1,5 @@
 #week 9 project Telecom churn EDA
 
-import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
@@ -46,3 +45,4 @@ print("\nChurn by Contract:\n",
 #sr.citizen impact
 print("\nsenior citizen impact on churn:\n",
       pd.crosstab(df["SeniorCitizen"],df["Churn"], normalize= "index"))
+
