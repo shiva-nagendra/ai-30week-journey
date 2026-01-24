@@ -35,3 +35,9 @@ print("\nTotal charges avg. vs churned\n",total)
 #Tenure compairsion
 print("\nAvg tenure by churn:\n", 
       df.groupby("Churn")["tenure"].mean())
+
+#contract type analysis
+print("\nContract analysis:\n",
+      df.groupby("Churn")["Contract"].value_counts())
+
+
