@@ -40,4 +40,9 @@ print("\nAvg tenure by churn:\n",
 print("\nContract analysis:\n",
       df.groupby("Churn")["Contract"].value_counts())
 
+#internet service analysis
+
+print("\nChurn rates across internet service types:\n",
+      df.groupby("Churn")["InternetService"].value_counts())
+
 
