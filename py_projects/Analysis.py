@@ -32,4 +32,6 @@ print("\nMonthly charges vs churn\n",monthly)
 total = df.groupby("Churn")["TotalCharges"].mean()
 print("\nTotal charges avg. vs churned\n",total)
 
-
+#Tenure compairsion
+print("\nAvg tenure by churn:\n", 
+      df.groupby("Churn")["tenure"].mean())
