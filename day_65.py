@@ -24,10 +24,11 @@ plt.show()
 
 #Month;y charges by churn (boxplot)
 plt.figure()
-plt.boxplot(column="MonthlyCharges", by="Churn")
-plt.title("MOnthly charges by churn")
+df.boxplot(column="MonthlyCharges", by="Churn")
+plt.title("Monthly Charges by Churn")
+plt.suptitle("")
 plt.xlabel("Churn")
-plt.ylabel("Monthly charges")
+plt.ylabel("Monthly Charges")
 plt.show()
 
 
