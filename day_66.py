@@ -21,3 +21,7 @@ sns.countplot(data=df, x="InternetService", hue="Churn")
 plt.title("Internet service by churn")
 plt.show()
 
+#Sr.citizen vs churn
+sns.countplot(data=df, x="SeniorCitizen", hue="Churn")
+plt.title("Sr. Citizen by churn")
+plt.show()
