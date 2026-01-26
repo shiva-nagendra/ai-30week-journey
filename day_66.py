@@ -26,7 +26,3 @@ sns.countplot(data=df, x="SeniorCitizen", hue="Churn")
 plt.title("Churn by Sr. Citizen")
 plt.show()
 
-#gender vs churn
-sns.countplot(data=df, x="gender", hue="Churn")
-plt.title("Churn by Gender")
-plt.show()
