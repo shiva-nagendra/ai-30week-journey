@@ -19,3 +19,8 @@ plt.show()
 sns.histplot(data=df, x="MonthlyCharges", hue="Churn", bins=10, kde=True)
 plt.title("Monthly distribution by churn")
 plt.show()
+
+#Tenure distribution by churn
+sns.histplot(data=df, x="Churn", y="tenure")
+plt.title("Tenure distribution by churn")
+plt.show()
