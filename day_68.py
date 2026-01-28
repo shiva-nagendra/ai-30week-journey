@@ -10,7 +10,7 @@ df = pd.read_csv("telecom_churn.csv")
 df["TotalCharges"]= pd.to_numeric(df["TotalCharges"], errors="coerce")
 df= df.dropna(subset=["TotalCharges"])
 
-
+#correlation matrix
 corr = df.corr(numeric_only=True)
 print(corr)
 
