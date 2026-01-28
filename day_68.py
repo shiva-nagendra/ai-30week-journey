@@ -7,6 +7,7 @@ import seaborn as sns
 #load data
 df = pd.read_csv("telecom_churn.csv")
 
+#clean datagit status
 df["TotalCharges"]= pd.to_numeric(df["TotalCharges"], errors="coerce")
 df= df.dropna(subset=["TotalCharges"])
 
