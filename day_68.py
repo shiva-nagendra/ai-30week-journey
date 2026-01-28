@@ -13,3 +13,7 @@ df= df.dropna(subset=["TotalCharges"])
 corr = df.corr(numeric_only=True)
 print(corr)
 
+plt.figure(figsize=(6,4))
+sns.heatmap(corr, annot=True, cmap="coolwarm")
+plt.title("Correlation heatmap")
+plt.show()
