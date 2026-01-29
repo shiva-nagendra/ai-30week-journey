@@ -18,7 +18,6 @@ plt.title("Contract vs Churn")
 plt.show()
 
 #monthly charges vs churn
-
 sns.boxplot(data=df,x="Churn", y="MonthlyCharges")
 plt.title("MOnthly charges vs churn")
 plt.show()
