@@ -1,3 +1,5 @@
+#Visualization mini-project for telecom churn analysis
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -33,3 +35,4 @@ corr = df.corr(numeric_only=True)
 sns.heatmap(corr, annot=True, cmap="coolwarm")
 plt.title("Feature correlation heatmap")
 plt.show()
+
