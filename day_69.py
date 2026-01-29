@@ -14,3 +14,9 @@ sns.countplot(data=df,x="Churn")
 plt.title("Churn Distribution")
 plt.show()
 
+#Contract vs churn
+
+sns.countplot(data=df, x="Contract", hue="Churn")
+plt.title("Contract vs Churn")
+plt.show()
+
