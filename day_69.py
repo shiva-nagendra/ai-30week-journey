@@ -10,6 +10,15 @@ df["TotalCharges"] = pd.to_numeric(df["TotalCharges"],errors="coerce")
 df = df.dropna(subset=["TotalCharges"])
 
 #churn distrubution 
+
+## Plot 1: Overall Churn Distribution
+# - What it shows:
+#   Shows the number of churned vs non-churned customers.
+# - Key insight:
+#   Churn is (balanced / imbalanced), which impacts ML model choice.
+# - Business implication:
+#   Class imbalance may require careful evaluation metrics.
+
 sns.countplot(data=df,x="Churn")
 plt.title("Churn Distribution")
 plt.show()
