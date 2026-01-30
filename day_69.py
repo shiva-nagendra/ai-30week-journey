@@ -53,6 +53,17 @@ plt.title("MOnthly charges vs churn")
 plt.show()
 
 #Tenure vs churn
+
+# What it shows:
+# Shows how long customers stay with the service before churning or remaining.
+
+# Key insight:
+# Churned customers generally have much shorter tenure.
+
+# Business implication:
+# Early-stage customers are at higher churn risk and should be targeted with
+# onboarding support or retention offers.
+
 sns.violinplot(data=df, x="Churn", y="tenure")
 plt.title("Tenure vs churn")
 plt.show()
