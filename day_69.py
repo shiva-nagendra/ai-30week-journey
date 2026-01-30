@@ -69,6 +69,18 @@ plt.title("Tenure vs churn")
 plt.show()
 
 #Correlation heatmap
+
+# What it shows:
+# Visualizes correlations between numerical features in the dataset.
+
+# Key insight:
+# Tenure and TotalCharges are strongly correlated, indicating redundancy.
+# MonthlyCharges shows weaker correlation with tenure.
+
+# Business implication:
+# Highly correlated features may not both be needed in ML models,
+# helping reduce model complexity and overfitting.
+
 corr = df.corr(numeric_only=True)
 
 sns.heatmap(corr, annot=True, cmap="coolwarm")
