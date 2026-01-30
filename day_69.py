@@ -10,8 +10,6 @@ df["TotalCharges"] = pd.to_numeric(df["TotalCharges"],errors="coerce")
 df = df.dropna(subset=["TotalCharges"])
 
 
-#churn distrubution 
-
 ## Plot 1: Overall Churn Distribution
 # - What it shows:
 #   Shows the number of churned vs non-churned customers.
@@ -23,9 +21,6 @@ df = df.dropna(subset=["TotalCharges"])
 sns.countplot(data=df,x="Churn")
 plt.title("Churn Distribution")
 plt.show()
-
-
-#Contract vs churn
 
 
 ## Plot 2: Churn by Contract Type
@@ -42,6 +37,17 @@ plt.title("Contract vs Churn")
 plt.show()
 
 #monthly charges vs churn
+# What it shows:
+
+# Displays the distribution of monthly charges for churned vs non-churned customers.
+
+# Key insight:
+# Churned customers tend to have higher monthly charges compared to those who stay.
+
+# Business implication:
+# High pricing may increase churn risk; pricing strategies or discounts could help
+# retain customers.
+
 sns.boxplot(data=df,x="Churn", y="MonthlyCharges")
 plt.title("MOnthly charges vs churn")
 plt.show()
