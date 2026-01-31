@@ -32,3 +32,11 @@ sns.violinplot(data=df, y="tenure", x="Churn")
 plt.title("Tenure vs churn")
 plt.show()
 
+#correlation heatmap
+
+corr = df.corr(numeric_only=True)
+
+plt.figure(figsize=(6,4))
+sns.heatmap(corr, cmap="coolwarm", annot=True)
+plt.title("Correlation heatmap")
+plt.show()
