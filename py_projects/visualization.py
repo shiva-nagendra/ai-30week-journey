@@ -40,3 +40,4 @@ plt.figure(figsize=(6,4))
 sns.heatmap(corr, cmap="coolwarm", annot=True)
 plt.title("Correlation heatmap")
 plt.show()
+
