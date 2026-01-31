@@ -26,3 +26,9 @@ plt.show()
 sns.boxplot(data=df, y="MonthlyCharges", x="Churn")
 plt.title("Monthly charges vs churn")
 plt.show()
+
+#Tenure vs churned
+sns.violinplot(data=df, y="tenure", x="Churn")
+plt.title("Tenure vs churn")
+plt.show()
+
