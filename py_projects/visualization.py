@@ -21,3 +21,8 @@ plt.show()
 sns.countplot(data=df, x="Contract", hue="Churn")
 plt.title("Churn by contract type")
 plt.show()
+
+#Monthly charges vs churn
+sns.boxplot(data=df, y="MonthlyCharges", x="Churn")
+plt.title("Monthly charges vs churn")
+plt.show()
