@@ -6,6 +6,7 @@ from sklearn.linear_model import LinearRegression
 
 model = LinearRegression()
 #model.fit(x, y) #supervised: x has answers y
+#Supervised Learning = Features (X) + Label/Target (y)
 
 # Unsupervised is for:
 # 	•	exploration
