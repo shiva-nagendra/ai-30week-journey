@@ -8,6 +8,9 @@ model = LinearRegression()
 #model.fit(x, y) #supervised: x has answers y
 #Supervised Learning = Features (X) + Label/Target (y)
 
+# x = df[features]
+# y = df["Churn"]
+
 # Unsupervised is for:
 # 	•	exploration
 # 	•	segmentation
