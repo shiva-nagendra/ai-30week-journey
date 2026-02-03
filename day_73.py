@@ -4,7 +4,7 @@ from sklearn.linear_model import LinearRegression
 import numpy as np
 
 #House size(sq.ft)
-x = np.array([500, 600, 1000, 1200, 1500]).reshape(-1, 1)
+x = np.array([500, 600, 1000, 1200, 15000]).reshape(-1, 1)
 
 #House price in lakhs
 y = np.array([30,50,65,80,100])
