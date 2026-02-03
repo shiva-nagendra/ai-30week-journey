@@ -16,9 +16,9 @@ model = LinearRegression()
 model.fit(x, y)
 
 #make prediction
-new_size = np.array([[100]])
+new_size = np.array([[1700]])
 predicted_price = np.round(model.predict(new_size),2)
 
 
-print("\nPredicted price for 1800 sq.ft. house:\n", predicted_price,"lakhs")
+print("\nPredicted price for 1700 sq.ft. house:\n", predicted_price,"lakhs")
 
