@@ -23,3 +23,5 @@ model = LinearRegression()
 #train on training data
 model.fit(x_train, y_train)
 
+#predict on test data
+y_pred = model.predict(x_test)
