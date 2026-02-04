@@ -13,8 +13,8 @@ y = np.array([30,38,65,80,100,120,135])#lakhs
 
 
 #split data
-x_train, x_test, y_train, y_test =train_test_split(
-    x, y, test_size=0.3, random_state=42
+x_train, x_test, y_train, y_test = train_test_split(
+    x, y, test_size = 0.3, random_state = 42
 )
 
 #create model
