@@ -8,8 +8,8 @@ from sklearn.linear_model import LinearRegression
 import numpy as np
 
 #dataset
-x = np.array([500,600,1000,1200,1500,1800,2000]).reshape(-1,1)
-y = np.array([30,38,65,80,100,120,135])
+x = np.array([500,600,1000,1200,1500,1800,2000]).reshape(-1,1)#sq.ft
+y = np.array([30,38,65,80,100,120,135])#lakhs
 
 
 #split data
