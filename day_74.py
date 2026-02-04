@@ -21,4 +21,5 @@ x_train, x_test, y_train, y_test =train_test_split(
 model = LinearRegression()
 
 #train on training data
+model.fit(x_train, y_train)
 
