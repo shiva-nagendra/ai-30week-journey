@@ -29,3 +29,4 @@ y_pred = model.predict(x_test)
 print("\nTest inputs:\n", x_test)
 print("\nActual prices:\n",y_test)
 print("\nPredicted prices:\n",np.round(y_pred,2))
+
