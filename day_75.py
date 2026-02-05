@@ -32,7 +32,7 @@ rmse = np.sqrt(mse)
 r2 = r2_score(y_test, y_pred)
 
 print("Real answers:\n", y_test)
-print("predicted answers:\n", y_pred)
+
 print("MSE:", round(mse, 2))
 print("RMSE:", round(rmse, 2))
 print("R2:", round(r2, 3))
