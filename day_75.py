@@ -1,4 +1,4 @@
-# Week 11 Day 4 — Linear Regression with offline dataset (Diabetes)
+# Week 11 Day 5 — Linear Regression with offline dataset (Diabetes)
 
 import numpy as np
 import pandas as pd
