@@ -36,16 +36,5 @@ print("MSE:", round(mse, 2))
 print("RMSE:", round(rmse, 2))
 print("R2:", round(r2, 3))
 
-# 7. Interpret coefficients
-coef = pd.Series(model.coef_, index=X.columns).sort_values(ascending=False)
-print("\nTop positive features:")
-print(coef.head(5))
-print("\nTop negative features:")
-print(coef.tail(5))
 
-# 8. Example prediction vs actual
-sample = X_test.iloc[[0]]
-pred = model.predict(sample)[0]
-actual = y_test.iloc[0]
-print("\nSample prediction:", round(pred, 2), "Actual:", round(actual, 2))
 
