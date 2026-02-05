@@ -16,7 +16,7 @@ y = df["target"]  # disease progression measure
 
 # 3. Train/test split
 X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.3, random_state=42
+    X, y, test_size=0.2, random_state=42
 )
 
 # 4. Train model
@@ -33,7 +33,7 @@ r2 = r2_score(y_test, y_pred)
 
 print("Real answers:\n", y_test)
 
-print("MSE:", round(mse, 2))
+print("\nMSE:", round(mse, 2))
 print("RMSE:", round(rmse, 2))
 print("R2:", round(r2, 3))
 
