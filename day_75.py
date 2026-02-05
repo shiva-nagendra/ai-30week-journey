@@ -1,7 +1,6 @@
 # Week 11 Day 5 — Linear Regression with offline dataset (Diabetes)
 
 import numpy as np
-import pandas as pd
 from sklearn.datasets import load_diabetes
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
@@ -17,7 +16,7 @@ y = df["target"]  # disease progression measure
 
 # 3. Train/test split
 X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.2, random_state=42
+    X, y, test_size=0.3, random_state=42
 )
 
 # 4. Train model
