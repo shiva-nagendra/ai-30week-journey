@@ -26,8 +26,7 @@ model.fit(x_train, y_train)
 #prediction
 y_pred = model.predict(x_test)
 
-mse = mean_squared_error(y_pred)
-rsme = np.sqrt(mse)
+
 
 print(mse)
 print(rsme)
