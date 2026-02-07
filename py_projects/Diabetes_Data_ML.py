@@ -1,13 +1,13 @@
 #California housing price prediction by ML
 
-from sklearn.datasets import fetch_california_housing
+from sklearn.datasets import load_diabetes
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error,r2_score
 import numpy as np
 
 #load data
-data = fetch_california_housing(as_frame=True, download_if_missing=True)
+data = load_diabetes(as_frame=True)
 df = data.frame
 
 #split features
@@ -27,9 +27,11 @@ model.fit(x_train, y_train)
 y_pred = model.predict(x_test)
 
 mse = mean_squared_error(y_test,y_pred)
-rsme = np.sqrt(mse)
-r2score = r2_score(y_train,y_test)
+rmse = np.sqrt(mse)
+r2score = r2_score(y_test,y_pred)
 
-print(mse)
-print(rsme)
+print("\nreal answers:",y_test)
+print("\nMean square evaluation:",round(mse,2))
+print("\nroot mean square evaluation:",round(rmse,2))
+print("\nRoot square:",r2score)
 
