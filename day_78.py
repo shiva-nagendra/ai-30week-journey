@@ -33,3 +33,4 @@ cm = confusion_matrix(y_test, y_pred)
 
 print("\nAccuracy:", round(acc,2))
 print("\nConfusion matrix:\n",cm)
+
