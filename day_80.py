@@ -35,9 +35,9 @@ print("\nF1 score:\n", round(f1_score(y_test, y_pred),2))
 
 # custom threshold
 probs = model.predict_proba(x_test)[:, 1]
-custom_prob = (probs>=0.7).astype(int)
+custom_prob = (probs>=0.3).astype(int)
 
-print("\nWith threshold = 0.7")
+print("\nWith threshold = 0.3")
 print("Precision score:\n", round(precision_score(y_test, custom_prob),2))
 print("Recall score:\n", round(recall_score(y_test, custom_prob),2))
 print("F1 score:\n", round(f1_score(y_test, custom_prob),2))
