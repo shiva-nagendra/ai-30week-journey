@@ -28,3 +28,4 @@ y_pred = model.predict(x_test)
 acc_score = accuracy_score(y_test,y_pred)
 
 print("Acuracy:\n",round(acc_score,2))
+
