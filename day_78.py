@@ -27,9 +27,7 @@ y_pred = model.predict(x_test)
 
 acc = accuracy_score(y_test, y_pred)
 cm = confusion_matrix(y_test, y_pred)
-# confusion matrix 
-#[[ TN   FP ]
-#[ FN   TP ]]
+
 
 print("\nAccuracy:", round(acc,2))
 print("\nConfusion matrix:\n",cm)
