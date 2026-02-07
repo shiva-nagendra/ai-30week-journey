@@ -1,6 +1,17 @@
 #week 12 day 4
-
 #Precision and recall metrics
+
+# Precision: When the model says YES, how often is it right?
+# Precision = TP / (TP + FP)
+# Think: Can I TRUST a YES?
+
+# Recall: Out of all real YES cases, how many did the model catch?
+# Recall = TP / (TP + FN)
+# Think: Did I MISS any YES?
+
+# Memory trick:
+# Precision = clean YES list
+# Recall = complete YES list
 
 from sklearn.datasets import load_breast_cancer
 from sklearn.model_selection import train_test_split
