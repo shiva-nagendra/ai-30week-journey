@@ -31,7 +31,8 @@ mse = mean_squared_error(y_test,y_pred)
 rmse = np.sqrt(mse)
 r2score = r2_score(y_test,y_pred)
 
-print("\nreal answers:",y_test)
+print("\nreal answers:\n" \
+"rw",y_test)
 print("\nMean square evaluation:",round(mse,2))
 print("\nroot mean square evaluation:",round(rmse,2))
 print("\nRoot square:",r2score)
