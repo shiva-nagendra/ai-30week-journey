@@ -57,3 +57,14 @@ print("\nScore changes after Threshold >0.7:\n")
 print("Precision score:",round(precision_score(y_test,custom_pred),2))
 print("Recall score:",round(recall_score(y_test,custom_pred),2))
 print("F1 score:",round(f1_score(y_test,custom_pred),2))
+
+## Key Insights:
+
+# - Precision and recall trade off with threshold changes
+# - Default threshold (0.5) provided balanced performance
+# - Higher threshold improved precision but reduced recall
+# - ROC–AUC measured overall ranking ability independent of threshold
+
+## Takeaway
+# Metrics must be interpreted together; threshold choice depends on real-world costs of errors.
+
