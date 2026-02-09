@@ -18,11 +18,11 @@ y = df["target"]
 
 #split train and test
 x_train, x_test, y_train, y_test = train_test_split(
-    x, y, test_size=0.4, random_state=42
+    x, y, test_size=0.5, random_state=42
 )
 
 #model train
-model = LogisticRegression(max_iter=2345)
+model = LogisticRegression(max_iter=2456)
 model.fit(x_train, y_train)
 
 #probs
