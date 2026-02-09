@@ -50,3 +50,10 @@ recall = print("\nRecall score:",round(recall_score(y_test,y_pred),2))
 f1Score = print("\nF1 score:", round(f1_score(y_test,y_pred),2))
 RocAuc = print("\nRoc_Auc score:",round(roc_auc_score(y_test,probs),2))
 
+#Threshold experiment
+
+custom_pred = (probs > 0.7).astype(int)
+print("\nScore changes after Threshold >0.7:\n")
+print("Precision score:",round(precision_score(y_test,custom_pred),2))
+print("Recall score:",round(recall_score(y_test,custom_pred),2))
+print("F1 score:",round(f1_score(y_test,custom_pred),2))
