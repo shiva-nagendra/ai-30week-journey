@@ -38,6 +38,6 @@ y_pred = model.predict(x_test_scaled)
 #evaluate
 acc = accuracy_score(y_test,y_pred)
 
-print("\nAccuracy score with scaling:",round(acc,6))
+print("\nAccuracy score with scaling:",round(acc,3))
 
 
