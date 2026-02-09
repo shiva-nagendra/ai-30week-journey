@@ -14,3 +14,4 @@ print(np.round(std.fit_transform(x),2))
 
 print("\nNormalized:")
 print(np.round(norm.fit_transform(x),2))
+
