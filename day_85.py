@@ -35,5 +35,5 @@ y_pred_tree = model_tree.predict(x_test)
 acc_lr = accuracy_score(y_test,y_pred_lr)
 acc_tree = accuracy_score(y_test,y_pred_tree)
 
-print("\nLogisitic accuracy:",acc_lr)
+print("\nLogisitic accuracy:",round(acc_lr,3))
 print("\nTree model accuracy:",acc_tree)
