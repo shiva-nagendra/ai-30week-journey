@@ -33,4 +33,4 @@ pipe.fit(x_train,y_train)
 #mdel predict
 y_pred=pipe.predict(x_test)
 acc = round(accuracy_score(y_test,y_pred),3)
-print("Pipeline Accuracy score:\n ",acc )
+print("\nPipeline Accuracy score: ",acc )
