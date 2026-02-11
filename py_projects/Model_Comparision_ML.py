@@ -45,3 +45,8 @@ acc_tree = accuracy_score(y_test,y_pred_tree)
 
 print("\nScaled data accuracy score:",round(acc_scaled_pipe,3))
 print("\nTree classification acc score:",round(acc_tree,3))
+
+#observation:
+
+#Scaled data has been seen delivering efficient and higher score than tree unscaled classification.
+
