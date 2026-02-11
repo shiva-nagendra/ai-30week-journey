@@ -24,7 +24,7 @@ x_train,x_test,y_train,y_test = train_test_split(
 #pipelne build
 pipe = Pipeline([
     ("scaler",StandardScaler()),
-    ("model", LogisticRegression(max_iter=3000))
+    ("model", LogisticRegression(max_iter=3340))
 ])
 
 #model train
