@@ -59,3 +59,6 @@ def plot_model(model, title):
     plt.title(title)
     plt.show()
 
+# Visualize
+plot_model(logistic_pipe, "Logistic Regression Boundary")
+plot_model(svm_pipe, "SVM Boundary (Max Margin)")
