@@ -62,3 +62,8 @@ def plot_model(model, title):
 # Visualize
 plot_model(logistic_pipe, "Logistic Regression Boundary")
 plot_model(svm_pipe, "SVM Boundary (Max Margin)")
+
+# Reflection:
+# Logistic Regression separates classes with a straight boundary.
+# SVM finds a boundary with maximum margin (largest separation).
+# Both are linear here, but SVM focuses on geometric safety.
