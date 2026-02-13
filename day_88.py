@@ -25,12 +25,12 @@ x_train, x_test, y_train, y_test = train_test_split(
 
 #pipeline build
 Pipeline_lr = Pipeline([
-    ("scalar", StandardScaler),
+    ("scalar", StandardScaler()),
     ("model", LogisticRegression(max_iter=3456))
 ])
 
 Pipeline_svm = Pipeline([
-    ("scalar", StandardScaler),
+    ("scalar", StandardScaler()),
     ("model", SVC(kernel="linear"))
 ])
 
@@ -44,5 +44,6 @@ model_svm = Pipeline_svm.fit(x_train,y_train)
 svm_pred = model_svm.predict(x_test)
 acc_svm = accuracy_score(y_test,svm_pred)
 
-print("\nAccuracy score logistic regression:",acc_lr)
+print("\nAccuracy score logistic regression:",round(acc_lr,3))
 
+print("\nAcccuracy score SVM:", acc_svm)
