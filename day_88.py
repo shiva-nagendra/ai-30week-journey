@@ -46,4 +46,4 @@ acc_svm = accuracy_score(y_test,svm_pred)
 
 print("\nAccuracy score logistic regression:",round(acc_lr,3))
 
-print("\nAcccuracy score SVM:", acc_svm)
+print("\nAcccuracy score SVM:", round(acc_svm,3))
