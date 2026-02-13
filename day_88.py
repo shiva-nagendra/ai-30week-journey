@@ -44,6 +44,12 @@ model_svm = Pipeline_svm.fit(x_train,y_train)
 svm_pred = model_svm.predict(x_test)
 acc_svm = accuracy_score(y_test,svm_pred)
 
+#Results
 print("\nAccuracy score logistic regression:",round(acc_lr,3))
-
 print("\nAcccuracy score SVM:", round(acc_svm,3))
+
+
+# Reflection:
+# Logistic Regression optimizes probability (log loss).
+# SVM maximizes margin between classes.
+# Both perform similarly on this dataset because it is nearly linearly separable.
