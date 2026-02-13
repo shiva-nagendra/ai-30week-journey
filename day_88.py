@@ -41,4 +41,6 @@ lr_pred = model_lr.predict(x_test)
 acc_lr = accuracy_score(y_test,lr_pred)
 
 model_svm = Pipeline_svm.fit(x_train,y_train)
+svm_pred = model_svm.predict(x_test)
+
 
