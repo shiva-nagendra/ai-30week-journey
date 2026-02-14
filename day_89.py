@@ -4,41 +4,42 @@
 
 from sklearn.datasets import make_circles
 from sklearn.model_selection import train_test_split
-from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
-from sklearn.svm import SVC
 from sklearn.metrics import accuracy_score
+from sklearn.svm import SVC
+from sklearn.pipeline import Pipeline
 
-# Create non-linear dataset
-X, y = make_circles(n_samples=500, noise=0.1, factor=0.4, random_state=42)
+#create non-linear dataset
+x, y = make_circles(n_samples=500, noise= 0.1, factor=0.4, random_state=42)
 
-# Train-test split
-X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.3, random_state=42
+#train test split
+x_train, x_test, y_train, y_test = train_test_split(
+    x, y, test_size=0.3, random_state=42
 )
 
-# Linear SVM
+#linear SVM
 linear_svm = Pipeline([
     ("scaler", StandardScaler()),
     ("model", SVC(kernel="linear"))
 ])
 
-linear_svm.fit(X_train, y_train)
-linear_pred = linear_svm.predict(X_test)
-linear_acc = accuracy_score(y_test, linear_pred)
+linear_svm.fit(x_train,y_train)
+linear_pred = linear_svm.predict(x_test)
+acc_linear = accuracy_score(y_test,linear_pred)
 
-# Non-linear SVM (RBF kernel)
+#non-linear SVM
 rbf_svm = Pipeline([
-    ("scaler", StandardScaler()),
+    ("scaler",StandardScaler()),
     ("model", SVC(kernel="rbf"))
 ])
 
-rbf_svm.fit(X_train, y_train)
-rbf_pred = rbf_svm.predict(X_test)
-rbf_acc = accuracy_score(y_test, rbf_pred)
+rbf_svm.fit(x_train,y_train)
+rbf_pred = rbf_svm.predict(x_test)
+acc_rbf = accuracy_score(y_test,rbf_pred)
 
-print("Linear SVM Accuracy:", round(linear_acc, 3))
-print("RBF Kernel SVM Accuracy:", round(rbf_acc, 3))
+
+print("Linear SVM Accuracy:", round(acc_linear, 3))
+print("RBF Kernel SVM Accuracy:", round(acc_rbf, 3))
 
 
 # Reflection:
