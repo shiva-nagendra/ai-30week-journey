@@ -23,3 +23,7 @@ linear_svm = Pipeline([
     ("model", SVC(kernel="linear"))
 ])
 
+linear_svm.fit(X_train, y_train)
+linear_pred = linear_svm.predict(X_test)
+linear_acc = accuracy_score(y_test, linear_pred)
+
