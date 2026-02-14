@@ -37,3 +37,11 @@ rbf_svm.fit(X_train, y_train)
 rbf_pred = rbf_svm.predict(X_test)
 rbf_acc = accuracy_score(y_test, rbf_pred)
 
+print("Linear SVM Accuracy:", round(linear_acc, 3))
+print("RBF Kernel SVM Accuracy:", round(rbf_acc, 3))
+
+
+# Reflection:
+# Linear SVM struggles on non-linear data.
+# RBF kernel allows curved boundaries.
+# Kernel transforms space to make separation possible.
