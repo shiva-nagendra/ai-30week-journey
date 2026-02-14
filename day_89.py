@@ -33,3 +33,7 @@ rbf_svm = Pipeline([
     ("model", SVC(kernel="rbf"))
 ])
 
+rbf_svm.fit(X_train, y_train)
+rbf_pred = rbf_svm.predict(X_test)
+rbf_acc = accuracy_score(y_test, rbf_pred)
+
