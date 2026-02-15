@@ -39,3 +39,4 @@ print("\nKNN model accuracy score:",round(acc,3))
 # Reflection:
 # KNN classifies based on nearby points.
 # Scaling is critical because KNN uses distance.
+# No training optimization happens; it stores data and compares distances.
