@@ -12,3 +12,8 @@ from sklearn.preprocessing import StandardScaler
 data = load_breast_cancer(as_frame=True)
 df = data.frame
 
+#train split and target
+x = df.drop(columns=["target"])
+y = df["target"]
+
+
