@@ -34,3 +34,8 @@ y_pred = KNN_model.predict(x_test)
 acc = accuracy_score(y_test,y_pred)
 
 print("\nKNN model accuracy score:",round(acc,3))
+
+
+# Reflection:
+# KNN classifies based on nearby points.
+# Scaling is critical because KNN uses distance.
