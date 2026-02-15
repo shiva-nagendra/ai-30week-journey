@@ -28,5 +28,8 @@ KNN_model = Pipeline([
     ("model", KNeighborsClassifier(n_neighbors=5))
 ])
 
-
+#mdoel fit and predict
+KNN_model.fit(x_train,x_test)
+y_pred = KNN_model.predict(x_test)
+acc = accuracy_score(y_test,y_pred)
 
