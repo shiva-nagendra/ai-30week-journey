@@ -36,3 +36,8 @@ acc = accuracy_score(y_test,y_pred)
 print("\nNaive Bayes accuracy score:",round(acc,3))
 
 
+# Reflection:
+# Naive Bayes uses probability assumptions.
+# It assumes features are independent.
+# It often works well even if that assumption is not fully true.
+
