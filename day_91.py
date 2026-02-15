@@ -8,4 +8,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.metrics import accuracy_score
 from sklearn.preprocessing import StandardScaler
 
+#load data
+data = load_breast_cancer(as_frame=True)
+df = data.frame
 
