@@ -33,4 +33,4 @@ KNN_model.fit(x_train,y_train)
 y_pred = KNN_model.predict(x_test)
 acc = accuracy_score(y_test,y_pred)
 
-print("\nKNN model accuracy score:",acc)
+print("\nKNN model accuracy score:",round(acc*100,3)"%")
