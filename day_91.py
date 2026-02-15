@@ -27,4 +27,12 @@ model_pipeline = Pipeline([
     ("model",GaussianNB())
 ])
 
+#model fit and prediction
+model_pipeline.fit(x_train,y_train)
+y_pred = model_pipeline.predict(x_test)
+
+acc = accuracy_score(y_test,y_pred)
+
+print("\nNaive Bayes accuracy score:",round(acc,3))
+
 
