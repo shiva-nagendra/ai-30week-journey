@@ -56,4 +56,7 @@ for name, model in models.items():
     acc = accuracy_score(y_test,y_pred)
     print(f"\n{name} accuracy score:", round(acc,3))
 
-
+print("\nReflection:")
+print("Distance-based models require scaling.")
+print("Tree-based models do not require scaling.")
+print("Naive Bayes uses probability assumptions.\n")
