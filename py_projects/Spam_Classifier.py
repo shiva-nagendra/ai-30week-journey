@@ -13,9 +13,9 @@ from sklearn.metrics import accuracy_score,precision_score,f1_score,recall_score
 df = pd.read_csv("spam.csv")
 
 #convert labels to numeric
-df["label"] = df["label"].map({"ham": 0}, {"spam" : 1})
+df["label"] = df["label"].map({"ham": 0, "spam" : 1})
 
-x = df["messege"]
+x = df["message"]
 y = df["label"]
 
 #train test split
@@ -43,13 +43,15 @@ models = {
 
 #Model train and prediction
 for name, model in models.items():
-    model.fit(x_train,y_train)
+    model.fit(x_train, y_train)
     y_pred = model.predict(x_test)
 
-#metrics
-acc = accuracy_score(y_test,y_pred)
-pre_score = precision_score(y_test, y_pred)
-f1__score = f1_score(y_test,y_pred)
-recall = recall_score(y_test,y,y_pred)
+    acc = accuracy_score(y_test,y_pred)
+    pre_score = precision_score(y_test, y_pred)
+    f1__score = f1_score(y_test,y_pred)
+    recall = recall_score(y_test,y_pred)
 
 
+
+
+print(f"\n{name} Accuracy score", round(acc,3))
