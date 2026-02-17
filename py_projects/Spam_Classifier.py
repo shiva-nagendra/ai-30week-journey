@@ -66,6 +66,11 @@ for r in results:
     print("-" * 10)
 
 
+print("\nReflection:")
+print("Naive Bayes often performs well on text.")
+print("SVM usually strong on high-dimensional sparse data.")
+print("Random Forest may be slower on text features.")
+
 
 
 
