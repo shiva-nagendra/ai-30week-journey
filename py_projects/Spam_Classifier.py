@@ -10,7 +10,8 @@ from sklearn.svm import LinearSVC
 from sklearn.metrics import accuracy_score,precision_score,f1_score,recall_score
 
 #Load Data
-df = pd.read_csv("spam.csv")
+df = pd.read_csv("spam.csv", sep="\t", header=None)
+df.columns = ["label", "message"]
 
 #convert labels to numeric
 df["label"] = df["label"].map({"ham": 0, "spam" : 1})
@@ -58,8 +59,8 @@ for name, model in models.items():
 #print results
 print("\nModels comparrision:")
 for r in results:
-    print(f"{r[0]}")
-    print(f"\nAccuracy score: {round(r[1],3)}")
+    print(f"\n{r[0]}")
+    print(f"\n  Accuracy score: {round(r[1],3)}")
     print(f"  Precision: {round(r[2],3)}")
     print(f"  F1 score:  {round(r[3],3)}")
     print(f"  Recall:  {round(r[4],3)}")
@@ -70,8 +71,6 @@ print("\nReflection:")
 print("Naive Bayes often performs well on text.")
 print("SVM usually strong on high-dimensional sparse data.")
 print("Random Forest may be slower on text features.")
-
-
 
 
 
