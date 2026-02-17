@@ -41,3 +41,10 @@ models = {
     ])
 }
 
+#Model train and prediction
+
+for name, model in models.items():
+    model.fit(x_train,y_train)
+    y_pred = model.predict(x_test)
+    
+
