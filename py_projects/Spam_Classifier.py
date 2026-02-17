@@ -42,6 +42,8 @@ models = {
 }
 
 #Model train and prediction
+results = []
+
 for name, model in models.items():
     model.fit(x_train, y_train)
     y_pred = model.predict(x_test)
@@ -51,7 +53,21 @@ for name, model in models.items():
     f1__score = f1_score(y_test,y_pred)
     recall = recall_score(y_test,y_pred)
 
+    results.append([name, acc, pre_score, f1__score, recall])
+
+#print results
+print("\nModels comparrision:")
+for r in results:
+    print(f"{r[0]}")
+    print(f"\nAccuracy score: {round(r[1],3)}")
+    print(f"  Precision: {round(r[2],3)}")
+    print(f"  F1 score:  {round(r[3],3)}")
+    print(f"  Recall:  {round(r[4],3)}")
+    print("-" * 10)
 
 
 
-print(f"\n{name} Accuracy score", round(acc,3))
+
+
+
+
