@@ -42,9 +42,14 @@ models = {
 }
 
 #Model train and prediction
-
 for name, model in models.items():
     model.fit(x_train,y_train)
     y_pred = model.predict(x_test)
-    
+
+#metrics
+acc = accuracy_score(y_test,y_pred)
+pre_score = precision_score(y_test, y_pred)
+f1__score = f1_score(y_test,y_pred)
+recall = recall_score(y_test,y,y_pred)
+
 
