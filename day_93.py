@@ -34,4 +34,6 @@ plt.scatter(
     s=200
 )
 
+plt.title("K-Means Clustering")
+plt.show()
 
