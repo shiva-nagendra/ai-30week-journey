@@ -14,11 +14,11 @@ X, _ = make_blobs(
     random_state=42
 )
 
-# 2️⃣ Scale data (important for distance-based models)
+#Scale data (important for distance-based models)
 scaler = StandardScaler()
 X_scaled = scaler.fit_transform(X)
 
-# 3️⃣ Apply K-Means
+# Apply K-Means
 kmeans = KMeans(n_clusters=4, random_state=42)
 kmeans.fit(X_scaled)
 
