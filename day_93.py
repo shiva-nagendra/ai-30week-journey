@@ -19,7 +19,7 @@ scaler = StandardScaler()
 X_scaled = scaler.fit_transform(X)
 
 # Apply K-Means
-kmeans = KMeans(n_clusters=4, random_state=42)
+kmeans = KMeans(n_clusters=5, random_state=42)
 kmeans.fit(X_scaled)
 
 #Get cluster labels
