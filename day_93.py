@@ -6,7 +6,7 @@ from sklearn.datasets import make_blobs
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
 
-# 1️⃣ Create synthetic data
+# Create synthetic data
 X, _ = make_blobs(
     n_samples=300,
     centers=4,
