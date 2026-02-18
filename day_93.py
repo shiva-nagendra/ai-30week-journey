@@ -22,10 +22,10 @@ X_scaled = scaler.fit_transform(X)
 kmeans = KMeans(n_clusters=4, random_state=42)
 kmeans.fit(X_scaled)
 
-# 4️⃣ Get cluster labels
+#Get cluster labels
 labels = kmeans.labels_
 
-# 5️⃣ Plot clusters
+#Plot clusters
 plt.scatter(X_scaled[:, 0], X_scaled[:, 1], c=labels)
 plt.scatter(
     kmeans.cluster_centers_[:, 0],
