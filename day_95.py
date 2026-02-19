@@ -23,4 +23,4 @@ for k in range(2,7):
     labels = kmeans.fit_predict(x_scaled)
     score = silhouette_score(x_scaled,labels)
 
-    
+    print(f"K = {k}, Silhouette score = {round(score,3)}")
