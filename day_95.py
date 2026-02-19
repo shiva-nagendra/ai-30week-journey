@@ -9,7 +9,7 @@ from sklearn.datasets import make_blobs
 #Generate synthetic data
 x,_ = make_blobs(
     n_samples=300,
-    centers=4,
+    centers=3,
     random_state=42
 )
 
@@ -18,8 +18,9 @@ scaler = StandardScaler()
 x_scaled = scaler.fit_transform(x)
 
 #try multiple k values
-for k in range(2,7):
+for k in range(2,5):
     kmeans = KMeans(n_clusters=k, random_state=42)
     labels = kmeans.fit_predict(x_scaled)
     score = silhouette_score(x_scaled,labels)
     print(f"K = {k}, Silhouette score = {round(score,3)}")
+
