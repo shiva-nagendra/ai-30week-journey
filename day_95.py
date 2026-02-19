@@ -18,7 +18,7 @@ scaler = StandardScaler()
 x_scaled = scaler.fit_transform(x)
 
 #try multiple k values
-for k in range(2,4):
+for k in range(2,7):
     kmeans = KMeans(n_clusters=k, random_state=42)
     labels = kmeans.fit_predict(x_scaled)
     score = silhouette_score(x_scaled,labels)
