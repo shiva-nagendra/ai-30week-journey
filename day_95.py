@@ -22,5 +22,4 @@ for k in range(2,7):
     kmeans = KMeans(n_clusters=k, random_state=42)
     labels = kmeans.fit_predict(x_scaled)
     score = silhouette_score(x_scaled,labels)
-
     print(f"K = {k}, Silhouette score = {round(score,3)}")
