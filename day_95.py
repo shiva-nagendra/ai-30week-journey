@@ -13,3 +13,7 @@ x,_ = make_blobs(
     random_state=42
 )
 
+#Scale data
+scaler = StandardScaler()
+x_scaled = scaler.fit_transform(x)
+
