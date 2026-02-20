@@ -13,3 +13,10 @@ print(df.head())
 #Select relevant features
 x = df[["Annual Income (k$)","Spending Score (1-100)"]]
 
+#Scale data
+scaler = StandardScaler()
+x_scaled = scaler.fit_transform(x)
+
+#Elbow method(inertia)
+inertia_values = []
+
