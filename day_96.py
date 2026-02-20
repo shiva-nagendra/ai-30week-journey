@@ -30,3 +30,10 @@ plt.title("Elbow Method")
 plt.xlabel("k")
 plt.ylabel("Inertia")
 plt.show()
+
+#Apply K-means
+kmean = KMeans(n_clusters=4, random_state=42)
+clusters = kmean.fit_predict(x_scaled)
+
+df["Cluster"] = clusters
+
