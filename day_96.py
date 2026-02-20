@@ -5,6 +5,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import silhouette_score
 
 #Load dataset
 df = pd.read_csv("Mall_Customers.csv")
@@ -31,8 +32,21 @@ plt.xlabel("k")
 plt.ylabel("Inertia")
 plt.show()
 
+#Silhouette visualisation
+sil_scores = []
+
+for k in range(2, 11):
+    kmeanss = KMeans(n_clusters=k, random_state=42)
+    labels = kmeanss.fit_predict(x_scaled)
+    sil_scores.append(silhouette_score(x_scaled, labels))
+
+plt.plot(range(2, 11), sil_scores, marker = 'o')
+plt.title("Silhouette score")
+plt.show()
+
+
 #Apply K-means
-kmean = KMeans(n_clusters=4, random_state=42)
+kmean = KMeans(n_clusters=5, random_state=42)
 clusters = kmean.fit_predict(x_scaled)
 
 df["Cluster"] = clusters
