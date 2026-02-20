@@ -37,3 +37,17 @@ clusters = kmean.fit_predict(x_scaled)
 
 df["Cluster"] = clusters
 
+#visualise k means
+
+plt.scatter(x_scaled[:, 0], x_scaled[:, 1], c=clusters)
+plt.scatter(
+    kmean.cluster_centers_[:, 0],
+    kmean.cluster_centers_[:,1],
+    marker="x",
+    s=200
+)
+
+plt.title("customer segments")
+plt.xlabel("Income")
+plt.ylabel("Spending score")
+plt.show()
