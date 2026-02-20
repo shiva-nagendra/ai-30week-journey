@@ -28,3 +28,5 @@ for k in range(1, 11):
 plt.plot(range(1, 11), inertia_values, marker = 'o')
 plt.title("Elbow Method")
 plt.xlabel("k")
+plt.ylabel("Inertia")
+plt.show()
