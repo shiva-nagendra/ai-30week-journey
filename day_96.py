@@ -20,3 +20,11 @@ x_scaled = scaler.fit_transform(x)
 #Elbow method(inertia)
 inertia_values = []
 
+for k in range(1, 11):
+    kmean = KMeans(n_clusters=k, random_state=42)
+    kmean.fit(x_scaled)
+    inertia_values.append(kmean.inertia_)
+
+plt.plot(range(1, 11), inertia_values, marker = 'o')
+plt.title("Elbow Method")
+plt.xlabel("k")
