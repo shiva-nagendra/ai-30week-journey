@@ -16,6 +16,9 @@ x = df[["Annual Income (k$)", "Spending Score (1-100)"]]
 scaler = StandardScaler()
 x_scaled = scaler.fit_transform(x)
 
+# Apply KMeans (k = 5 from elbow + silhouette)
+kmean = KMeans(n_clusters=5, random_state=42)
+clusters = kmean.fit_predict(x_scaled)
 
 # Add cluster column
 df["Cluster"] = clusters
