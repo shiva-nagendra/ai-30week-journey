@@ -23,7 +23,7 @@ clusters = kmean.fit_predict(x_scaled)
 # Add cluster column
 df["Cluster"] = clusters
 
-# 🔥 Cluster interpretation table
+# Cluster interpretation table
 print("\nCluster Means:")
 print(df.groupby("Cluster").mean())
 
@@ -41,7 +41,7 @@ df["Segment"] = df["Cluster"].map(segment_names)
 print("\nSegment counts:")
 print(df["Segment"].value_counts())
 
-# 📊 Visualization
+# Visualization
 plt.scatter(x_scaled[:, 0], x_scaled[:, 1], c=clusters)
 plt.scatter(
     kmean.cluster_centers_[:, 0],
