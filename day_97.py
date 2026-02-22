@@ -17,7 +17,7 @@ scaler = StandardScaler()
 x_scaled = scaler.fit_transform(x)
 
 # Apply KMeans (k = 5 from elbow + silhouette)
-kmean = KMeans(n_clusters=5, random_state=42)
+kmean = KMeans(n_clusters=4, random_state=42)
 clusters = kmean.fit_predict(x_scaled)
 
 # Add cluster column
