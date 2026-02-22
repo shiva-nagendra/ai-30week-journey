@@ -47,7 +47,7 @@ plt.scatter(
     kmean.cluster_centers_[:, 0],
     kmean.cluster_centers_[:, 1],
     marker="x",
-    s=200
+    s=140
 )
 
 plt.title("Customer Segments")
