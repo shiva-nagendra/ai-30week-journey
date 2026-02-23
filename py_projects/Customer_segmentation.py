@@ -6,7 +6,7 @@ from sklearn.metrics import silhouette_score
 import pandas as pd
 
 #Load data
-df = pd.read_csv("Mall_customers.csv")
+df = pd.read_csv("Mall_Customers.csv")
 print(df.head())
 
 #Feature selection
@@ -18,33 +18,29 @@ x = df[["Annual Income (k$)","Spending Score (1-100)"]]
 scaler = StandardScaler()
 x_scaled = scaler.fit_transform(x)
 
-#Silhouette visualisation
-sil_score = []
-
-for k in range(2, 11):
-    kmean = KMeans(n_clusters=k, random_state=42)
-    labels = kmean.fit_predict(x_scaled)
-    sil_score.append(silhouette_score(x_scaled,labels))
-    
-plt.plot(range(2,11), sil_score, marker = 'o')
-plt.title("Silhouette score")
-plt.xlabel("K")
-plt.ylabel("Score")
-plt.show()
-
-
-#Elbow visualization
-inertia_val = []
+#Elbow method(inertia)
+inertia_values = []
 
 for k in range(1, 11):
-    kmeans = KMeans(n_clusters=k, random_state=42)
-    kmeans.fit(x_scaled)
-    inertia_val.append(kmeans.inertia_)
+    kmean = KMeans(n_clusters=k, random_state=42)
+    kmean.fit(x_scaled)
+    inertia_values.append(kmean.inertia_)
 
-plt.plot(range(1, 11), inertia_val, marker = "o")
-plt.title("Elbow K")
-plt.xlabel("K")
+plt.plot(range(1, 11), inertia_values, marker = 'o')
+plt.title("Elbow Method")
+plt.xlabel("k")
 plt.ylabel("Inertia")
 plt.show()
 
+#Silhouette visualisation
+sil_scores = []
+
+for k in range(2, 11):
+    kmeanss = KMeans(n_clusters=k, random_state=42)
+    labels = kmeanss.fit_predict(x_scaled)
+    sil_scores.append(silhouette_score(x_scaled, labels))
+
+plt.plot(range(2, 11), sil_scores, marker = 'o')
+plt.title("Silhouette score")
+plt.show()
 
