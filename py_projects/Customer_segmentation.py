@@ -9,3 +9,12 @@ import pandas as pd
 df = pd.read_csv("Mall_customers.csv")
 print(df.head())
 
+#Feature selection
+
+x = df[["Annual Income (k$)","Spending Score (1-100)"]]
+
+
+#Scaling
+scaler = StandardScaler()
+x_scaled = scaler.fit_transform(x)
+
