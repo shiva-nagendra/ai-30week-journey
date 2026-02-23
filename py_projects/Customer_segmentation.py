@@ -1,9 +1,8 @@
 #week 15 project - Customer segmentation
-
+import matplotlib.pyplot as plt
 from sklearn.preprocessing import StandardScaler
 from sklearn.cluster import KMeans
 from sklearn.metrics import silhouette_score
-import matplotlib.pyplot as plt
 import pandas as pd
 
 #Load data
@@ -19,6 +18,21 @@ x = df[["Annual Income (k$)","Spending Score (1-100)"]]
 scaler = StandardScaler()
 x_scaled = scaler.fit_transform(x)
 
+#Silhouette visualisation
+sil_score = []
+
+for k in range(2, 11):
+    kmean = KMeans(n_clusters=k, random_state=42)
+    labels = kmean.fit_predict(x_scaled)
+    sil_score.append(silhouette_score(x_scaled,labels))
+    
+plt.plot(range(2,11), sil_score, marker = 'o')
+plt.title("Silhouette score")
+plt.xlabel("K")
+plt.ylabel("Score")
+plt.show()
+
+
 #Elbow visualization
 inertia_val = []
 
@@ -33,14 +47,4 @@ plt.xlabel("K")
 plt.ylabel("Inertia")
 plt.show()
 
-#Silhouette visualisation
-sil_score = []
 
-for k in range(2, 11):
-    kmean = KMeans(n_clusters=k, random_state=42)
-    labels = kmean.fit_predict(x_scaled)
-    sil_score.append(silhouette_score(x_scaled,labels))
-    
-plt.plot(range(2,11), sil_score, marker = 'o')
-plt.title("Silhouette score")
-plt.show()
