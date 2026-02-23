@@ -33,10 +33,14 @@ plt.xlabel("K")
 plt.ylabel("Inertia")
 plt.show()
 
-#Apply k means
-#Elbow
+#Silhouette visualisation
+sil_score = []
 
-for k in range(1, 11):
-    kmean = KMeans(n_clusters=k,random_state=42)
-    clusters = kmean.fit_predict(x_scaled)
-
+for k in range(2, 11):
+    kmean = KMeans(n_clusters=k, random_state=42)
+    labels = kmean.fit_predict(x_scaled)
+    sil_score.append(silhouette_score(x_scaled,labels))
+    
+plt.plot(range(2,11), sil_score, marker = 'o')
+plt.title("Silhouette score")
+plt.show()
