@@ -61,4 +61,8 @@ plt.scatter(
     s=200
 )
 
+plt.title("customer segments")
+plt.xlabel("Income")
+plt.ylabel("Spending score")
+plt.show()
 
