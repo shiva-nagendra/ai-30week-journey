@@ -44,3 +44,21 @@ plt.plot(range(2, 11), sil_scores, marker = 'o')
 plt.title("Silhouette score")
 plt.show()
 
+#apply K means
+for k in range(1, 11):
+    kmeanss = KMeans(n_clusters=5, random_state=42)
+    clusters = kmeanss.fit_predict(x_scaled)
+
+    df["clusters"] = clusters
+
+#visualise clusters
+
+plt.scatter(x_scaled[:, 0], x_scaled[:, 1], c=clusters)
+plt.scatter(
+    kmeanss.cluster_centers_[:,0],
+    kmeanss.cluster_centers_[:, 1],
+    marker="x",
+    s=200
+)
+
+
