@@ -29,8 +29,8 @@ for k in range(1, 11):
 
 plt.plot(range(1, 11), inertia_val, marker = "o")
 plt.title("Elbow K")
-plt.xlabel("")
-plt.ylabel("")
+plt.xlabel("K")
+plt.ylabel("Inertia")
 plt.show()
 
 #Apply k means
