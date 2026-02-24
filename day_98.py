@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 # Load dataset
 df = pd.read_csv("Mall_Customers.csv")
 
-x = df[["Annual Income (k$)", "Spending Score (1-100)"]]
+x = df[["Gender","Age","Annual Income (k$)", "Spending Score (1-100)"]]
 
 #scale data
 scaler = StandardScaler()
