@@ -16,6 +16,7 @@ df["Gender"] = df["Gender"].map({"Male":0,"Female":1})
 x = df[["Gender","Age","Annual Income (k$)", "Spending Score (1-100)"]]
 
 print(x.head())
+print(x.dtypes)
 
 #scale data
 scaler = StandardScaler()
