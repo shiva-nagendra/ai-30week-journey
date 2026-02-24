@@ -21,7 +21,7 @@ x_scaled = scaler.fit_transform(x)
 pca = PCA(n_components=2)
 x_pca = pca.fit_transform(x_scaled)
 
-
+print("PCA Variance:\n")
 print(pca.explained_variance_ratio_)
 
 #Visuallize
