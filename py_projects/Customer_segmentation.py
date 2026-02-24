@@ -45,11 +45,11 @@ plt.title("Silhouette score")
 plt.show()
 
 #apply K means
-for k in range(1, 11):
-    kmeanss = KMeans(n_clusters=5, random_state=42)
-    clusters = kmeanss.fit_predict(x_scaled)
 
-    df["clusters"] = clusters
+kmeanss = KMeans(n_clusters=5, random_state=42)
+clusters = kmeanss.fit_predict(x_scaled)
+
+df["Cluster"] = clusters
 
 #visualise clusters
 
@@ -65,4 +65,22 @@ plt.title("customer segments")
 plt.xlabel("Income")
 plt.ylabel("Spending score")
 plt.show()
+
+# Cluster interpretation table
+print("\nCluster Means:")
+print(df.groupby("Cluster").mean(numeric_only=True))
+
+#Assign segment names (edit based on your results)
+segment_names = {
+    0: "Regular",
+    1: "VIP",
+    2: "Budget",
+    3: "Potential",
+    4: "Impulsive"
+}
+
+df["Segment"] = df["Cluster"].map(segment_names)
+
+print("\nSegment counts:")
+print(df["Segment"].value_counts())
 
