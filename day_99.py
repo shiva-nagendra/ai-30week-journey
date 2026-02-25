@@ -40,8 +40,5 @@ plt.scatter(
     color="red" 
 )
 plt.title("PCA-Kmeans")
-plt.xlabel("PC1")
-plt.ylabel("PC2")
-plt.show()
 
 
