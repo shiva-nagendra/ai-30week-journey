@@ -3,7 +3,6 @@
 
 from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
-from sklearn.cluster import KMeans
 import matplotlib.pyplot as plt
 import pandas as pd
 
@@ -19,21 +18,3 @@ x = df[["Gender","Age","Annual Income (k$)", "Spending Score (1-100)"]]
 scaler = StandardScaler()
 x_scaled = scaler.fit_transform(x)
 
-pca_full = PCA()
-pca_full.fit(x_scaled)
-
-plt.plot(pca_full.explained_variance_ratio_, marker='o')
-plt.title("Scree Plot")
-plt.xlabel("Principal Components")
-plt.ylabel("Variance Explained")
-plt.show()
-
-import numpy as np
-
-cum_var = np.cumsum(pca_full.explained_variance_ratio_)
-
-plt.plot(cum_var, marker='o')
-plt.title("Cumulative Variance")
-plt.xlabel("Components")
-plt.ylabel("Total Variance")
-plt.show()
