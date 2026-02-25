@@ -28,7 +28,7 @@ kmeans = KMeans(n_clusters=5, random_state=42)
 clusters = kmeans.fit_predict(x_pca)
 
 print("PCA Variance:\n")
-print(pca.explained_variance_ratio_)
+
 
 #plot
 plt.scatter(x_pca[:, 0], x_pca[:, 1], c=clusters, cmap="viridis" )
