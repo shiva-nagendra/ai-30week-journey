@@ -33,3 +33,18 @@ plt.title("Scree plot")
 plt.xlabel("Principal componenets")
 plt.ylabel("Variance Explained")
 plt.show()
+
+#Cumulative variance
+
+plt.plot(range(1, len(x_var)+1), x_var.cumsum(), marker="o")
+plt.title("Cumulative variance")
+plt.xlabel("No. of components")
+plt.ylabel("Total variance")
+plt.show()
+
+#Choose optimal components (ex: 2)
+
+pca_opt = PCA(n_components=2)
+x_reduced = pca_opt.fit_transform(x_scaled)
+
+print("\nFinal PCA shape:", x_reduced.shape)
