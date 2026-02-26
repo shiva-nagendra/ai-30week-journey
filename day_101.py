@@ -25,7 +25,7 @@ kmeans = KMeans(n_clusters=5, random_state=42)
 clusters = kmeans.fit_predict(x_scaled)
 
 #Add cluster column
-clusters = df["Cluster"]
+df["Cluster"] = clusters 
 
 #apply pca
 pca = PCA(n_components=2)
@@ -33,6 +33,13 @@ x_pca = pca.fit_transform(x_scaled)
 
 #Plot pca with cluster
 plt.scatter(x_pca[:, 0], x_pca[:, 1], c=clusters)
+plt.scatter(
+    kmeans.cluster_centers_[:, 0],
+    kmeans.cluster_centers_[:,1],
+    s=200,
+    marker="x",
+    color = "red"
+)
 plt.title("Customer segments(PCA view)")
 plt.xlabel("PC1")
 plt.ylabel("PC2")
