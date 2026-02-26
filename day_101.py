@@ -21,7 +21,7 @@ scaler = StandardScaler()
 x_scaled = scaler.fit_transform(x)
 
 #apply kmeans
-kmeans = KMeans(n_clusters=5, random_state=42)
+kmeans = KMeans(n_clusters=3, random_state=42)
 clusters = kmeans.fit_predict(x_scaled)
 
 #Add cluster column
