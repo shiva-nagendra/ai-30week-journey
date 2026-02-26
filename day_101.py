@@ -30,3 +30,10 @@ clusters = df["Cluster"]
 #apply pca
 pca = PCA(n_components=2)
 x_pca = pca.fit_transform(x_scaled)
+
+#Plot pca with cluster
+plt.scatter(x_pca[:, 0], x_pca[:, 1], c=clusters)
+plt.title("Customer segments(PCA view)")
+plt.xlabel("PC1")
+plt.ylabel("PC2")
+plt.show()
