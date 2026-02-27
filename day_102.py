@@ -15,3 +15,7 @@ df["Gender"] = df["Gender"].map({"Male":0,"Female":1})
 x = df[["Gender", "Age", "Annual Income (k$)", "Spending Score (1-100)"]]
 
 
+#scale data
+scaler = StandardScaler()
+x_scaled = scaler.fit_transform(x)
+
