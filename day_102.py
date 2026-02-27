@@ -19,3 +19,8 @@ x = df[["Gender", "Age", "Annual Income (k$)", "Spending Score (1-100)"]]
 scaler = StandardScaler()
 x_scaled = scaler.fit_transform(x)
 
+#Apply pca
+pca = PCA(n_components=2, random_state=42)
+x_pca = pca.fit_transform(x_scaled)
+
+
