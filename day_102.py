@@ -45,4 +45,4 @@ plt.show()
 #Add cluster column
 df["Cluster"] = clusters 
 print("\n Cluster mean:")
-print(df["Cluster"].mean(numeric_only=True))
+print(df.groupby("Cluster").mean(numeric_only=True))
