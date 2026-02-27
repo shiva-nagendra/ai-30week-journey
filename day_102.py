@@ -23,8 +23,13 @@ x_scaled = scaler.fit_transform(x)
 pca = PCA(n_components=2, random_state=42)
 x_pca = pca.fit_transform(x_scaled)
 
+#Add cluster column
+clusters = df["Cluster"]
 
 #Apply kmeans
 Kmeans = KMeans(n_clusters=5, random_state=42)
 clusters = Kmeans.fit_predict(x_scaled)
 
+#Visualize
+
+plt.scatter()
