@@ -25,11 +25,11 @@ x_pca = pca.fit_transform(x_scaled)
 
 #Apply kmeans
 Kmeans = KMeans(n_clusters=5, random_state=42)
-clusters = Kmeans.fit_predict(x_scaled)
+clusters = Kmeans.fit_predict(x_pca)
 
 #Visualize
 
-plt.scatter(x_pca[:, 0], x_pca[:,1], c=clusters)
+plt.scatter(x_pca[:,0], x_pca[:,1], c=clusters)
 plt.scatter(
     Kmeans.cluster_centers_[:,0],
     Kmeans.cluster_centers_[:,1],
@@ -37,11 +37,12 @@ plt.scatter(
     color="red",
     marker="x"
 )
-plt.title("PCA - Kmeans Cluster")
+plt.title("Customer segmentation (PCA view)")
 plt.xlabel("PC1")
 plt.ylabel("PC2")
 plt.show()
 
 #Add cluster column
 df["Cluster"] = clusters 
+print("\n Cluster mean:")
 print(df["Cluster"].mean(numeric_only=True))
