@@ -13,7 +13,7 @@ class SimpleNN(nn.Module):
 
     def forward(self, x):
         x = self.linear(x)
-        x = self.sigmoid(x)
+        x = self.activation(x)
         return x
     
 #Create model
