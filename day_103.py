@@ -1,4 +1,5 @@
 #week 17, day 1 and day 2
+#Eural netwrks and py torch
 
 import torch
 
