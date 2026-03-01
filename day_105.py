@@ -17,3 +17,6 @@ class SimpleModel(nn.Module):
 
     def forward(self, x):
         return self.linear(x)
+    
+# Create model
+model = SimpleModel()
