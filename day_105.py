@@ -43,3 +43,6 @@ for epoch in range(50):
 
     if epoch % 10 == 0:
         print(f"Epoch {epoch}, Loss: {loss.item()}")
+# Check learned parameters
+for name, param in model.named_parameters():
+    print(name, param.data)
