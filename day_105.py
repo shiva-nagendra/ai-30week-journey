@@ -7,3 +7,13 @@ import torch.optim as optim
 # Fake dataset (y = 2x + 1)
 x = torch.randn(100, 1)
 y = 2 * x + 1
+
+
+# Define simple linear model
+class SimpleModel(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.linear = nn.Linear(1, 1)
+
+    def forward(self, x):
+        return self.linear(x)
