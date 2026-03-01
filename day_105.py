@@ -40,3 +40,6 @@ for epoch in range(50):
 
     # Update weights
     optimizer.step()
+
+    if epoch % 10 == 0:
+        print(f"Epoch {epoch}, Loss: {loss.item()}")
