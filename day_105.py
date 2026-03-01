@@ -37,3 +37,6 @@ for epoch in range(50):
      # Backward pass
     optimizer.zero_grad()
     loss.backward()
+
+    # Update weights
+    optimizer.step()
