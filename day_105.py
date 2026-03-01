@@ -20,3 +20,9 @@ class SimpleModel(nn.Module):
     
 # Create model
 model = SimpleModel()
+
+# Define loss function
+criterion = nn.MSELoss()
+
+# Define optimizer
+optimizer = optim.SGD(model.parameters(), lr=0.1)
