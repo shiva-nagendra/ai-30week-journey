@@ -26,3 +26,10 @@ criterion = nn.MSELoss()
 
 # Define optimizer
 optimizer = optim.SGD(model.parameters(), lr=0.1)
+
+# Training loop
+for epoch in range(50):
+
+    # Forward pass
+    predictions = model(x)
+    loss = criterion(predictions, y)
