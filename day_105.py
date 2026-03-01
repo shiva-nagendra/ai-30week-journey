@@ -33,3 +33,7 @@ for epoch in range(50):
     # Forward pass
     predictions = model(x)
     loss = criterion(predictions, y)
+
+     # Backward pass
+    optimizer.zero_grad()
+    loss.backward()
