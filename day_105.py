@@ -1,12 +1,12 @@
 #week 17 day 4
-# Training loop
+#Training loop
 
 import torch
 import torch.nn as nn
 import torch.optim as optim
 
-#Create fake data
-x = torch.randn(100, 1)
+#create fake data
+x = torch.range(100, 1)
 y = 2*x + 1
 
 #Define model
@@ -16,45 +16,10 @@ class SimpleModel(nn.Module):
         super().__init__()
         self.linear = nn.Linear(1,1) #1 input 1 output
 
-    def forward(self,x):
+    def forward(self, x):
         return self.linear(x)
     
 model = SimpleModel()
 
-#Define loss function
+#loss function
 
-criterion = nn.MSELoss() #mean squared error
-
-#Define optimizer
-
-optimizer = optim.SGD(model.parameters(), lr=0.1)
-
-#trainig loop
-for epoch in range(50):
-
-    #forward pass (model make prediction)
-    predictions = model(x)
-
-    #compute loss(measure error)
-    loss = criterion(predictions,y)
-
-    #Clear old gradients
-    optimizer.zero_grad()
-
-    #Backward pass(compute gradients)
-    loss.backward()
-
-    #update weights
-    optimizer.step()
-
-    #print progress
-    if epoch % 10 == 0:
-        print(f"Epoch: {epoch}, loss: {loss.item()}")
-
-#check learned parameters
-
-print("\nLearned parameters:")
-for name, params in model.named_parameters():
-    print(name, params.data)
-    
-    
