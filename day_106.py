@@ -20,8 +20,8 @@ class SimpleNN(nn.Module):
 
     def forward(self, x):
         x = self.hidden(x)
-        x = self.output(x)
         x = self.relu(x)
+        x = self.output(x)
         return x
     
 model = SimpleNN()
@@ -30,7 +30,7 @@ model = SimpleNN()
 criterion = nn.MSELoss()
 
 #define optimizer
-optimizer = optim.Adam(model.parameters(),lr=0.1)
+optimizer = optim.Adam(model.parameters(),lr=0.01)
 
 #training loop
 for epoch in range(500):
