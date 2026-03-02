@@ -26,3 +26,23 @@ class SimpleNN(nn.Module):
     
 model = SimpleNN()
 
+#define loss
+criterion = nn.MSELoss()
+
+#define optimizer
+optimizer = optim.Adam(model.parameters(),lr=0.1)
+
+#training loop
+for epoch in range(500):
+    predictions = model(x)
+    loss = criterion(predictions, y)
+    optimizer.zero_grad()
+    loss.backward()
+    optimizer.step()
+
+    if epoch % 100 == 0:
+        print(f"Epoch {epoch}, Loss {loss.item()}")
+
+print("\nTraining complete.")
+
+
