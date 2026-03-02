@@ -6,7 +6,7 @@ import torch.nn as nn
 import torch.optim as optim
 
 #create fake data
-x = torch.range(100, 1)
+x = torch.randn(100, 1)
 y = 2*x + 1
 
 #Define model
@@ -50,7 +50,10 @@ for epoch in range(50):
         print(f"\nEpoch:{epoch},Loss:{loss.item()}")
 
 
+#print learned parameters
 
+for name, params in model.named_parameters():
+    print(name, params)
 
 
 
