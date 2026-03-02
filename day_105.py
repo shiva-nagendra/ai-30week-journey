@@ -51,9 +51,9 @@ for epoch in range(50):
 
 
 #print learned parameters
-
+print("\nLearned parameters:")
 for name, params in model.named_parameters():
-    print(name, params)
+    print(name, params.data)
 
 
 
