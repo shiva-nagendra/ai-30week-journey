@@ -26,3 +26,6 @@ x_test = scaler.transform(x_test)
 #convert to tensor
 x_train = torch.tensor(x_train,dtype=torch.float32)
 x_test = torch.tensor(x_test,dtype=torch.float32)
+y_train = torch.tensor(y_train,dtype=torch.long)
+y_test = torch.tensor(y_test,dtype=torch.long)
+
