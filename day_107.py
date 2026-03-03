@@ -34,7 +34,7 @@ class IrisNN(nn.Module):
     def __init__(self):
         super().__init__()
         self.hidden = nn.Linear(4,16)
-        self.relu = nn.ReLU
+        self.relu = nn.ReLU()
         self.output = nn.Linear(16,3)
 
     def forward(self, x):
@@ -54,7 +54,7 @@ optimizer = optim.Adam(model.parameters(),lr=0.01)
 for epoch in range(200):
     output = model(x_train)
     loss = crieterion(output, y_train)
-    
+
     optimizer.zero_grad()
     loss.backward()
     optimizer.step()
@@ -62,3 +62,10 @@ for epoch in range(200):
     if epoch % 50 == 0:
         print(f"\nEpoch:{epoch}, Loss:{loss.item()}")
 
+#evaluation
+with torch.no_grad():
+    predictions = model(x_test)
+    _, predicted_classes = torch.max(predictions, 1)
+    accuracy = (predicted_classes == y_test).float().mean()
+
+print(f"\nTest accuracy: {accuracy.item()*100}%")
