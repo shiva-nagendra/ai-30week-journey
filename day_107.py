@@ -45,3 +45,7 @@ class IrisNN(nn.Module):
     
 model = IrisNN()
 
+#loss and optimizer
+crieterion = nn.CrossEntropyLoss()
+optimizer = optim.Adam(model.parameters(),lr=0.01)
+
