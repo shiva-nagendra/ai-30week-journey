@@ -68,3 +68,13 @@ for epoch in range(300):
 
     if epoch % 50 == 0:
         print(f"Epoch {epoch}, Loss: {loss.item()}")
+
+# Evaluation
+with torch.no_grad():
+
+    outputs = model(X_test)
+    _, predicted = torch.max(outputs, 1)
+
+    accuracy = (predicted == y_test).sum().item() / len(y_test)
+
+print(f"\nTest Accuracy: {accuracy*100:.2f}%")
