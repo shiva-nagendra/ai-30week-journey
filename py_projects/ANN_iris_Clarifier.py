@@ -23,3 +23,7 @@ x_train, x_test, y_train, y_test = train_test_split(
 scaler = StandardScaler()
 x_scaled = scaler.fit_transform(x_train)
 x_test = scaler.transform(x_test)
+
+#convert to tensors
+x_train = torch.tensor(x_train,dtype=torch.float32)
+x_test = torch.tensor(x_test,dtype=torch.float32)
