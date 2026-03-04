@@ -48,3 +48,23 @@ class IrisNN(nn.Module):
         x = self.output(x)
 
         return x
+    
+
+model = IrisNN()
+
+criterion = nn.CrossEntropyLoss()
+optimizer = optim.Adam(model.parameters(), lr=0.01)
+
+
+# Training Loop
+for epoch in range(300):
+
+    outputs = model(X_train)
+    loss = criterion(outputs, y_train)
+
+    optimizer.zero_grad()
+    loss.backward()
+    optimizer.step()
+
+    if epoch % 50 == 0:
+        print(f"Epoch {epoch}, Loss: {loss.item()}")
