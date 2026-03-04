@@ -59,7 +59,7 @@ optimizer = optim.Adam(model.parameters(), lr=0.01)
 # Training Loop
 for epoch in range(300):
 
-    outputs = model(X_train)
+    outputs = model(x_train)
     loss = criterion(outputs, y_train)
 
     optimizer.zero_grad()
@@ -72,7 +72,7 @@ for epoch in range(300):
 # Evaluation
 with torch.no_grad():
 
-    outputs = model(X_test)
+    outputs = model(x_test)
     _, predicted = torch.max(outputs, 1)
 
     accuracy = (predicted == y_test).sum().item() / len(y_test)
