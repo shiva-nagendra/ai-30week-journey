@@ -30,3 +30,21 @@ x_test = torch.tensor(x_test,dtype=torch.float32)
 
 y_train = torch.tensor(y_train,dtype=torch.long)
 y_test = torch.tensor(y_test,dtype=torch.long)
+
+# Neural Network Architecture
+class IrisNN(nn.Module):
+
+    def __init__(self):
+        super().__init__()
+
+        self.hidden = nn.Linear(4, 16)
+        self.relu = nn.ReLU()
+        self.output = nn.Linear(16, 3)
+
+    def forward(self, x):
+
+        x = self.hidden(x)
+        x = self.relu(x)
+        x = self.output(x)
+
+        return x
