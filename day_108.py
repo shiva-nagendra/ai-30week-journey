@@ -23,3 +23,8 @@ feature_map = conv(image)
 print("\nAfter convolution:")
 print(feature_map.shape)
 
+#Apply activation
+
+relu = nn.ReLU()
+activated = relu(feature_map)
+
