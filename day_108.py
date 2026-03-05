@@ -17,3 +17,9 @@ conv = nn.Conv2d(
     kernel_size=3
 )
 
+#Apply convolution
+feature_map = conv(image)
+
+print("\nAfter convolution:")
+print(feature_map.shape)
+
