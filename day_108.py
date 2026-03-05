@@ -28,3 +28,6 @@ print(feature_map.shape)
 relu = nn.ReLU()
 activated = relu(feature_map)
 
+print("\nAfter reLu:")
+print(activated.shape)
+
