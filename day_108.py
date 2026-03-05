@@ -14,7 +14,7 @@ print(image.shape)
 conv = nn.Conv2d(
     in_channels=1,
     out_channels=8,
-    kernel_size=3
+    kernel_size=2
 )
 
 #Apply convolution
