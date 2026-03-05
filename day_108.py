@@ -24,10 +24,17 @@ print("\nAfter convolution:")
 print(feature_map.shape)
 
 #Apply activation
-
 relu = nn.ReLU()
 activated = relu(feature_map)
 
 print("\nAfter reLu:")
 print(activated.shape)
 
+
+#Apply pooling
+pool = nn.MaxPool2d(kernel_size=2)
+
+pooled = pool(activated)
+
+print("\nAfter pooling:")
+print(pooled.shape)
