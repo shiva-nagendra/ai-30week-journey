@@ -40,6 +40,8 @@ class CNNmodel(nn.Module):
 
         x = self.fc(x)
 
+        return x
+
 #model
 model = CNNmodel()
 print(model)
