@@ -44,5 +44,10 @@ class CNNmodel(nn.Module):
 model = CNNmodel()
 print(model)
 
+#test with fake image
+image = torch.randn(1,1,28,28)
 
-     
+output = model(image)
+
+print("\nOutput shape:")
+print(output.shape)     
