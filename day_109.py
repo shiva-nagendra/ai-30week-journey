@@ -24,6 +24,22 @@ class CNNmodel(nn.Module):
             kernel_size=3
         )
 
+        self.fc = nn.Linear(16*5*5, 10)
+
+    def forward(self, x):
+        x = self.conv1(x)
+        x = self.relu(x)
+        x = self.pool(x)
+
+        x = self.conv2(x)
+        x = self.relu(x)
+        x = self.pool(x)
+
+        #Flatten
+        x = torch.flatten(x, 1)
+
+        x = self.fc(x)
+
         
 
      
