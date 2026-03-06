@@ -28,11 +28,11 @@ class CNNmodel(nn.Module):
 
     def forward(self, x):
         x = self.conv1(x)
-        x = self.relu(x)
+        x = torch.relu(x)
         x = self.pool(x)
 
         x = self.conv2(x)
-        x = self.relu(x)
+        x = torch.relu(x)
         x = self.pool(x)
 
         #Flatten
