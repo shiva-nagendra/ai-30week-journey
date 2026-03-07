@@ -67,9 +67,6 @@ for epoch in range(5):
     print(f"\nEpoch{epoch+1}, loss:{total_loss:.4f}")
 
 
-# git add .
-# git commit -m "Week 18 Day 3: Trained CNN on MNIST handwritten digit dataset"
-# git push
 
 
 
