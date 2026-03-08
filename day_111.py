@@ -49,7 +49,7 @@ class CNN(nn.Module):
 
         self.fc = nn.Linear(16*5*5,10)
 
-        def forward(self,x):
+    def forward(self,x):
 
         x = self.pool(torch.relu(self.conv1(x)))
         x = self.pool(torch.relu(self.conv2(x)))
@@ -59,4 +59,26 @@ class CNN(nn.Module):
         x = self.fc(x)
 
         return x
+    
+
+model = CNN()
+
+criterion = nn.CrossEntropyLoss()
+optimizer = optim.Adam(model.parameters(), lr=0.001)
+
+
+# train model
+for epoch in range(3):
+
+    for images, labels in train_loader:
+
+        outputs = model(images)
+
+        loss = criterion(outputs, labels)
+
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()
+
+    print(f"Epoch {epoch+1} finished")
 
