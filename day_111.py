@@ -80,7 +80,7 @@ for epoch in range(3):
         loss.backward()
         optimizer.step()
 
-    print(f"Epoch {epoch+1} finished")
+    print(f"Epoch {epoch+1}, loss:{loss.item():.3f},finished")
 
 # evaluation mode
 model.eval()
