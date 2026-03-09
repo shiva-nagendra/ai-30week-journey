@@ -9,3 +9,11 @@ from torch.utils.data import dataloader
 
 transform = transforms.ToTensor
 
+#training dataset
+train_dataset = datasets.MNIST(
+    root="./data",
+    train=True,
+    download=False,
+    transform=transform
+)
+
