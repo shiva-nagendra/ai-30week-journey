@@ -62,5 +62,17 @@ model = CNN()
 criterion = nn.CrossEntropyLoss()
 optimizer = optim.Adam(model.parameters(),lr=0.001)
 
+#train model
+for epoch in range(5):
+    for images, labels in train_loader:
+        output = model(images)
+        loss = criterion(output,labels)
+
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()
+
+    print(f"epoch {epoch} finished")
+
 
 
