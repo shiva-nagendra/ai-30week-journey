@@ -23,3 +23,17 @@ train_loader = DataLoader(
     shuffle=True
 )
 
+#Test dataset
+test_dataset = datasets.MNIST(
+    root="./data",
+    download=False,
+    train=False,
+    transform=transform
+)
+
+test_loader = DataLoader(
+    dataset=test_dataset,
+    batch_size=128,
+    shuffle=False
+)
+
