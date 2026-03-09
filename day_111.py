@@ -1,4 +1,4 @@
-#week 18 day 5
+# Week 18 Day 5
 # Evaluate CNN on MNIST test set
 
 import torch
@@ -7,9 +7,10 @@ import torch.optim as optim
 from torchvision import datasets, transforms
 from torch.utils.data import DataLoader
 
-transform = transforms.ToTensor
 
-#training dataset
+transform = transforms.ToTensor()
+
+# training dataset
 train_dataset = datasets.MNIST(
     root="./data",
     train=True,
@@ -23,11 +24,11 @@ train_loader = DataLoader(
     shuffle=True
 )
 
-#Test dataset
+# test dataset
 test_dataset = datasets.MNIST(
     root="./data",
-    download=False,
     train=False,
+    download=False,
     transform=transform
 )
 
@@ -37,7 +38,9 @@ test_loader = DataLoader(
     shuffle=False
 )
 
+
 class CNN(nn.Module):
+
     def __init__(self):
         super().__init__()
 
@@ -45,9 +48,11 @@ class CNN(nn.Module):
         self.pool = nn.MaxPool2d(2)
 
         self.conv2 = nn.Conv2d(8,16,3)
+
         self.fc = nn.Linear(16*5*5,10)
 
     def forward(self,x):
+
         x = self.pool(torch.relu(self.conv1(x)))
         x = self.pool(torch.relu(self.conv2(x)))
 
@@ -57,28 +62,35 @@ class CNN(nn.Module):
 
         return x
 
+
 model = CNN()
 
 criterion = nn.CrossEntropyLoss()
-optimizer = optim.Adam(model.parameters(),lr=0.001)
+optimizer = optim.Adam(model.parameters(), lr=0.001)
 
-#train model
-for epoch in range(5):
+
+# train model
+for epoch in range(3):
+
     for images, labels in train_loader:
-        output = model(images)
-        loss = criterion(output,labels)
+
+        outputs = model(images)
+
+        loss = criterion(outputs, labels)
 
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
 
-    print(f"epoch {epoch} finished")
+    print(f"Epoch {epoch+1} finished")
 
-#evaluation mode
+
+# evaluation mode
 model.eval()
 
 correct = 0
 total = 0
+
 
 with torch.no_grad():
 
@@ -96,4 +108,3 @@ with torch.no_grad():
 accuracy = 100 * correct / total
 
 print(f"\nTest Accuracy: {accuracy:.2f}%")
-
