@@ -83,3 +83,27 @@ for epoch in range(3):
         optimizer.step()
 
     print(f"Epoch {epoch+1} finished")
+
+# evaluation mode
+model.eval()
+
+correct = 0
+total = 0
+
+
+with torch.no_grad():
+
+    for images, labels in test_loader:
+
+        outputs = model(images)
+
+        _, predicted = torch.max(outputs,1)
+
+        total += labels.size(0)
+
+        correct += (predicted == labels).sum().item()
+
+
+accuracy = 100 * correct / total
+
+print(f"\nTest Accuracy: {accuracy:.2f}%")
