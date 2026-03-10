@@ -16,3 +16,4 @@ train_dataset = datasets.MNIST(
     download=False,
     transform=transform
 )
+
