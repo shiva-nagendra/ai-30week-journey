@@ -64,3 +64,22 @@ class CNN(nn.Module):
 
 
 model = CNN()
+
+criterion = nn.CrossEntropyLoss()
+optimizer = optim.Adam(model.parameters(), lr=0.001)
+
+
+# train model
+for epoch in range(3):
+
+    for images, labels in train_loader:
+
+        outputs = model(images)
+
+        loss = criterion(outputs, labels)
+
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()
+
+    print(f"Epoch {epoch+1} finished")
