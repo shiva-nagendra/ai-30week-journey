@@ -60,5 +60,12 @@ for epoch in range(5):
 
     print(f"epoch{epoch+1} finished")
 
-    
-        
+#save model:
+
+torch.save(model.state_dict(),"mnist_cnn.pth")
+
+print("\nModel saved as mnist_cnn.pth")
+
+#load model
+
+
