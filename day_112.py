@@ -16,3 +16,9 @@ train_dataset = datasets.MNIST(
     transform=transform
 )
 
+train_loader = DataLoader(
+    dataset=train_dataset,
+    batch_size=128,
+    shuffle=True
+)
+
