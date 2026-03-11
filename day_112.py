@@ -36,7 +36,7 @@ class CNN(nn.Module):
         x = self.pool(torch.relu(self.conv1(x)))
         x = self.pool(torch.relu(self.conv2(x)))
 
-        x = torch.flatten(x)
+        x = torch.flatten(x,1)
 
         x = self.fc(x)
 
@@ -48,7 +48,7 @@ criterion = nn.CrossEntropyLoss()
 optimization = optim.Adam(model.parameters(),lr=0.001)
 
 #training
-for epoch in range(5):
+for epoch in range(3):
     for images, labels in train_loader:
         outcome = model(images)
 
