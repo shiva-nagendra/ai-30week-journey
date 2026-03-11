@@ -58,5 +58,7 @@ for epoch in range(5):
         loss.backward()
         optimization.step()
 
-        
+    print(f"epoch{epoch+1} finished")
+
+    
         
