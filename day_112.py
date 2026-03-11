@@ -44,3 +44,6 @@ class CNN(nn.Module):
     
 model = CNN()
 
+criterion = nn.CrossEntropyLoss()
+optimization = optim.Adam(model.parameters(),lr=0.001)
+
