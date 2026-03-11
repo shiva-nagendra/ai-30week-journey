@@ -67,5 +67,10 @@ torch.save(model.state_dict(),"mnist_cnn.pth")
 print("\nModel saved as mnist_cnn.pth")
 
 #load model
+loaded_model = CNN()
 
+loaded_model.load_state_dict(torch.load("mnist_cnn.pth"))
 
+loaded_model.eval()
+
+print("\nModel loaded succesfully")
