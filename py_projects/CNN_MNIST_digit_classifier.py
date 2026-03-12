@@ -25,3 +25,12 @@ train_loader = DataLoader(
     shuffle=True
 )
 
+#load test data
+test_datasets = datasets.MNIST(
+    root="./data",
+    train=False,
+    download=False,
+    transform=transform
+)
+
+#CNN model
