@@ -12,3 +12,16 @@ import random
 transform = transforms.ToTensor()
 
 #load training data
+train_datasets = datasets.MNIST(
+    root="./data",
+    train=True,
+    download=False,
+    transform=transform
+)
+
+train_loader = DataLoader(
+    dataset=train_datasets,
+    batch_size=128,
+    shuffle=True
+)
+
