@@ -55,3 +55,18 @@ class CNN(nn.Module):
         return x
     
 model = CNN()
+
+criterion = nn.CrossEntropyLoss()
+optimization = optim.Adam(model.parameters(),lr=0.001)
+
+#training
+
+print("\nTraining model....\n")
+
+for epoch in range(3):
+
+    for images, labels in train_loader:
+        output = model(images)
+        loss = criterion(output,labels)
+
+        
