@@ -75,4 +75,11 @@ for epoch in range(3):
 
         total_loss+=loss.item()
 
-        
+    print(f"\nEpoch {epoch+1}, Total loss: {total_loss:.3f}")
+
+
+#Pick random test image
+index = random.randint(0,9999)
+
+image, label = test_datasets[index]
+
