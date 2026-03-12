@@ -33,6 +33,13 @@ test_datasets = datasets.MNIST(
     transform=transform
 )
 
+test_loader = DataLoader(
+    dataset=test_datasets,
+    batch_size=128,
+    shuffle=False
+)
+
+
 #CNN model
 class CNN(nn.Module):
     def __init__(self):
@@ -48,7 +55,7 @@ class CNN(nn.Module):
         x = self.pool(torch.relu(self.conv1(x)))
         x = self.pool(torch.relu(self.conv2(x)))
 
-        x = torch.flatten(x)
+        x = torch.flatten(x,1)
 
         x = self.fc(x)
 
@@ -64,6 +71,8 @@ optimization = optim.Adam(model.parameters(),lr=0.001)
 print("\nTraining model....\n")
 
 for epoch in range(3):
+
+    total_loss = 0
 
     for images, labels in train_loader:
         output = model(images)
@@ -95,7 +104,28 @@ with torch.no_grad():
 
     _, prediction = torch.max(output, 1)
 
+print("\nPrediction:",prediction.item())
+print("\nActual",label)
 
 
+with torch.no_grad():
+
+    for images, labels in test_loader:
+
+        total = 0
+        correct = 0
+
+        outputs = model(images)
+
+        _, predicted = torch.max(outputs,1)
+
+        total += labels.size(0)
+
+        correct += (predicted == labels).sum().item()
+
+
+accuracy = 100 * correct / total
+
+print(f"\nTest Accuracy: {accuracy:.2f}%")
 
  
