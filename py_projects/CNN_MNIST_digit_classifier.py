@@ -83,3 +83,19 @@ index = random.randint(0,9999)
 
 image, label = test_datasets[index]
 
+#add batch dimension
+image = image.unsqueeze(0)
+
+#prediction
+model.eval()
+
+with torch.no_grad():
+
+    output = model(image)
+
+    _, prediction = torch.max(output, 1)
+
+
+
+
+ 
