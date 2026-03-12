@@ -69,4 +69,10 @@ for epoch in range(3):
         output = model(images)
         loss = criterion(output,labels)
 
+        optimization.zero_grad()
+        loss.backward()
+        optimization.step()
+
+        total_loss+=loss.item()
+
         
