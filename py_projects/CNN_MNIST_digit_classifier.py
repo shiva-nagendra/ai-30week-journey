@@ -34,3 +34,15 @@ test_datasets = datasets.MNIST(
 )
 
 #CNN model
+class CNN(nn.Module):
+    def __init__(self):
+        super().__init__()
+
+        self.conv1 = nn.Conv2d(1,8,3)
+        self.pool = nn.MaxPool2d(2)
+
+        self.conv2 = nn.Conv2d(8,16,3)
+        self.fc = nn.Linear(16*5*5,10)
+
+    def forward(self, x):
+        
