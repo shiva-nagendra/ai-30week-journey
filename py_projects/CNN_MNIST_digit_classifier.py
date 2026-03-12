@@ -45,4 +45,13 @@ class CNN(nn.Module):
         self.fc = nn.Linear(16*5*5,10)
 
     def forward(self, x):
-        
+        x = self.pool(torch.relu(self.conv1(x)))
+        x = self.pool(torch.relu(self.conv2(x)))
+
+        x = torch.flatten(x)
+
+        x = self.fc(x)
+
+        return x
+    
+model = CNN()
