@@ -5,6 +5,8 @@ from transformers import pipeline
 sentiment = pipeline("sentiment-analysis")
 print(sentiment("I love learning AI"))
 print(sentiment("I hate learning AI"))
+print(sentiment("I am not sure about the AI"))
+
 
 
 
