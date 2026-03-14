@@ -8,11 +8,16 @@ summerizer = pipeline("summarization",
                       )
 
 text = """
-Artificial intellingence is transforming many industries including healthcare,
-finance, transportation, and education. Machine learning models are helping
-companies analyze massive datasets and make better decisions. AI systems
-can detect patterns in data that humans might miss, enabling businesses
-to optimize operations and improve efficiency.
+I will explain the process how to book a movie ticket online\
+At first we have to open google chrome or safari on your mobile phone\
+Then we need to open a website called bookmyshow.
+It will open and shows certain options like book an event,book a movie ticket\
+book a musical night, book a dinner table.
+Now we have to select the right option as book a movie ticket. Then we have to select the movie we\
+want to watch and then it will display available seats in that show.
+Select the seat numbers. Go to payment mode, make payment.
+That's it it will display as You booked your movie tickets with screen no and ticket numbers\
+Enjoy the movie.
 """
 
 summerize = summerizer(
