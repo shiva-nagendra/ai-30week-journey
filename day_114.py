@@ -21,8 +21,8 @@ Expertise in using Unix Utilities and associated command with Oracle Database
 
 summerize = summerizer(
     text,
-    max_length=60,
-    min_length=30,
+    max_length=40,
+    min_length=10,
     do_sample=False)
 
 print("\nsummerized text:",summerize)
