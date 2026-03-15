@@ -5,10 +5,13 @@ from transformers import pipeline
 from PIL import Image
 
 #load image captioning pipeline
-captioner = pipeline("image-to-text")
+captioner = pipeline("image-to-text",
+                     model='AutoModelForImageTextToText')
 
 #Load an image
 image = Image.open("dog.jpg")
 
 #generate caption
 result = captioner(image)
+
+print("Caption:",result)
