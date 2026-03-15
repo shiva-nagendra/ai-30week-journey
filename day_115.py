@@ -10,7 +10,7 @@ from io import BytesIO
 #load image captioning pipeline
 captioner = pipeline("image-to-text")
 
-url = "https://huggingface.co/datasets/Narsil/image_dummy/raw/main/parrots.png"
+url = "https://hips.hearstapps.com/hmg-prod/images/close-up-portrait-of-cat-sitting-on-floor-royalty-free-image-1718201739.jpg?crop=0.668xw:1.00xh;0.180xw,0"
 image = Image.open(BytesIO(requests.get(url).content))
 
 #generate caption
