@@ -11,3 +11,4 @@ captioner = pipeline("image-to-text")
 image = Image.open("dog.jpg")
 
 #generate caption
+result = captioner(image)
