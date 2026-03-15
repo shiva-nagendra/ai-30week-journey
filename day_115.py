@@ -4,3 +4,6 @@
 from transformers import pipeline
 from PIL import Image
 
+#load image captioning pipeline
+captioner = pipeline("image-to-text")
+
