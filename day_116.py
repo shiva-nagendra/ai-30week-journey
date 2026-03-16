@@ -15,3 +15,10 @@ text = "I love training AI"
 
 #tokenize text
 inputs = tokenizer(text, return_tensors="pt")
+
+#Run model
+outputs = model(**inputs)
+
+#convert logits to probabilities
+probs = torch.nn.functional.softmax(outputs.logits, dim=1)
+
