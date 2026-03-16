@@ -10,3 +10,8 @@ model_name = "distilbert-base-uncased-finetuned-sst-2-english"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForSequenceClassification.from_pretrained(model_name)
 
+#input text
+text = "I love training AI"
+
+#tokenize text
+inputs = tokenizer(text, return_tensors="pt")
