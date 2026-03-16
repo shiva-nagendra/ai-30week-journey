@@ -22,3 +22,6 @@ outputs = model(**inputs)
 #convert logits to probabilities
 probs = torch.nn.functional.softmax(outputs.logits, dim=1)
 
+#get prediction
+predicted_class = torch.argmax(probs).item()
+
