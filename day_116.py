@@ -25,3 +25,8 @@ probs = torch.nn.functional.softmax(outputs.logits, dim=1)
 #get prediction
 predicted_class = torch.argmax(probs).item()
 
+labels = ["NEGATIVE", "POSITIVE"]
+
+print("Text:", text)
+print("prediction:", labels[predicted_class])
+print("confidence:", probs[0][predicted_class].item())
