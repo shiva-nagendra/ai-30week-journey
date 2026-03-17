@@ -11,7 +11,8 @@ model = SentenceTransformer("all-MiniLM-L6-v2")
 sentences = [
     "I love learning AI",
     "Artificial intelligence is fascinating",
-    "The weather is very hot today"
+    "The weather is very hot today",
+    "I don't know what to say"
 ]
 
 # Convert sentences into embeddings
