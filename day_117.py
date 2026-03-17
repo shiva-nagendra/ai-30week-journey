@@ -13,3 +13,6 @@ sentences = [
     "Artificial intelligence is fascinating",
     "The weather is very hot today"
 ]
+
+# Convert sentences into embeddings
+embeddings = model.encode(sentences)
