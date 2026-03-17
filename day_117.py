@@ -19,3 +19,5 @@ embeddings = model.encode(sentences)
 
 # Compute similarity
 similarity = cosine_similarity([embeddings[0]], embeddings)
+
+print("Similarity scores with first sentence:\n")
