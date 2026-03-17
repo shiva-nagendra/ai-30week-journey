@@ -12,7 +12,8 @@ sentences = [
     "I love learning AI",
     "Artificial intelligence is fascinating",
     "The weather is very hot today",
-    "I don't know what to say"
+    "I don't know what to say",
+    "This macbook is..."
 ]
 
 # Convert sentences into embeddings
