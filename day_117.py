@@ -16,3 +16,6 @@ sentences = [
 
 # Convert sentences into embeddings
 embeddings = model.encode(sentences)
+
+# Compute similarity
+similarity = cosine_similarity([embeddings[0]], embeddings)
