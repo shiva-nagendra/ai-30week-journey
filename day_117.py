@@ -6,3 +6,10 @@ from sklearn.metrics.pairwise import cosine_similarity
 
 # Load embedding model
 model = SentenceTransformer("all-MiniLM-L6-v2")
+
+# Sentences
+sentences = [
+    "I love learning AI",
+    "Artificial intelligence is fascinating",
+    "The weather is very hot today"
+]
