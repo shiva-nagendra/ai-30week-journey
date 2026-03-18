@@ -25,4 +25,7 @@ querry = "How does AI help medicine?"
 #Convert querry into embeddings
 Query_embedding = model.encode([querry])
 
+#Compute similarity
+scores = cosine_similarity(Query_embedding,doc_embeddings)
+
 
