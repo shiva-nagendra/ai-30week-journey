@@ -16,3 +16,5 @@ documents = [
     "Cooking pasta requires boiling water."
 ]
 
+#convert docs into embeddings
+
