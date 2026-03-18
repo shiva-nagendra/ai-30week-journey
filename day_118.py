@@ -22,4 +22,7 @@ doc_embeddings = model.encode(documents)
 #user querry
 querry = "How does AI help medicine?"
 
+#Convert querry into embeddings
+Query_embedding = model.encode([querry])
+
 
