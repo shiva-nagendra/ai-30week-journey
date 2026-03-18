@@ -28,4 +28,6 @@ Query_embedding = model.encode([querry])
 #Compute similarity
 scores = cosine_similarity(Query_embedding,doc_embeddings)
 
+#Find best match
+best_match_index = np.argmax(scores)
 
