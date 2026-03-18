@@ -29,5 +29,10 @@ Query_embedding = model.encode([querry])
 scores = cosine_similarity(Query_embedding,doc_embeddings)
 
 #Find best match
-best_match_index = np.argmax(scores
+best_match_index = np.argmax(scores)
+
+print("Query:",querry)
+print("\nMost relevant document:")
+print(documents[best_match_index])
+print("\nsimilarity score:",scores[0][best_match_index])
 
