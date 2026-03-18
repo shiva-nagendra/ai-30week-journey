@@ -19,4 +19,7 @@ documents = [
 #convert docs into embeddings
 doc_embeddings = model.encode(documents)
 
+#user querry
+querry = "How does AI help medicine?"
+
 
