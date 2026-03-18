@@ -9,3 +9,10 @@ import numpy as np
 model = SentenceTransformer("all-MiniLM-L6-v2")
 
 #knowledge base
+documents = [
+    "Artificial intelligence is transforming healthcare.",
+    "Space rockets travel beyond earth's atmosphere.",
+    "Deep learning improves computer vision systems.",
+    "Cooking pasta requires boiling water."
+]
+
