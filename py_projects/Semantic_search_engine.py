@@ -23,8 +23,25 @@ documents = [
 ]
 
 # Convert docs into embeddings
-
 doc_embeddings = model.encode(documents)
+
+#Function to search
+def semantic_search(query, top_k=3):
+    query_embeddings = model.encode([query])
+
+    scores = cosine_similarity(query_embeddings, doc_embeddings)[0]
+
+    #top_k indices
+    top_indices = np.argsort(scores)[::-1][:top_k]
+
+    print("\nQuery:",query)
+    print("\nTop matches:\n")
+
+    
+
+
+
+
 
 
 
