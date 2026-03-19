@@ -22,3 +22,5 @@ documents = [
     "Programming is essential for building software."
 ]
 
+# Convert docs into embeddings
+
