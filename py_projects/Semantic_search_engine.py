@@ -8,3 +8,5 @@ import numpy as np
 #Load model
 model = SentenceTransformer("all-MiniLM-L6-v2")
 
+#Knowledge base
+
