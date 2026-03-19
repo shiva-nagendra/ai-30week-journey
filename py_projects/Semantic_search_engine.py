@@ -37,7 +37,13 @@ def semantic_search(query, top_k=3):
     print("\nQuery:",query)
     print("\nTop matches:\n")
 
-    
+    for idx in top_indices:
+        print(f"{documents[idx]} (score:{scores[idx]:.3f})")
+
+#test querries
+semantic_search("How does AI help medicine?")
+semantic_search("How do planes fly?")
+semantic_search("What is programming?")
 
 
 
