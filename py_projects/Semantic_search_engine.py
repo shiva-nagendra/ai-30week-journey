@@ -24,5 +24,7 @@ documents = [
 
 # Convert docs into embeddings
 
+doc_embeddings = model.encode(documents)
+
 
 
