@@ -9,3 +9,6 @@ tokenizer = AutoTokenizer.from_pretrained(model_name)
 
 text = "I love learning AI"
 
+#tokenize
+inputs = tokenizer(text)
+
