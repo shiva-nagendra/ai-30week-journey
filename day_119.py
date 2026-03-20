@@ -12,3 +12,5 @@ text = "I love learning AI"
 #tokenize
 inputs = tokenizer(text)
 
+print("Original text:",text)
+print("\nTokenized output:",inputs)
