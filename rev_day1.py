@@ -29,3 +29,8 @@ query_embedding = model_embed.encode([query])
 scores = cosine_similarity(query_embedding, doc_embeddings)[0]
 
 top_index = np.argmax(scores)
+
+print("\n[Semantic Search Result]")
+print("Query:", query)
+print("Best Match:", documents[top_index])
+print("Score:", scores[top_index])
