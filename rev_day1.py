@@ -45,3 +45,11 @@ model = AutoModelForSequenceClassification.from_pretrained(model_name)
 text = "I love learning AI"
 
 inputs = tokenizer(text, return_tensors="pt")
+
+outputs = model(**inputs)
+
+probs = torch.nn.functional.softmax(outputs.logits, dim=-1)
+
+pred = torch.argmax(probs).item()
+
+labels = ["NEGATIVE", "POSITIVE"]
