@@ -53,3 +53,8 @@ probs = torch.nn.functional.softmax(outputs.logits, dim=-1)
 pred = torch.argmax(probs).item()
 
 labels = ["NEGATIVE", "POSITIVE"]
+
+print("\n[Manual Transformer Result]")
+print("Text:", text)
+print("Prediction:", labels[pred])
+print("Confidence:", probs[0][pred].item())
