@@ -19,3 +19,13 @@ documents = [
     "Airplanes fly using lift and aerodynamics."
 ]
 
+
+doc_embeddings = model_embed.encode(documents)
+
+query = "How do planes fly?"
+
+query_embedding = model_embed.encode([query])
+
+scores = cosine_similarity(query_embedding, doc_embeddings)[0]
+
+top_index = np.argmax(scores)
