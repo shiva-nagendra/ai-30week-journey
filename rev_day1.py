@@ -34,3 +34,14 @@ print("\n[Semantic Search Result]")
 print("Query:", query)
 print("Best Match:", documents[top_index])
 print("Score:", scores[top_index])
+
+# -------- PART 2: TRANSFORMER (NO PIPELINE) -------- #
+
+model_name = "distilbert-base-uncased-finetuned-sst-2-english"
+
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+model = AutoModelForSequenceClassification.from_pretrained(model_name)
+
+text = "I love learning AI"
+
+inputs = tokenizer(text, return_tensors="pt")
