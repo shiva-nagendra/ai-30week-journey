@@ -6,3 +6,16 @@ from sklearn.metrics.pairwise import cosine_similarity
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import torch
 import numpy as np
+
+
+# -------- PART 1: SEMANTIC SEARCH -------- #
+
+model_embed = SentenceTransformer("all-MiniLM-L6-v2")
+
+documents = [
+    "Artificial intelligence is transforming healthcare.",
+    "Deep learning improves computer vision.",
+    "Cooking requires heat and ingredients.",
+    "Airplanes fly using lift and aerodynamics."
+]
+
