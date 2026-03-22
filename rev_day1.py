@@ -24,7 +24,7 @@ documents = [
 
 doc_embeddings = model_embed.encode(documents)
 
-query = "What is RAG??"
+query = "What is RAG?"
 
 query_embedding = model_embed.encode([query])
 
