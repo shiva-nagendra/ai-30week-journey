@@ -17,7 +17,8 @@ documents = [
     "Deep learning improves computer vision.",
     "Cooking requires heat and ingredients.",
     "Airplanes fly using lift and aerodynamics.",
-    "Semantic search relations are...."
+    "Semantic search relations are....",
+    "RAG is Retrieval Augumented Generation"
 ]
 
 
