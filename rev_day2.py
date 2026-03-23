@@ -50,3 +50,18 @@ texts = [
     "I am not sure about this"
 ]
 
+labels = ["NEGATIVE", "POSITIVE"]
+
+print("\n[Sentiment Results]\n")
+
+for text in texts:
+
+    inputs = tokenizer(text, return_tensors="pt")
+
+    outputs = model(**inputs)
+
+    probs = torch.nn.functional.softmax(outputs.logits, dim=-1)
+
+    pred = torch.argmax(probs).item()
+
+    print(f"{text} → {labels[pred]} ({probs[0][pred].item():.3f})")
