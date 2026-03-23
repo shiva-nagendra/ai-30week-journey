@@ -36,3 +36,17 @@ print("\n[Top Matches]\n")
 
 for idx in top_indices:
     print(f"{documents[idx]} (score: {scores[idx]:.3f})")
+
+# -------- PART 2: TRANSFORMER MULTI-TEST -------- #
+
+model_name = "distilbert-base-uncased-finetuned-sst-2-english"
+
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+model = AutoModelForSequenceClassification.from_pretrained(model_name)
+
+texts = [
+    "I love this product",
+    "This is terrible",
+    "I am not sure about this"
+]
+
