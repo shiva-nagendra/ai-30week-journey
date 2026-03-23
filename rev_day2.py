@@ -29,3 +29,10 @@ query_embedding = model_embed.encode([query])
 
 scores = cosine_similarity(query_embedding, doc_embeddings)[0]
 
+# top 3 matches
+top_indices = np.argsort(scores)[::-1][:3]
+
+print("\n[Top Matches]\n")
+
+for idx in top_indices:
+    print(f"{documents[idx]} (score: {scores[idx]:.3f})")
