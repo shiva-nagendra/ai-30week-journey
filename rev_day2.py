@@ -22,3 +22,10 @@ documents = [
 
 doc_embeddings = model_embed.encode(documents)
 
+#user query
+query = input("Enter your query: ")
+
+query_embedding = model_embed.encode([query])
+
+scores = cosine_similarity(query_embedding, doc_embeddings)[0]
+
