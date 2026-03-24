@@ -17,7 +17,8 @@ documents = [
     "Deep learning improves image recognition.",
     "Airplanes fly using lift and aerodynamics.",
     "Cooking requires proper ingredients and heat.",
-    "Programming builds software systems."
+    "Programming builds software systems.",
+    "Macbook m5 model released in 2026"
 ]
 
 doc_embeddings = model_embed.encode(documents)
