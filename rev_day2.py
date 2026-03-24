@@ -18,6 +18,7 @@ documents = [
     "Airplanes fly using lift and aerodynamics.",
     "Cooking requires proper ingredients and heat.",
     "Programming builds software systems.",
+    "Apple has it's own powerful silicon for macbooks.",
     "Macbook m5 model released in 2026 and it is very powerful."
 ]
 
