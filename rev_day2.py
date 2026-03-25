@@ -20,6 +20,7 @@ documents = [
     "Programming builds software systems.",
     "Apple has it's own powerful silicon for macbooks.",
     "Apple launched Macbook neo for entry level line up.",
+    "And it's better for entry level buyers.´",
     "Macbook m5 model released in 2026 and it is very powerful."
 ]
 
