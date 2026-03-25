@@ -19,6 +19,7 @@ documents = [
     "Cooking requires proper ingredients and heat.",
     "Programming builds software systems.",
     "Apple has it's own powerful silicon for macbooks.",
+    "Apple launched Macbook neo for entry level line up.",
     "Macbook m5 model released in 2026 and it is very powerful."
 ]
 
