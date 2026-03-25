@@ -21,6 +21,7 @@ documents = [
     "Apple has it's own powerful silicon for macbooks.",
     "Apple launched Macbook neo for entry level line up.",
     "And it's better for entry level buyers.´",
+    "It launched iphone air, but it's ain't a bit hit like macbook",
     "Macbook m5 model released in 2026 and it is very powerful."
 ]
 
