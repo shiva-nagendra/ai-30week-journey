@@ -15,3 +15,5 @@ text = "I love learning AI"
 #step 1 tokenize
 inputs = tokenizer(text, return_tensors ="pt")
 
+print("Inputs\n", inputs)
+
