@@ -12,3 +12,6 @@ model = AutoModelForSequenceClassification.from_pretrained(model_name)
 
 text = "I love learning AI"
 
+#step 1 tokenize
+inputs = tokenizer(text, return_tensors ="pt")
+
