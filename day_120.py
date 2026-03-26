@@ -4,3 +4,5 @@
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import torch
 
+model_name = "distilbert-base-uncased-finetuned-sst-2-english"
+
