@@ -6,3 +6,7 @@ import torch
 
 model_name = "distilbert-base-uncased-finetuned-sst-2-english"
 
+#Load tokenizer and model
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+model = AutoModelForSequenceClassification.from_pretrained(model_name)
+
