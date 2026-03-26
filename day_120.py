@@ -25,3 +25,4 @@ print("\nRaw model output:\n", outputs)
 #step 3 extract logits
 logits = outputs.logits
 
+print("\nLogits:\n",logits)
