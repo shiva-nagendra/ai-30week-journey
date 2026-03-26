@@ -22,3 +22,6 @@ outputs = model(**inputs)
 
 print("\nRaw model output:\n", outputs)
 
+#step 3 extract logits
+logits = outputs.logits
+
