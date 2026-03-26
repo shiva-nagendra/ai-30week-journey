@@ -17,3 +17,8 @@ inputs = tokenizer(text, return_tensors ="pt")
 
 print("Inputs\n", inputs)
 
+#step 2 pass through model
+outputs = model(**inputs)
+
+print("\nRaw model output:\n", outputs)
+
