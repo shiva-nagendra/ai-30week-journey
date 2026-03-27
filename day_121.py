@@ -22,5 +22,7 @@ logits = outputs.logits
 
 print("\nLogits:",logits)
 
+#step 3: convert to probabilities
 
+probs = torch.nn.functional.softmax(logits, dim=-1)
 
