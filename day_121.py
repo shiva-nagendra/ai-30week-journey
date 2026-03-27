@@ -26,3 +26,6 @@ print("\nLogits:",logits)
 
 probs = torch.nn.functional.softmax(logits, dim=-1)
 
+print("\nProbabilities:",probs)
+
+
