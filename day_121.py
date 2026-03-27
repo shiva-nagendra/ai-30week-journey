@@ -18,5 +18,9 @@ inputs = tokenizer(text, return_tensors = "pt")
 #step 2 model forward
 outputs = model(**inputs)
 
+logits = outputs.logits
+
+print("\nLogits:",logits)
+
 
 
