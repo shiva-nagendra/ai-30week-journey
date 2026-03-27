@@ -15,3 +15,8 @@ text = "I love learning AI."
 #Step 1 Tokenize
 inputs = tokenizer(text, return_tensors = "pt")
 
+#step 2 model forward
+outputs = model(**inputs)
+
+
+
