@@ -33,4 +33,5 @@ pred_index = torch.argmax(probs).item()
 
 labels = ["NEGATIVE", "POSITIVE"]
 
-
+print("\nFinal prediction:", labels[pred_index])
+print("Confidence:", probs[0][pred_index].item())
