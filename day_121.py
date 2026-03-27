@@ -31,4 +31,6 @@ print("\nProbabilities:",probs)
 #step 4: get prediction
 pred_index = torch.argmax(probs).item()
 
+labels = ["NEGATIVE", "POSITIVE"]
+
 
