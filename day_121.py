@@ -28,4 +28,7 @@ probs = torch.nn.functional.softmax(logits, dim=-1)
 
 print("\nProbabilities:",probs)
 
+#step 4: get prediction
+pred_index = torch.argmax(probs).item()
+
 
