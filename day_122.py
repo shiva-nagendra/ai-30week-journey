@@ -35,3 +35,9 @@ probs = torch.nn.functional.softmax(logits, dim=-1)
 #step 4: predictions
 preds = torch.argmax(probs, dim=1)
 
+labels = ["NEGATIVE", "POSITIVE"]
+
+print("\nResults:")
+
+for i, text in enumerate(texts):
+    print(f"{text} - {labels[preds[i]]} ({probs[i][preds[i]].item():.3f})")
