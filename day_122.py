@@ -15,3 +15,6 @@ texts = [
     "Machine learning is interesting."
 ]
 
+#step 1: tokenize batch
+inputs = tokenizer(texts, return_tensors="pt", padding=True, truncation=True)
+
