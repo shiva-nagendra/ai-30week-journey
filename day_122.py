@@ -21,3 +21,17 @@ inputs = tokenizer(texts, return_tensors="pt", padding=True, truncation=True)
 print("Input IDs:\n", inputs["input_ids"])
 print("\nAttention Mask:\n", inputs["attention_mask"])
 
+#step 2: Model forward
+with torch.no_grad():
+    outputs = model(**inputs)
+
+logits = outputs.logits
+
+print("\nLogits:\n",logits)
+
+#step 3: softmax
+probs = torch.nn.functional.softmax(logits, dim=-1)
+
+#step 4: predictions
+preds = torch.argmax(probs, dim=1)
+
