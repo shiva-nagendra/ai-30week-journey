@@ -18,3 +18,6 @@ texts = [
 #step 1: tokenize batch
 inputs = tokenizer(texts, return_tensors="pt", padding=True, truncation=True)
 
+print("Input IDs:\n", inputs["input_ids"])
+print("\nAttention Mask:\n", inputs["attention_mask"])
+
