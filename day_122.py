@@ -4,7 +4,7 @@
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import torch
 
-model_name = "sshleifer/tiny-distilbert-base-uncased-finetuned-sst-2-english"
+model_name = "distilbert-base-uncased-finetuned-sst-2-english"
 
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForSequenceClassification.from_pretrained(model_name)
@@ -12,7 +12,7 @@ model = AutoModelForSequenceClassification.from_pretrained(model_name)
 texts = [
     "I love AI",
     "This is Terrible.",
-    "Machine learning is interesting."
+    "I don't know what i think about Machine learning is interesting.",
 ]
 
 #step 1: tokenize batch
