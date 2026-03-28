@@ -4,10 +4,12 @@
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import torch
 
-model_name = "sshleifer/tiny-distilbert-base-uncased-finetuned-sst-2-english"
+# Using a standard model fine-tuned for SST-2 sentiment analysis
+model_name = "distilbert-base-uncased-finetuned-sst-2-english"
 
 #load
 tokenizer = AutoTokenizer.from_pretrained(model_name)
+
 model = AutoModelForSequenceClassification.from_pretrained(model_name)
 
 text = "I love learning AI."
