@@ -19,3 +19,6 @@ token_ids = tokenizer.convert_tokens_to_ids(tokens)
 
 print("\nToken IDs:", token_ids)
 
+#step 3: Full encoding
+encoding = tokenizer(text)
+
