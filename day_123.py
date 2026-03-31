@@ -22,3 +22,5 @@ print("\nToken IDs:", token_ids)
 #step 3: Full encoding
 encoding = tokenizer(text)
 
+print("\nFull encoding", encoding)
+
