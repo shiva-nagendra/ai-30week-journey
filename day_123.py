@@ -12,3 +12,5 @@ text = "I Love learning ai"
 #step 1: tokenize (raw tokens)
 tokens = tokenizer.tokenize(text)
 
+print("Tokens:", tokens)
+
