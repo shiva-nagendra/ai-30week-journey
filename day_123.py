@@ -3,3 +3,9 @@
 
 from transformers import AutoTokenizer
 
+model_name = "distilbert-base-uncased"
+
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+
+text = "I Love learning ai"
+
