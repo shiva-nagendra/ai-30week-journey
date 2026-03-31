@@ -27,3 +27,4 @@ print("\nFull encoding", encoding)
 #step 4: Decode back
 decoded = tokenizer.decode(encoding["input_ids"])
 
+print("\nDecoded back:", decoded)
