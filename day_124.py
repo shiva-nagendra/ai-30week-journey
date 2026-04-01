@@ -15,4 +15,7 @@ scores = np.dot(embeddings, embeddings.T)
 
 #softmax
 exp_scores = np.exp(scores)
+attention = exp_scores/np.sum(exp_scores, axis=1,keepdims=True)
 
+print("Attention matrix:\n")
+print(attention)
