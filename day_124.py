@@ -6,3 +6,7 @@ import numpy as np
 #words 
 words = ["I","Love","AI"]
 
+#pretend embeddings(random numbers)
+np.random.seed(0)
+embeddings = np.random.rand(3,4)
+
