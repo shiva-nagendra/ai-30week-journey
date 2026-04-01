@@ -10,3 +10,6 @@ words = ["I","Love","AI"]
 np.random.seed(0)
 embeddings = np.random.rand(3,4)
 
+#similarity = dot product
+scores = np.dot(embeddings, embeddings.T)
+
