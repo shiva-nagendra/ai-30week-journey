@@ -4,3 +4,5 @@
 import numpy as np
 
 #words 
+words = ["I","Love","AI"]
+
