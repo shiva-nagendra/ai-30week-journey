@@ -33,4 +33,14 @@ def predict_sentiment_text(text):
     logits = outputs.logits
     print("\nLogits:",logits)
 
+    logits_np = logits.detach().numpy()
+
+    exp_vals = np.exp(logits.np)
+    probs = exp_vals/ np.sum(exp_vals, axis=1, keepdims=True)
+
+    print("\nProbabilities:", probs)
+
+    pred_index = np.argmax(probs)
+
+    labels = ["NEGATIVE", "POSITIVE"]
     
