@@ -29,3 +29,8 @@ def predict_sentiment_text(text):
 
     with torch.no_grad():
         outputs = model(**inputs)
+
+    logits = outputs.logits
+    print("\nLogits:",logits)
+
+    
