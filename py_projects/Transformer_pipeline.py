@@ -19,7 +19,7 @@ model = AutoModelForSequenceClassification.from_pretrained(
 
 # Function
 
-def predict_sentiment_text(text):
+def predict_sentiment(text):
 
     inputs = tokenizer(text, return_tensors = "pt")
 
@@ -43,4 +43,12 @@ def predict_sentiment_text(text):
     pred_index = np.argmax(probs)
 
     labels = ["NEGATIVE", "POSITIVE"]
-    
+
+    print("\nFinal prediction:", labels[pred_index])
+    print("Confidence:", probs[0][pred_index])
+
+#Test
+predict_sentiment("I love AI")
+predict_sentiment("This is terrible")
+predict_sentiment("I am not sure about this")
+
