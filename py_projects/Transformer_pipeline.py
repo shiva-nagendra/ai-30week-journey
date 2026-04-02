@@ -17,3 +17,15 @@ model = AutoModelForSequenceClassification.from_pretrained(
     model_name,
     ignore_mismatched_sizes = True)
 
+# Function
+
+def predict_sentiment_text(text):
+
+    inputs = tokenizer(text, return_tensors = "pt")
+
+    print("\nInput Ids:", inputs["input_ids"])
+    print("Attention mask:\n", inputs["attention_mask"])
+
+
+    with torch.no_grad():
+        outputs = model(**inputs)
