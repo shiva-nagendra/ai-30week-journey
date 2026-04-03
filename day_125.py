@@ -17,4 +17,6 @@ sentances = [
 #convert to embeddings
 embeddings = model.encode(sentances)
 
+print("Embeddings shape:", embeddings.shape)
+
 
