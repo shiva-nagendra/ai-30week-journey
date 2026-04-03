@@ -14,3 +14,7 @@ sentances = [
     "The weather is very hot"
 ]
 
+#convert to embeddings
+embeddings = model.encode(sentances)
+
+
