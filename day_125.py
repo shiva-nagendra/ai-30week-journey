@@ -19,4 +19,5 @@ embeddings = model.encode(sentances)
 
 print("Embeddings shape:", embeddings.shape)
 
-
+print("\nFirst sentance embedding (short view):")
+print(embeddings[0][:10]) #print first 10 numbers
