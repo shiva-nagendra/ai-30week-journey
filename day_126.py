@@ -15,3 +15,6 @@ sentences = [
     "I enjoy machine learning"
 ]
 
+#convert to embeddings
+embeddings = model.encode(sentences)
+
