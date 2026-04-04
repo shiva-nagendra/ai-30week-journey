@@ -18,3 +18,6 @@ sentences = [
 #convert to embeddings
 embeddings = model.encode(sentences)
 
+#compare first sentence with all
+scores = cosine_similarity([embeddings[0]], embeddings)[0]
+
