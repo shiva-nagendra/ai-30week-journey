@@ -21,3 +21,9 @@ embeddings = model.encode(sentences)
 #compare first sentence with all
 scores = cosine_similarity([embeddings[0]], embeddings)[0]
 
+print("similarity with:",sentences[0],"\n")
+
+for i, score in enumerate(scores):
+    print(f"{sentences[i]} -> {score:.3f}")
+
+    
