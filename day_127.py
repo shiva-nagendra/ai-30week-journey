@@ -32,3 +32,6 @@ score = cosine_similarity(que_emb, doc_emb)[0]
 #find best match
 best_index = np.argmax(score)
 
+print("\nBest match\n")
+print(sentences[best_index])
+print("\nScore:",score[best_index])
