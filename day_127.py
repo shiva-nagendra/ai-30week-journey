@@ -23,3 +23,6 @@ doc_emb = model.encode(sentences)
 #User querry
 querry = input("Enter your querry")
 
+#querry embeddings
+que_emb = model.encode([querry])
+
