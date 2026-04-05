@@ -26,3 +26,6 @@ querry = input("Enter your querry")
 #querry embeddings
 que_emb = model.encode([querry])
 
+#compute similarity
+score = cosine_similarity(que_emb, doc_emb)[0]
+
