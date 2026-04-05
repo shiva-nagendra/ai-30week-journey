@@ -20,3 +20,6 @@ sentences = [
 #convert dox to embeddings
 doc_emb = model.encode(sentences)
 
+#User querry
+querry = input("Enter your querry")
+
