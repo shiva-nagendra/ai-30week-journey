@@ -17,3 +17,6 @@ sentences = [
     "Cooking pasta requires boiling water"
 ]
 
+#convert dox to embeddings
+doc_emb = model.encode(sentences)
+
