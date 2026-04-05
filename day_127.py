@@ -21,7 +21,7 @@ sentences = [
 doc_emb = model.encode(sentences)
 
 #User querry
-querry = input("Enter your querry")
+querry = input("\nEnter your querry: ")
 
 #querry embeddings
 que_emb = model.encode([querry])
@@ -30,8 +30,11 @@ que_emb = model.encode([querry])
 score = cosine_similarity(que_emb, doc_emb)[0]
 
 #find best match
-best_index = np.argmax(score)
+top_index = np.argsort(score)[::-1][:3]
+print("\nTop Matches:\n")
 
-print("\nBest match\n")
-print(sentences[best_index])
-print("\nScore:",score[best_index])
+for idx in top_index:
+    print(f"{sentences[idx]} (scores:{score[idx]:.3f})")
+
+
+
