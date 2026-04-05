@@ -8,3 +8,12 @@ import numpy as np
 #Load model
 model = SentenceTransformer("all-MiniLM-L6-v2")
 
+#Knowledge base (documents)
+sentences = [
+    "Artificial intelligence is transforming healthcare.",
+    "Machine learning helps analyze large datasets",
+    "Space rockets travel beyond earth's atmosphere.",
+    "Deep learning improves computer vision system",
+    "Cooking pasta requires boiling water"
+]
+
