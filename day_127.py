@@ -29,3 +29,6 @@ que_emb = model.encode([querry])
 #compute similarity
 score = cosine_similarity(que_emb, doc_emb)[0]
 
+#find best match
+best_index = np.argmax(score)
+
