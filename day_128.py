@@ -17,4 +17,7 @@ documents = [
     "Cooking requires ingredients"
 ]
 
+#Convert to embeddings
+doc_embeddings = model.encode(documents)
+
 
