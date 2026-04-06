@@ -27,4 +27,7 @@ doc_embeddings = np.array(doc_embeddings).astype("float32")
 dimension = doc_embeddings.shape[1]
 index = faiss.IndexFlatL2(dimension)
 
+#Add embeddings to index
+index.add(doc_embeddings)
+
 
