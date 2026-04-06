@@ -20,4 +20,7 @@ documents = [
 #Convert to embeddings
 doc_embeddings = model.encode(documents)
 
+#Convert to numpy float32 
+doc_embeddings = np.array(doc_embeddings).astype("float32")
+
 
