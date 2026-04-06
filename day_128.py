@@ -23,4 +23,8 @@ doc_embeddings = model.encode(documents)
 #Convert to numpy float32 
 doc_embeddings = np.array(doc_embeddings).astype("float32")
 
+#Create faiss index
+dimension = doc_embeddings.shape[1]
+index = faiss.IndexFlatL2(dimension)
+
 
