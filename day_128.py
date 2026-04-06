@@ -30,4 +30,8 @@ index = faiss.IndexFlatL2(dimension)
 #Add embeddings to index
 index.add(doc_embeddings)
 
+#User querry
+querry = input("Enter your querry: ")
+
+querry_emb = model.encode([querry]).astype("float32")
 
