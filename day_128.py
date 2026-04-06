@@ -35,3 +35,11 @@ querry = input("Enter your querry: ")
 
 querry_emb = model.encode([querry]).astype("float32")
 
+#search
+k = 3
+distances,indices = index.search(querry_emb, k)
+
+print("\nTop matches:\n")
+
+for i, idx in enumerate(indices[0]):
+    print(f"{documents[idx]} (distance: {distances[0][i]:.3f})")
