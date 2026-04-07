@@ -23,3 +23,7 @@ print("\nchunks:\n")
 for c in chunks:
     print("-", c)
 
+querry = input("\nEnter your querry:")
+
+querry_emb = model.encode([querry])
+
