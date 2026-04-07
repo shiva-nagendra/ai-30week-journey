@@ -19,6 +19,8 @@ AI also helps in drug discovery.
 
 chunks = document.strip().split("\n")
 
+chunk_emb = model.encode(chunks)
+
 print("\nchunks:\n")
 for c in chunks:
     print("-", c)
@@ -27,3 +29,4 @@ querry = input("\nEnter your querry:")
 
 querry_emb = model.encode([querry])
 
+scores = cosine_similarity(querry_emb, chunk_emb)[0]
