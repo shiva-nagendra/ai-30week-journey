@@ -19,3 +19,7 @@ AI also helps in drug discovery.
 
 chunks = document.strip().split("\n")
 
+print("\nchunks:\n")
+for c in chunks:
+    print("-", c)
+
