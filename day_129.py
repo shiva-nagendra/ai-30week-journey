@@ -35,3 +35,7 @@ top_indices = np.argsort(scores)[::-1][:2]
 
 print("\nTop matches:\n")
 
+for idx in top_indices:
+    print(f"{chunks[idx]} (score: {scores[idx]:.3f})")
+
+    
