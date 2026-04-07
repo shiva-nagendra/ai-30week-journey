@@ -17,3 +17,5 @@ Deep learning improves medical imaging systems.
 AI also helps in drug discovery.
 """
 
+chunks = document.strip().split("\n")
+
