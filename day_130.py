@@ -20,4 +20,8 @@ Chunks = document.strip().split()("\n")
 
 chunk_emb = model.encode(Chunks)
 
+querry = input("\nEnter your querry: ")
+
+querry_emb = model.encode(querry)
+
 
