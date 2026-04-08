@@ -16,3 +16,8 @@ Deep learning improves medical imaging.
 AI is also used in drug discovery.
 """
 
+Chunks = document.strip().split()("\n")
+
+chunk_emb = model.encode(Chunks)
+
+
