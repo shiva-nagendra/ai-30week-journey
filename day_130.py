@@ -8,3 +8,11 @@ import numpy as np
 #load model
 model = SentenceTransformer("all-MiniLM-L6-v2")
 
+#Documents
+document = """
+AI helps diagnose diseases.
+Machine learning analyzes patient data.
+Deep learning improves medical imaging.
+AI is also used in drug discovery.
+"""
+
