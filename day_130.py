@@ -33,4 +33,7 @@ context = " ".join([Chunks[idx] for idx in top_indices])
 print("\nRetrieved context:")
 print(context)
 
+print("\nGenerated answer:")
+print(f"\nAnswer: {querry} -> {context}")
+
 
