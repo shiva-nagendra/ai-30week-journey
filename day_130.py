@@ -28,4 +28,9 @@ scores =cosine_similarity(querry_emb, chunk_emb)[0]
 
 top_indices = np.argsort(scores)[::-1][:2]
 
+context = " ".join([Chunks[idx] for idx in top_indices])
+
+print("\nRetrieved context:")
+print(context)
+
 
