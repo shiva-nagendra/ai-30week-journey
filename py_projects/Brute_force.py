@@ -69,3 +69,12 @@ sentences = [
 #sentence emb
 sen_emb = model.encode(sentences)
 
+#Querry loop
+while True:
+    querry = input("\nEnter your query: (or exit)")
+    if querry == "exit":
+        break
+
+    querry_emb = model.encode([querry])
+
+    
