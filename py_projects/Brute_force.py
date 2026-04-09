@@ -66,3 +66,6 @@ sentences = [
     "Vegetables are essential for nutrition"
 ]
 
+#sentence emb
+sen_emb = model.encode(sentences)
+
