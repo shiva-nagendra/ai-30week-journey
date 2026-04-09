@@ -77,4 +77,8 @@ while True:
 
     querry_emb = model.encode([querry])
 
+    scores = cosine_similarity(querry_emb, sen_emb)[0]
+
+    top_indices = np.argsort(scores)[::-1][:3]
+
     
