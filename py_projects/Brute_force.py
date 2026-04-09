@@ -81,4 +81,5 @@ while True:
 
     top_indices = np.argsort(scores)[::-1][:3]
 
-    
+    for idx in top_indices:
+        print(f"{sentences[idx]}->(score:{scores[idx]:.3f})")
