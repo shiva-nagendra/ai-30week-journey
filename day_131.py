@@ -23,6 +23,11 @@ model = SentenceTransformer("all-MiniLM-L6-v2")
 #embeded sentences
 sen_emb = model.encode(sentences)
 
+#querry
+querry = input("Enter your querry:")
+
+query_emb = model.encode([querry])
+
 
 
 
