@@ -38,6 +38,10 @@ for idx in top_indices:
 
 print("\n Simulated faster search(idea):")
 
+subset_indices = [0,1,2,3]
+
+subset_emb = sen_emb[subset_indices]
+
 
 
 
