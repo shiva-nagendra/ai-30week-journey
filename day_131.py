@@ -28,6 +28,11 @@ querry = input("Enter your querry:")
 
 query_emb = model.encode([querry])
 
+print("\nBrute force search:")
+
+scores = cosine_similarity(query_emb,sen_emb)[0]
+top_indices = np.argsort(scores)[::-1][:3]
+
 
 
 
