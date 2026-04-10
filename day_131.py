@@ -45,6 +45,10 @@ subset_emb = sen_emb[subset_indices]
 subset_scores = cosine_similarity(query_emb, subset_emb)[0]
 top_subset = np.argsort(subset_scores)[::-1][:3]
 
+for i in top_subset:
+    real_idx = subset_indices[i]
+    print(f"{sentences[real_idx]} (score: {subset_scores[i]:.3f})")
 
+    
 
 
