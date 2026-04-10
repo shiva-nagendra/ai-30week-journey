@@ -17,6 +17,12 @@ sentences = [
     "Wind power generates electricity"
 ]
 
+#load model
+model = SentenceTransformer("all-MiniLM-L6-v2")
+
+#embeded sentences
+sen_emb = model.encode(sentences)
+
 
 
 
