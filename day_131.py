@@ -42,6 +42,9 @@ subset_indices = [0,1,2,3]
 
 subset_emb = sen_emb[subset_indices]
 
+subset_scores = cosine_similarity(query_emb, subset_emb)[0]
+top_subset = np.argsort(subset_scores)[::-1][:3]
+
 
 
 
