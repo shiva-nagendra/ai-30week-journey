@@ -41,5 +41,8 @@ query_emb = model.encode([query]).astype("float32")
 k = 3
 distances, indices = index.search(query_emb, k)
 
+print("\nTop matches")
 
+for i, idx in enumerate(indices[0]):
+    print(f"{sentences[idx]} (distance: {distances[0][i]}:.3f)")
 
