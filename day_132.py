@@ -30,3 +30,11 @@ embeddings = np.array(embeddings).astype("float32")
 dimension = embeddings.shape[1]
 index = faiss.IndexFlatL2(dimension)
 
+#add vectors to index
+index.add(embeddings)
+
+#Querry
+query = input("\nEnter your querry:")
+
+query_emb = model.encode(query)
+
