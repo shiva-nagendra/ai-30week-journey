@@ -26,3 +26,7 @@ embeddings = model.encode(sentences)
 #convert to float32(FAISS requirement)
 embeddings = np.array(embeddings).astype("float32")
 
+#create index
+dimension = embeddings.shape[1]
+index = faiss.IndexFlatL2(dimension)
+
