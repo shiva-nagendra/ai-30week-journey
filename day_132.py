@@ -21,3 +21,8 @@ sentences = [
     "Wind power generates electricity"
 ]
 
+embeddings = model.encode(sentences)
+
+#convert to float32(FAISS requirement)
+embeddings = np.array(embeddings).astype("float32")
+
