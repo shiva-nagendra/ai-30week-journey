@@ -35,6 +35,11 @@ index.add(embeddings)
 
 #Querry
 query = input("\nEnter your querry:")
+query_emb = model.encode([query]).astype("float32")
 
-query_emb = model.encode(query)
+#search
+k = 3
+distances, indices = index.search(query_emb, k)
+
+
 
