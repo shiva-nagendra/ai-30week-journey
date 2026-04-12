@@ -19,6 +19,8 @@ sentences = [
     "Exercise keeps the body fit",
     "Solar energy is renewable",
     "Wind power generates electricity"
+    "Macbook is a great laptop",
+    "Mallareddy college is on top"
 ]
 
 embeddings = model.encode(sentences)
