@@ -46,5 +46,5 @@ distances, indices = index.search(query_emb, k)
 print("\nTop matches")
 
 for i, idx in enumerate(indices[0]):
-    print(f"{sentences[idx]} (distance: {distances[0][i]}:.3f)")
+    print(f"{sentences[idx]} (distance: {distances[0][i]:.3f})")
 
