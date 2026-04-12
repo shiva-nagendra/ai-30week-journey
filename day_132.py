@@ -26,11 +26,6 @@ sentences = [
     "Astronomy studies celestial objects and space",
     "Satellites help in global communication",
     "Mars missions are a focus of space agencies",
-    "Telescopes observe distant galaxies",
-    "Gravity affects objects with mass",
-    "The universe is constantly expanding",
-    "Black holes have strong gravitational pull",
-    "The moon affects ocean tides",
 ]
 
 embeddings = model.encode(sentences)
