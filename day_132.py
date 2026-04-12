@@ -20,7 +20,17 @@ sentences = [
     "Solar energy is renewable",
     "Wind power generates electricity"
     "Macbook is a great laptop",
-    "Mallareddy college is on top"
+    "Mallareddy college is on top",
+    "Space exploration expands human knowledge",
+    "Rockets are used to send satellites into orbit",
+    "Astronomy studies celestial objects and space",
+    "Satellites help in global communication",
+    "Mars missions are a focus of space agencies",
+    "Telescopes observe distant galaxies",
+    "Gravity affects objects with mass",
+    "The universe is constantly expanding",
+    "Black holes have strong gravitational pull",
+    "The moon affects ocean tides",
 ]
 
 embeddings = model.encode(sentences)
