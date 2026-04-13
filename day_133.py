@@ -24,3 +24,6 @@ sentences = [
 embeddings = model.encode(sentences)
 embeddings = np.array(embeddings).astype("float32")
 
+#Dimension
+dimension = embeddings.shape[1]
+
