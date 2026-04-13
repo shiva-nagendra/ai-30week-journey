@@ -32,10 +32,13 @@ nlist = 2 #No. of clusters
 
 quantizer = faiss.IndexFlatL2(dimension)#base index
 
-#Train index
-index = faiss.IndexIVFFlat(quantizer,dimension,nlist)
+# Create IVF index
+index = faiss.IndexIVFFlat(quantizer, dimension, nlist)
 
-#Add vectors
+# IMPORTANT: Train the index before adding vectors
+index.train(embeddings)
+
+# Add vectors after training
 index.add(embeddings)
 
 #query
