@@ -20,3 +20,7 @@ sentences = [
     "Wind power generates electricity"
 ]
 
+#Embeddings
+embeddings = model.encode(sentences)
+embeddings = np.array(embeddings).astype("float32")
+
