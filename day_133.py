@@ -43,3 +43,14 @@ index.add(embeddings)
 query = input("\nEnter your query: ")
 query_embedding = model.encode([query]).astype("float32")
 
+#search
+k = 3
+index.nprobe = 1 #How many clusters to search
+
+distances, indices = index.search(query_embedding, k)
+
+
+print("\nTop matches:\n")
+
+for i, idx in enumerate(indices[0]):
+    print(f"{sentences[idx]} (distance: {distances[0][i]:.3f})")
