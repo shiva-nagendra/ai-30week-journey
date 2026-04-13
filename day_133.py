@@ -27,3 +27,9 @@ embeddings = np.array(embeddings).astype("float32")
 #Dimension
 dimension = embeddings.shape[1]
 
+#IVF setup
+nlist = 2 #No. of clusters
+
+quantizer = faiss.IndexFlatL2(dimension)#base index
+
+
