@@ -32,4 +32,14 @@ nlist = 2 #No. of clusters
 
 quantizer = faiss.IndexFlatL2(dimension)#base index
 
+#Train index
+index = faiss.IndexIVFFlat(quantizer,dimension,nlist)
+
+#Add vectors
+index.add(embeddings)
+
+#query
+
+query = input("\nEnter your query: ")
+query_embedding = model.encode([query]).astype("float32")
 
