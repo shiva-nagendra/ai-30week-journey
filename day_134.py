@@ -38,5 +38,15 @@ index.add(sen_emb)
 query = input("\nEnter your query:")
 query_emb = model.encode([query]).astype("float32")
 
+#Normalize querry
+faiss.normalize_L2(query_emb)
 
+#search
+k = 3
+distances, indices = index.search(query_emb, k)
+
+print("\nTop matches:")
+
+for i, idx in enumerate(indices[0]):
+    print(f"{sentences[idx]} (score: {1 - distances[0][i]:.3f})")
 
