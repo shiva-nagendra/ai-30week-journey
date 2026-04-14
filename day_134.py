@@ -31,4 +31,12 @@ faiss.normalize_L2(sen_emb)
 dimension = sen_emb.shape[1]
 index = faiss.IndexFlatL2(dimension)
 
+#Add
+index.add(sen_emb)
+
+#Query
+query = input("\nEnter your query:")
+query_emb = model.encode([query]).astype("float32")
+
+
 
