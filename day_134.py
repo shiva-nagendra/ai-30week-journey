@@ -24,3 +24,11 @@ sentences = [
 sen_emb = model.encode(sentences)
 sen_emb = np.array(sen_emb).astype("float32")
 
+#normalize
+faiss.normalize_L2(sen_emb)
+
+#Index
+dimension = sen_emb.shape[1]
+index = faiss.IndexFlatL2(dimension)
+
+
