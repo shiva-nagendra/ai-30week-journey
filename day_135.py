@@ -45,5 +45,18 @@ distances, indices = index.search(query_emb, k)
 
 print("\nFiltered results: ")
 
+#Filter results
+
+results = []
+
+for i, idx in enumerate(indices[0]):
+    item = data[idx]
+
+    if category_filter == "all" or item["category"] == category_filter:
+        score = 1 - distances[0][i]
+        results.append((item["text"], item["category"], score))
+        
+
+    
 
 
