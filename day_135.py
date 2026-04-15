@@ -32,3 +32,18 @@ index = faiss.IndexFlatL2(dimension)
 
 index.add(embeddings)
 
+#Query
+query = input("\nEnter your query: ")
+category_filter = input("\nEnter category (or 'all'):")
+
+query_emb = model.encode(query).astype("float32")
+faiss.normalize_L2(query_emb)
+
+#Search
+k = 5
+distances, indices = index.search(query_emb, k)
+
+print("\nFiltered results: ")
+
+
+
