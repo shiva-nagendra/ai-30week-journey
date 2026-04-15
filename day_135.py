@@ -36,7 +36,7 @@ index.add(embeddings)
 query = input("\nEnter your query: ")
 category_filter = input("\nEnter category (or 'all'):")
 
-query_emb = model.encode(query).astype("float32")
+query_emb = model.encode([query]).astype("float32")
 faiss.normalize_L2(query_emb)
 
 #Search
@@ -62,6 +62,6 @@ results = sorted(results, key=lambda x: x[2], reverse=True)[:3]
 
 for text, cat, score in results:
     print(f"{text}[{cat}] (score: {score:.3f})")
-    
+
 
 
