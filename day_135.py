@@ -55,8 +55,13 @@ for i, idx in enumerate(indices[0]):
     if category_filter == "all" or item["category"] == category_filter:
         score = 1 - distances[0][i]
         results.append((item["text"], item["category"], score))
-        
 
+
+#Show top 3 filters after searching
+results = sorted(results, key=lambda x: x[2], reverse=True)[:3]
+
+for text, cat, score in results:
+    print(f"{text}[{cat}] (score: {score:.3f})")
     
 
 
