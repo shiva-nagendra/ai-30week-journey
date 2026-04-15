@@ -9,7 +9,7 @@ import numpy as np
 model = SentenceTransformer("all-MiniLM-L6-v2")
 
 #doc
-sentences = [
+data = [
      {"text": "AI helps diagnose diseases", "category": "health"},
     {"text": "Machine learning analyzes data", "category": "tech"},
     {"text": "Deep learning improves imaging", "category": "health"},
@@ -17,4 +17,18 @@ sentences = [
     {"text": "Healthy food improves life", "category": "health"},
     {"text": "Solar energy is renewable", "category": "energy"},
 ]
+
+texts = [item["text"] for item in data]
+
+#Embeddings
+embeddings = model.encode(texts)
+embeddings = np.array(embeddings).astype("float32")
+
+faiss.normalize_L2(embeddings)
+
+#index
+dimension = embeddings.shape[1]
+index = faiss.IndexFlatL2(dimension)
+
+index.add(embeddings)
 
