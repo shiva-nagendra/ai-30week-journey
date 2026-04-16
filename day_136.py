@@ -36,6 +36,18 @@ query = input("\nEnter your query: ")
 query_emb = model.encode(query)
 faiss.normalize_L2(query_emb)
 
+#Retrive more
+k = 5
+distances, indices = index.search(query_emb, k)
+
+#Filter
+filtered = []
+
+for i, idx in enumerate(indices[0]):
+    item = data[idx]
+    score = 1 - distances[0][i]
+    filtered.append((item["text"], item["category"], score))
+    
 
 
 
