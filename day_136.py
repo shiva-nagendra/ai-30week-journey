@@ -52,7 +52,9 @@ top_results = filtered[:3]
 
 print("\nFinal results:\n")
 
-
+for text, cat, score in top_results:
+    print(f"{text} [{cat}] (score: {score:.3f})")
+    
 
 
 
