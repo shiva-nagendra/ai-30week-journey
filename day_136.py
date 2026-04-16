@@ -17,3 +17,8 @@ data = [
 
 texts = [item["text"] for item in data]
 
+# Embeddings
+embeddings = model.encode(texts)
+embeddings = np.array(embeddings).astype("float32")
+
+
