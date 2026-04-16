@@ -31,6 +31,13 @@ dimension = embeddings.shape[1]
 index = faiss.IndexFlatL2(dimension)
 index.add(embeddings)
 
+#query
+query = input("\nEnter your query: ")
+query_emb = model.encode(query)
+faiss.normalize_L2(query_emb)
+
+
+
 
 
 
