@@ -50,6 +50,10 @@ for i, idx in enumerate(indices[0]):
 
 top_results = filtered[:3]
 
+print("\nFinal results:\n")
+
+
+
 
 
 
