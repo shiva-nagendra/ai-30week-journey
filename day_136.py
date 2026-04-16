@@ -5,6 +5,9 @@ from sentence_transformers import SentenceTransformer
 import faiss
 import numpy as np
 
+#Load model
+model = SentenceTransformer("all-MiniLM-L6-v2")
+
 # Data
 data = [
     {"text": "AI helps diagnose diseases", "category": "health"},
@@ -20,5 +23,16 @@ texts = [item["text"] for item in data]
 # Embeddings
 embeddings = model.encode(texts)
 embeddings = np.array(embeddings).astype("float32")
+
+faiss.normalize_L2(embeddings)
+
+#Index
+dimension = embeddings.shape[1]
+index = faiss.IndexFlatL2(dimension)
+index.add(embeddings)
+
+
+
+
 
 
