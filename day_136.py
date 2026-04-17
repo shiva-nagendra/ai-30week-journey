@@ -16,6 +16,7 @@ data = [
     {"text": "Space rockets explore planets", "category": "space"},
     {"text": "Healthy food improves life", "category": "health"},
     {"text": "Solar energy is renewable", "category": "energy"},
+    {"text": "Macbooks are doing great", "category": "news"}
 ]
 
 texts = [item["text"] for item in data]
