@@ -45,7 +45,18 @@ while True:
     results = []
 
     for i, idx in enumerate(indices[0]):
-        
+        item = data[idx]
+
+        if category_filter == "all" or item["category"] == category_filter:
+            score = 1 - distance[0][i]
+            results.append((item["text"], item["category"], score))
+
+    results = sorted(score, key=lambda x: x[2], reverse=True)
+
+    print("\nResults:\n")
+
+    
+
 
 
 
