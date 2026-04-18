@@ -55,7 +55,10 @@ while True:
 
     print("\nResults:\n")
 
-    
+    for text, cat, score in results:
+       print(f"{text} [{cat}] (score: {score:.3f})")
+
+
 
 
 
