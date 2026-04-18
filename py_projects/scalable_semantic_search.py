@@ -31,11 +31,23 @@ while True:
     if query == "exit":
         break
 
-    else:
-        query_emb = model.encode([query]).astype("float32")
-        faiss.normalize_L2(query_emb)
+    #Category filter
+    category_filter = input("Enter category (or 'all'): ")
 
+    query_emb = model.encode([query]).astype("float32")
+    faiss.normalize_L2(query_emb)
+
+    #Retrieve more
+    k = 5
+    distance, indices = index.search(query_emb, k)
+
+    #filter + rerank
+    results = []
+
+    for i, idx in enumerate(indices[0]):
         
+
+
 
     
 
