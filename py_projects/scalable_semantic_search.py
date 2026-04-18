@@ -19,10 +19,25 @@ embeddings = np.array(embeddings).astype("float32")
 #Normalize
 faiss.normalize_L2(embeddings)
 
-#Index creation
+# FAISS Index creation
 dimension = embeddings.shape[1]
 index = faiss.IndexFlatL2(dimension)
 index.add(embeddings)
+
+#Query loop
+
+while True:
+    query = input("\nEnter your query: (or 'exit')")
+    if query == "exit":
+        break
+
+    else:
+        query_emb = model.encode([query]).astype("float32")
+        faiss.normalize_L2(query_emb)
+
+        
+
+    
 
 
 
