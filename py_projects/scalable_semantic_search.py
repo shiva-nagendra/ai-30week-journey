@@ -4,8 +4,15 @@
 from sentence_transformers import SentenceTransformer
 import faiss
 import numpy as np
-from data_week22 import data
+from data import data
 
 #Load model
 model = SentenceTransformer("all-MiniLM-L6-v2")
+
+#texts
+texts = [item["text"] for item in data]
+
+#Embedings
+embeddings = model.encode(texts)
+embeddings = np.array(embeddings).astype("float32")
 
