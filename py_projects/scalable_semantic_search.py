@@ -16,3 +16,13 @@ texts = [item["text"] for item in data]
 embeddings = model.encode(texts)
 embeddings = np.array(embeddings).astype("float32")
 
+#Normalize
+faiss.normalize_L2(embeddings)
+
+#Index creation
+dimension = embeddings.shape[1]
+index = faiss.IndexFlatL2(dimension)
+index.add(embeddings)
+
+
+
