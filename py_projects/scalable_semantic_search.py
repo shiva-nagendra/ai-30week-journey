@@ -38,7 +38,7 @@ while True:
     faiss.normalize_L2(query_emb)
 
     #Retrieve more
-    k = 5
+    k = 6
     distance, indices = index.search(query_emb, k)
 
     #filter + rerank
