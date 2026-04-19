@@ -48,7 +48,7 @@ while True:
         item = data[idx]
 
         if category_filter == "all" or item["category"] == category_filter:
-            score = 1 - distance[0]
+            score = 1 - distance[0][i]
             results.append((item["text"], item["category"], score))
 
     results = sorted(results, key=lambda x: x[2], reverse=True)
