@@ -27,3 +27,7 @@ query = input("Enter your query: ")
 
 query_emb = emb_model.encode([query])
 
+#Retrieval
+scores = cosine_similarity(query_emb, doc_emb)[0]
+top_indices = np.argsort(scores)[::-1][:3]
+
