@@ -4,3 +4,4 @@
 #Demo
 query = "AI in healthcare"
 
+#Step 1: Retrieve
