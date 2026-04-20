@@ -21,5 +21,9 @@ documents = [
     "Doctors use AI for treatment planning"
 ]
 
-doc_emb = model_generator.encode(documents)
+doc_emb = emb_model.encode(documents)
+
+query = input("Enter your query: ")
+
+query_emb = emb_model.encode([query])
 
