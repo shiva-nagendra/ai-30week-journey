@@ -10,7 +10,7 @@ import numpy as np
 emb_model = SentenceTransformer("all-MiniLM-L6-v2")
 
 #Generation model
-model_generstor = pipeline("text-generation", model="distilgpt2")
+model_generator = pipeline("text-generation", model="distilgpt2")
 
 #Data
 documents = [
@@ -20,4 +20,6 @@ documents = [
     "AI is used in drug discovery",
     "Doctors use AI for treatment planning"
 ]
+
+doc_emb = model_generator.encode(documents)
 
