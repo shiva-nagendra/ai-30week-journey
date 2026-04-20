@@ -5,3 +5,5 @@
 query = "AI in healthcare"
 
 #Step 1: Retrieve
+context = retrieve_top_chunks(query)
+
