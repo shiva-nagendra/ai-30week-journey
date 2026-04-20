@@ -5,7 +5,7 @@
 query = "AI in healthcare"
 
 #Step 1: Retrieve
-context = retrieve_top_chunks(query)
+#context = retrieve_top_chunks(query)
 
 #Step: 2 generate
-answer = LLM(f"Context: {context}\nQuestion: {query}")
+#answer = LLM(f"Context: {context}\nQuestion: {query}")
