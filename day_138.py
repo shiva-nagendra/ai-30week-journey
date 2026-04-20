@@ -48,5 +48,8 @@ Answer:
 
 response = model_generator(prompt, max_length=100, num_return_sequences=1)
 
+print("Generated responses: ")
+print(response[0]["generated_text"])
+
 
 
