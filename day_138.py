@@ -10,6 +10,14 @@ import numpy as np
 emb_model = SentenceTransformer("all-MiniLM-L6-v2")
 
 #Generation model
-model = pipeline("text-generation", model="distilgpt2")
+model_generstor = pipeline("text-generation", model="distilgpt2")
 
+#Data
+documents = [
+    "AI helps diagnose diseases",
+    "Machine learning analyzes patient data",
+    "Deep learning improves medical imaging",
+    "AI is used in drug discovery",
+    "Doctors use AI for treatment planning"
+]
 
