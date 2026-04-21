@@ -1,3 +1,4 @@
+#speculative decoding 
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import torch.nn.functional as F
 import torch
