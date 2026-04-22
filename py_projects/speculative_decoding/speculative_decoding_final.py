@@ -90,4 +90,28 @@ def speculative_decode(prompt, k=5, max_length=15):
                 break
 
     return tokenizer.decode(current_tokens[0])
-    
+
+if __name__ == "__main__":
+    test_prompt = "The future of AI is"
+    target_length = 20
+
+    print("Running normal decoding: ")
+    start_normal = time.time()
+    normal_text = normal_decode(test_prompt, max_length=target_length)
+    end_normal = time.time()
+
+    print("\nNormal Decoding Result: \n", normal_text)
+    print(f"Normal decoding time: {end_normal - start_normal:.4f} seconds")
+
+    print("\nRunning speculative decoding: ")
+    start_speculative = time.time()
+    speculative_text = speculative_decode(test_prompt, k=5, max_length=target_length)
+    end_speculative = time.time()
+
+    print("\nSpeculative Decoding Result: \n", speculative_text)
+    print(f"Speculative decoding time: {end_speculative - start_speculative:.4f} seconds")
+
+    #Calculate the speedup
+    speed_up = (end_normal - start_normal) / (end_speculative - start_speculative)
+    print(f" Speculative Decoding was {speed_up:.2f}x faster.")
+  
