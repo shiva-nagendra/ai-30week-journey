@@ -52,7 +52,7 @@ with torch.no_grad():
         eos_reached = False # NEW: Flag to track if the AI is finished speaking
 
         for i in range(k):
-            target_logits_i = target_output.logits[:,N-1+i,:]
+            target_logits_i = target_output.logits[:, N-1+i, :]
             target_probs_i = F.softmax(target_logits_i, dim=-1)
 
             guessed_token = draft_tokens[i]
