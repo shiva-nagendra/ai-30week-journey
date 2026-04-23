@@ -60,3 +60,7 @@ context: {context},
 question: {query},
 Answer:
 """
+
+response = generator(prompt, max_length=100, num_return_sequences=1)
+print("Generated response: ")
+print(response[0]["generated_text"])
