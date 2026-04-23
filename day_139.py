@@ -27,3 +27,15 @@ documents = [
 
 ]
 
+doc_emb = emb_model.encode(documents)
+
+query = input("Enter your query: ") 
+
+expanded_query = [
+    query,
+    query + " in healthcare",
+    query + " for diagnosis",
+    "machine learning" + query,
+]
+
+
