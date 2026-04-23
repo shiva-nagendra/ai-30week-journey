@@ -38,4 +38,15 @@ expanded_query = [
     "machine learning" + query,
 ]
 
+#Retrieval
 
+all_scores = []
+
+for q in expanded_query:
+    q_emb = emb_model.encode([q])
+    scores = cosine_similarity(q_emb, doc_emb)[0]
+    all_scores.append(scores)
+
+#combine scores
+final_scores = np.mean(all_scores, axis=0)
+top_indices = np.argsort(final_scores)[::-1][:3]
