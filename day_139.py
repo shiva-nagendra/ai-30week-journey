@@ -50,3 +50,7 @@ for q in expanded_query:
 #combine scores
 final_scores = np.mean(all_scores, axis=0)
 top_indices = np.argsort(final_scores)[::-1][:3]
+context = " ".join([documents[idx] for idx in top_indices])
+print("\nRetrieved context: ")
+print(context)
+
