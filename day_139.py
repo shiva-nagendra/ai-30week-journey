@@ -54,3 +54,9 @@ context = " ".join([documents[idx] for idx in top_indices])
 print("\nRetrieved context: ")
 print(context)
 
+#Generation
+prompt = f"""
+context: {context},
+question: {query},
+Answer:
+"""
