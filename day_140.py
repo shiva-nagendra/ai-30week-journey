@@ -29,3 +29,8 @@ documents = [
 
 doc_embeddings = embed_model.encode(documents)
 
+# -------- QUERY -------- #
+
+query = input("Enter your question: ")
+query_emb = embed_model.encode([query])
+
