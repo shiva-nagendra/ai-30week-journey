@@ -76,3 +76,22 @@ print("\nBetter Context:\n")
 
 print(context)
 
+
+
+# -------- GENERATION -------- #
+
+prompt = f"""
+
+Context: {context}
+
+Question: {query}
+
+Answer:
+
+"""
+
+response = generator(prompt, max_length=100, num_return_sequences=1)
+
+print("\nGenerated Answer:\n")
+
+print(response[0]["generated_text"])
