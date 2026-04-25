@@ -34,3 +34,13 @@ doc_embeddings = embed_model.encode(documents)
 query = input("Enter your question: ")
 query_emb = embed_model.encode([query])
 
+# -------- STEP 1: RETRIEVE MORE -------- #
+
+k = 5
+
+scores = cosine_similarity(query_emb, doc_embeddings)[0]
+
+top_indices = np.argsort(scores)[::-1][:k]
+
+# -------- STEP 2: RERANK -------- #
+
