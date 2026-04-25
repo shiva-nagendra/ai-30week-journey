@@ -62,4 +62,17 @@ for idx in top_indices:
 
     ranked_chunks.append((text, final_score))
 
-    
+    # Sort again
+
+ranked_chunks = sorted(ranked_chunks, key=lambda x: x[1], reverse=True)
+
+# -------- STEP 3: SELECT BEST -------- #
+
+best_chunks = [chunk[0] for chunk in ranked_chunks[:3]]
+
+context = " ".join(best_chunks)
+
+print("\nBetter Context:\n")
+
+print(context)
+
