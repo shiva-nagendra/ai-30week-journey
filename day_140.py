@@ -44,3 +44,22 @@ top_indices = np.argsort(scores)[::-1][:k]
 
 # -------- STEP 2: RERANK -------- #
 
+ranked_chunks = []
+
+for idx in top_indices:
+
+    text = documents[idx]
+
+    # simple reranking: length + similarity
+
+    score = cosine_similarity(query_emb, [doc_embeddings[idx]])[0][0]
+
+    # bonus: prefer shorter, more direct chunks
+
+    length_penalty = len(text.split()) * 0.01
+
+    final_score = score - length_penalty
+
+    ranked_chunks.append((text, final_score))
+
+    
