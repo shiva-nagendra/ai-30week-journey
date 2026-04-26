@@ -19,4 +19,14 @@ documents = [
     "Doctors use AI for treatment planning"
 ]
 
+doc_emb = model.encode(documents)
+
+query = input("Enter your question: ")
+
+#Step 1: intial Retrieve 
+
+query_emb = model.encode([query])
+scores = cosine_similarity(query_emb, doc_emb)[0]
+top_indices = np.argsort(scores)[::-1][:5]
+
 
