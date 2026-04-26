@@ -29,4 +29,8 @@ query_emb = model.encode([query])
 scores = cosine_similarity(query_emb, doc_emb)[0]
 top_indices = np.argsort(scores)[::-1][:5]
 
+first_context = " ".join([documents[idx] for idx in top_indices])
+
+print("\nFirst Context:\n", first_context)
+
 
