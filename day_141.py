@@ -63,3 +63,8 @@ Answer:
 
 """
 
+response = generator(prompt, max_length=120, num_return_sequences=1)
+
+print("\nGenerated Answer:\n")
+
+print(response[0]["generated_text"])
