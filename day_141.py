@@ -33,7 +33,7 @@ first_context = " ".join([documents[idx] for idx in top_indices])
 
 print("\nFirst Context:\n", first_context)
 
-# -------- STEP 2: REFINE QUERY -------- #
+#STEP 2: REFINE QUERY 
 
 refined_query = query + " medical applications and benefits"
 
@@ -47,4 +47,6 @@ second_context = " ".join([documents[idx] for idx in top_indices_refined])
 
 print("\nSecond Context:\n", second_context)
 
+# STEP 3: COMBINE 
 
+final_context = first_context + " " + second_context
