@@ -6,5 +6,17 @@ from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
 from transformers import pipeline
 
+#models
+model = SentenceTransformer("all-MiniLM-L6-v2")
+generator = pipeline("text-generation", model="distilgpt2")
+
+#data
+documents = [
+    "AI helps diagnose diseases",
+    "Machine learning analyzes patient data",
+    "Deep learning improves medical imaging",
+    "AI is used in drug discovery",
+    "Doctors use AI for treatment planning"
+]
 
 
