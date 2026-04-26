@@ -53,3 +53,13 @@ final_context = first_context + " " + second_context
 
 print("\nFinal Context:\n", final_context)
 
+# -------- STEP 4: GENERATION -------- #
+
+prompt = f"""
+
+Context: {final_context}
+Question: {query}
+Answer:
+
+"""
+
