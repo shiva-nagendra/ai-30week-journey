@@ -33,4 +33,18 @@ first_context = " ".join([documents[idx] for idx in top_indices])
 
 print("\nFirst Context:\n", first_context)
 
+# -------- STEP 2: REFINE QUERY -------- #
+
+refined_query = query + " medical applications and benefits"
+
+refined_emb = model.encode([refined_query])
+
+scores_refined = cosine_similarity(refined_emb, doc_emb)[0]
+
+top_indices_refined = np.argsort(scores_refined)[::-1][:2]
+
+second_context = " ".join([documents[idx] for idx in top_indices_refined])
+
+print("\nSecond Context:\n", second_context)
+
 
