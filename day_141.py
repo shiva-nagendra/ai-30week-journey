@@ -50,3 +50,6 @@ print("\nSecond Context:\n", second_context)
 # STEP 3: COMBINE 
 
 final_context = first_context + " " + second_context
+
+print("\nFinal Context:\n", final_context)
+
