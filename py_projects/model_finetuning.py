@@ -16,7 +16,7 @@ for row in dataset["train"]:
 
     new_data.append(sample)
 
-instruction = row["instruction"].replace("{{orderNumber}}", "12345")
+    instruction = row["instruction"].replace("{{orderNumber}}", "12345")
 
 import json
 
@@ -25,6 +25,6 @@ with open("train.jsonl", "w") as f:
 
         f.write(json.dumps(item) + "\n")
 
-        
+
 
 
