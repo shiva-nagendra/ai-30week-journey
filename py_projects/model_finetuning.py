@@ -16,6 +16,8 @@ for row in dataset["train"]:
 
     new_data.append(sample)
 
-    
+instruction = row["instruction"].replace("{{orderNumber}}", "12345")
+
+
 
 
