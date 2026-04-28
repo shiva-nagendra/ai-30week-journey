@@ -18,6 +18,13 @@ for row in dataset["train"]:
 
 instruction = row["instruction"].replace("{{orderNumber}}", "12345")
 
+import json
 
+with open("train.jsonl", "w") as f:
+    for item in new_data:
+
+        f.write(json.dumps(item) + "\n")
+
+        
 
 
