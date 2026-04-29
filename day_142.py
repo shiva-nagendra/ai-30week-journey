@@ -26,3 +26,10 @@ query_emb = model.encode([query])
 scores = cosine_similarity(query_emb, doc_emb)[0]
 top_indices = np.argsort(scores)[::-1][:3]
 
+retrieved = [documents[idx] for idx in top_indices]
+
+print("\nRetrieved chunks: ")
+for r in retrieved:
+    print("-", r)
+
+    
