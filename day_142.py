@@ -17,3 +17,9 @@ documents = [
     "Doctors use AI for treatment planning"
 ]
 
+doc_emb = model.encode(documents)
+
+query = input("Enter your question: ")
+
+query_emb = model.encode([query])
+
