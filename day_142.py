@@ -32,4 +32,11 @@ print("\nRetrieved chunks: ")
 for r in retrieved:
     print("-", r)
 
-    
+print("\nEvaluation:")
+
+relevant_keywords = query.lower().split()
+
+for chunk in retrieved:
+    match_score = sum(word in chunk.lower() for word in relevant_keywords)
+    print(f"{chunk}")
+    print(f"Relevance score: {match_score}/{len(relevant_keywords)}\n")
