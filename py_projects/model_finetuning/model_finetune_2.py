@@ -29,3 +29,8 @@ lora_config = LoraConfig(
 
 model = get_peft_model(model, lora_config)
 
+#load data
+dataset = load_dataset("json", data_files="train.jsonl")
+
+
+
