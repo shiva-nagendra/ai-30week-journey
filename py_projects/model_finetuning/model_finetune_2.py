@@ -41,4 +41,10 @@ training_args = TrainingArguments(
     fp16=True
 )
 
+trainer = SFTTrainer(
+    model=model,
+    train_dataset=dataset["train"],
+    args=training_args
+)
+
 
