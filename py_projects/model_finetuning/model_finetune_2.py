@@ -47,4 +47,6 @@ trainer = SFTTrainer(
     args=training_args
 )
 
+trainer.train()
+
 
