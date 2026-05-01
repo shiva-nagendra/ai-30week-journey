@@ -1,6 +1,6 @@
 #iteration 2 of model finetuning using QLoRA
 
-from transformers import autotokenizer, AutoModelForCausalLM, TrainingArguments
+from transformers import AutoTokenizer, AutoModelForCausalLM, TrainingArguments
 from peft import LoraConfig, get_peft_model
 from datasets import load_dataset
 from trl import SFTTrainer
@@ -8,7 +8,7 @@ from trl import SFTTrainer
 #models 
 model_name = "microsoft/phi-2"
 
-tokenizer = autotokenizer.from_pretrained(model_name)
+tokenizer = AutoTokenizer.from_pretrained(model_name)
 
 model = AutoModelForCausalLM.from_pretrained(
     model_name,
