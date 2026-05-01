@@ -22,16 +22,22 @@ while True:
         break
 
     expanded_queries = [
-
         query,
-        query + "in healthcare.",
-        query + "medical applications."
-        
+        query + " in healthcare.",
+        query + " medical applications."   
     ]
     
     all_scores = []
 
     for q in expanded_queries:
+        q_emb = embed_model.encode([q])
+        scores = cosine_similarity(q_emb, doc_emb)[0]
+        all_scores.append(scores)
+
+        
+
+
+
 
 
 
