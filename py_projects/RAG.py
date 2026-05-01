@@ -12,6 +12,8 @@ embed_model = SentenceTransformer("all-MiniLM-L6-v2")
 generator = pipeline("text-generation",model="distilgpt2")
 
 #Data
-documents = data
-doc_emb = embed_model.encode(documents)
+texts = [item["text"] for item in data]
+doc_emb = embed_model.encode(texts)
+
+
 
