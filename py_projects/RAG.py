@@ -15,5 +15,24 @@ generator = pipeline("text-generation",model="distilgpt2")
 texts = [item["text"] for item in data]
 doc_emb = embed_model.encode(texts)
 
+#Main loop
+while True:
+    query = input("\nEnter your querry: (or exit)")
+    if query == "exit".lower():
+        break
+
+    expanded_queries = [
+
+        query,
+        query + "in healthcare.",
+        query + "medical applications."
+        
+    ]
+    
+    all_scores = []
+
+    for q in expanded_queries:
+
+
 
 
