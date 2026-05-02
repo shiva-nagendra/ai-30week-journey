@@ -15,8 +15,7 @@ if HF_TOKEN:
 else:
     print("Warning: HF_TOKEN not found in Colab secrets. Model downloads might be rate-limited.")
 
-#models
-model_name = "microsoft/phi-2"
+
 
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 # Set pad_token for the tokenizer
