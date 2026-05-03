@@ -24,7 +24,9 @@ documents = [
 
     "AI is used in drug discovery",
 
-    "Doctors use AI for treatment planning"
+    "Doctors use AI for treatment planning",
+
+    "aeroplanes use bernouli's principle for flying"
 
 ]
 
