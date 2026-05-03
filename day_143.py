@@ -27,3 +27,11 @@ documents = [
     "Doctors use AI for treatment planning"
 
 ]
+
+doc_emb = model.encode(documents)
+
+#Request format
+
+class QueryRequest(BaseModel):
+    query:str
+    
