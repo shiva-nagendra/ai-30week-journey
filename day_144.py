@@ -16,3 +16,19 @@ app = FastAPI()
 embed_model = SentenceTransformer("all-miniLM-L6-v2")
 generator = pipeline("text-generation", model='distilgpt2')
 
+documents = [
+
+    "AI helps diagnose diseases",
+
+    "Machine learning analyzes patient data",
+
+    "Deep learning improves medical imaging",
+
+    "AI is used in drug discovery",
+
+    "Doctors use AI for treatment planning"
+
+]
+
+doc_emb = embed_model.encode(documents)
+
