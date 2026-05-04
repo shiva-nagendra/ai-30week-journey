@@ -37,3 +37,18 @@ class QueryRequest(BaseModel):
     query:str
 
 @app.post("/ask")
+def ask_question(req: QueryRequest):
+    query = req.query
+
+    #Retrieval
+    query_emb = embed_model.encode([query])
+    scores = cosine_similarity(query_emb, doc_emb)[0]
+    top_indices = np.argsort(scores)[::-1][:3]
+
+    context = " ".join([documents[idx] for idx in top_indices])
+    
+    #generation
+    prompt = f"""
+
+    
+
