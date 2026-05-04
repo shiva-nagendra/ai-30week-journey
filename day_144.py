@@ -32,3 +32,8 @@ documents = [
 
 doc_emb = embed_model.encode(documents)
 
+#Request format
+class QueryRequest(BaseModel):
+    query:str
+
+@app.post("/ask")
