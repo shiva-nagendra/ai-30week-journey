@@ -49,6 +49,20 @@ def ask_question(req: QueryRequest):
     
     #generation
     prompt = f"""
+context: {context},
 
+question: {query},
+
+Answer:
+"""
+    response = generator(prompt, max_length=120, num_return_sequences=1)
+
+    answer = response[0]["generated_text"]
+
+    return{
+        "query": query,
+        "context":context,
+        "answer":answer
+    }
     
 
