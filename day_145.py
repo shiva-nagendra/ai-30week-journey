@@ -45,3 +45,21 @@ def generate_stream(prompt):
         yield word + " "
         time.sleep(0.05)
 
+#API
+@app.post("/ask-stream")
+def ask_stream(req: QueryRequest):
+    query = req.query
+
+    #Retrieval
+    query_emb = model.encode([query])
+    scores = cosine_similarity(query_emb, doc_emb)[0]
+    top_indices = np.argsort(scores)[::-1][:3]
+
+    context = " ".join([documents[idx] for idx in top_indices])
+
+    #prompt
+    prompt = """
+context: {context},
+Question: {query},
+Answer:
+"""
