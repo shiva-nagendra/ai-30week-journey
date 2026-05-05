@@ -63,3 +63,8 @@ context: {context},
 Question: {query},
 Answer:
 """
+
+    return StreamingResponse(generate_stream(prompt), media_type="text/plain")
+
+
+
