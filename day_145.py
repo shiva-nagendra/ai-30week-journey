@@ -14,8 +14,8 @@ import time
 app = FastAPI()
 
 #model
-model = SentenceTransformer("all-miniLM-L6-v2")
-generator = pipeline("text-generation", model="distilgpt2")
+model = SentenceTransformer("all-MiniLM-L6-v2")
+generator = pipeline("text2text-generation", model="google/flan-t5-small")
 
 documents = [
 
@@ -37,7 +37,11 @@ class QueryRequest(BaseModel):
     query: str
 
 def generate_stream(prompt):
-    response = generator(prompt, max_length=120)[0]["generated_text"]
+    response = generator(
+        prompt,
+        max_new_tokens=80,
+        do_sample=False
+    )[0]["generated_text"]
 
     words = response.split()
 
@@ -58,13 +62,16 @@ def ask_stream(req: QueryRequest):
     context = " ".join([documents[idx] for idx in top_indices])
 
     #prompt
-    prompt = """
-context: {context},
-Question: {query},
+    prompt = f"""
+Answer the question using the context below.
+
+Context:
+{context}
+
+Question:
+{query}
+
 Answer:
 """
 
     return StreamingResponse(generate_stream(prompt), media_type="text/plain")
-
-
-
