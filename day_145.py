@@ -31,3 +31,17 @@ documents = [
 
 ]
 
+doc_emb = model.encode(documents)
+
+class QueryRequest(BaseModel):
+    query: str
+
+def generate_stream(prompt):
+    response = generator(prompt, max_length=120)[0]["generated_text"]
+
+    words = response.split()
+
+    for word in words:
+        yield word + " "
+        time.sleep(0.05)
+
