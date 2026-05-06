@@ -71,7 +71,7 @@ def ask_stream(req: QueryRequest):
     prompt = f"""
 You are an AI assistant.
 
-Use ONLY the context below to answer clearly.
+answer the  question using clear sentence using context.
 
 Context:
 {context}
@@ -84,9 +84,10 @@ Answer:
     #Generation
     response = generator(
         prompt,
-        max_new_tokens=80,
-        do_sample=False,
-        repetition_penalty=1.2
+        max_new_tokens=200,
+        do_sample=True,
+        temperature=0.1,
+        repetition_penalty=1.3
     )[0]["generated_text"]
 
     cache[query] = response
