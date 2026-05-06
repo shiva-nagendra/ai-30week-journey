@@ -49,7 +49,16 @@ def generate_stream(prompt):
         yield word + " "
         time.sleep(0.05)
 
+cache = {}
 #API
 @app.post("/ask-stream")
 def ask_stream(req: QueryRequest):
+    query=req.query.strip().lower()
+
+    #cache check
+    if query in cache:
+        return StreamingResponse(
+            (word + " " for word in cache[query].split()),
+             media_type="text/plain"
+        )
     
