@@ -81,5 +81,21 @@ Question:
 
 Answer:
 """
+    #Generation
+    response = generator(
+        prompt,
+        max_new_tokens=80,
+        do_sample=False,
+        repetition_penalty=1.2
+    )[0]["generated_text"]
+
+    cache[query] = response
+
+    return StreamingResponse(
+        (word + " " for word in response.split()),
+        media_type="text/plain"
+    )
+
+
     
     
