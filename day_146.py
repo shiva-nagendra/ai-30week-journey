@@ -62,3 +62,24 @@ def ask_stream(req: QueryRequest):
              media_type="text/plain"
         )
     
+    query_emb = model.encode([query])
+    scores = cosine_similarity(query_emb, doc_emb)[0]
+    top_indices = np.argsort(scores)[::-1][:3]
+
+    context = " ".join([documents[idx] for idx in top_indices])
+
+    prompt = f"""
+You are an AI assistant.
+
+Use ONLY the context below to answer clearly.
+
+Context:
+{context}
+
+Question:
+{query}
+
+Answer:
+"""
+    
+    
