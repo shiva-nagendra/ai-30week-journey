@@ -33,4 +33,26 @@ documents = [
 
 doc_emb = model.encode(documents)
 
+cache={}
 
+#Request model
+
+class QueryRequest(BaseModel):
+    query:str
+
+async def generate_stream(response_text):
+
+    words = response_text.split()
+
+    for word in words:
+        yield word + " "
+        await asyncio.sleep(0.03)
+
+#API
+@app.post("/ask-stream")
+async def ask_stream(req: QueryRequest):
+
+    query = req.query.strip().lower()
+
+    
+    
