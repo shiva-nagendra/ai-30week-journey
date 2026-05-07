@@ -11,3 +11,11 @@ from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
 import asyncio
 
+app = FastAPI()
+
+model = SentenceTransformer("all-MiniLM-L6-v2")
+generator = pipeline(
+    "text2text-generation",
+    model="google/flan-t5-small"
+)
+
