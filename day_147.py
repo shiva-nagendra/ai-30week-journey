@@ -28,6 +28,7 @@ documents = [
     "Deep learning improves medical imaging",
     "AI is used in drug discovery",
     "Doctors use AI for treatment planning"
+    "AI can be used to guess the patterns of disease evoolution and virus spread."
 
 ]
 
