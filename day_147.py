@@ -68,5 +68,31 @@ async def ask_stream(req: QueryRequest):
 
     context = " ".join(documents[idx] for idx in top_indices)
 
-    
+
+#prompt
+
+
+    prompt = f"""
+Answer the question clearly using the context.
+
+Context:
+{context}
+
+Question:
+{query}
+
+Answer:
+"""
+    response = generator(
+        prompt,
+        max_new_token=50,
+        temperature=0.7,
+        do_sample=True,
+        repetition_penalty=1.3
+    )[0]["generated_text"]
+
+    return StreamingResponse(
+        generate_stream(response),
+        media_type="text/plain"
+    )
     
