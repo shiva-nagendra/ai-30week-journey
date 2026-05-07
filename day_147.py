@@ -19,3 +19,18 @@ generator = pipeline(
     model="google/flan-t5-small"
 )
 
+
+
+documents = [
+
+    "AI helps diagnose diseases",
+    "Machine learning analyzes patient data",
+    "Deep learning improves medical imaging",
+    "AI is used in drug discovery",
+    "Doctors use AI for treatment planning"
+
+]
+
+doc_emb = model.encode(documents)
+
+
