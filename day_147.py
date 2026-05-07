@@ -54,5 +54,11 @@ async def ask_stream(req: QueryRequest):
 
     query = req.query.strip().lower()
 
+    if query in cache:
+        return StreamingResponse(
+            generate_stream(cache[query]),
+            media_type="text/plain"
+        )
+    
     
     
