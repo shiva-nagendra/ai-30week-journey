@@ -85,7 +85,7 @@ Answer:
 """
     response = generator(
         prompt,
-        max_new_token=50,
+        max_new_tokens=50,
         temperature=0.7,
         do_sample=True,
         repetition_penalty=1.3
