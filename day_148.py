@@ -7,3 +7,12 @@ import os
 #load env file
 load_dotenv()
 
+#read variables
+hf_token = os.getenv("HF_TOKEN")
+app_mode = os.getenv("APP_MODE")
+
+print("Hugging_face token: ")
+print(hf_token)
+
+print("\nApp_mode: ")
+print(app_mode)
