@@ -20,15 +20,14 @@ generator = pipeline(
 )
 
 
-
 documents = [
 
     "AI helps diagnose diseases",
     "Machine learning analyzes patient data",
     "Deep learning improves medical imaging",
     "AI is used in drug discovery",
-    "Doctors use AI for treatment planning"
-    "AI can be used to guess the patterns of disease evoolution and virus spread."
+    "Doctors use AI for treatment planning",
+    "AI can be used to guess the patterns of disease evolution and virus spread."
 
 ]
 
