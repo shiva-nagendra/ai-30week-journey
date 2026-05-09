@@ -8,7 +8,7 @@ from pydantic import BaseModel
 from dotenv import load_dotenv
 import os
 import asyncio
-import numpy
+import numpy as np
 
 from sklearn.metrics.pairwise import cosine_similarity
 from sentence_transformers import SentenceTransformer
@@ -54,6 +54,28 @@ async def generate_stream(response_text):
         yield word + " "
         await asyncio.sleep(0.03)
 
+#API 
+@app.post("/ask")
+async def ask(req: QueryRequest):
+
+    query = req.strip()
+
+    #cache check
+    if query in cache:
+
+        return StreamingResponse(
+            generate_stream(cache[query]),
+            media_type="text/plain"
+        )
+    
+    query_emb = model.encode([query])
+    scores = cosine_similarity(query_emb, doc_emb)[0]
+    top_indices = np.argsort(scores)[::-1][:3]
+
+    context = " ".join(documents[idx] for idx in top_indices)
+
+    #prompt
+    prompt = f"""
 
 
         
