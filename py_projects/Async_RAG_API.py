@@ -16,14 +16,19 @@ from transformers import pipeline
 
 from data import documents
 
+load_dotenv()
 
+APP_MODE = os.getenv("APP_MODE")
+MODEL_NAME = os.getenv("MODEL_NAME")
 
-
+print(f"Running in: {APP_MODE}")
 
 app = FastAPI()
 
 model = SentenceTransformer("all-MiniLM-L6-v2")
 generator = pipeline(
     "text2text-generation",
-    model=
+    model=MODEL_NAME
 )
+
+
