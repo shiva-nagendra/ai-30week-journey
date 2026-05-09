@@ -68,6 +68,7 @@ async def ask(req: QueryRequest):
             media_type="text/plain"
         )
     
+    #Retrieval
     query_emb = model.encode([query])
     scores = cosine_similarity(query_emb, doc_emb)[0]
     top_indices = np.argsort(scores)[::-1][:3]
@@ -76,7 +77,37 @@ async def ask(req: QueryRequest):
 
     #prompt
     prompt = f"""
+You are a helpful AI assistant that answers using the context
 
+Context:
+{context}
+
+Question:
+{query}
+
+Answer in 3 sentences
+"""
+    #Generation
+    response = generator(
+        prompt,
+        max_new_tokens=80,
+        repeatitive_penalty=1.4,
+        do_sample=True,
+        temperature=0.5
+    )[0]["generated_text"]
+
+    #cache store
+    cache[query] = response
+
+    #stream response
+    return StreamingResponse(
+        generate_stream(response),
+        media_type="text/plain"
+    )
+
+
+    
+    
 
         
 
