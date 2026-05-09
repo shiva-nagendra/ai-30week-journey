@@ -45,7 +45,7 @@ cache={}
 class QueryRequest(BaseModel):
     query:str
 
-    #streaming
+#streaming
 async def generate_stream(response_text):
 
     words = response_text.split()
@@ -58,7 +58,7 @@ async def generate_stream(response_text):
 @app.post("/ask")
 async def ask(req: QueryRequest):
 
-    query = req.strip()
+    query = req.query.strip()
 
     #cache check
     if query in cache:
@@ -91,7 +91,7 @@ Answer in 3 sentences
     response = generator(
         prompt,
         max_new_tokens=80,
-        repeatitive_penalty=1.4,
+        repetition_penalty=1.4,
         do_sample=True,
         temperature=0.5
     )[0]["generated_text"]
