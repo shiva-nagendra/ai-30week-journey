@@ -10,7 +10,13 @@ with open("medical_notes.txt", "r") as file:
     text = file.read()
 
 #Chunking
-documents = text.split("\n")
+
+documents = text.split()
+chunk_size = 50
+chunks = []
+
+for i in range(0, len(documents), chunk_size):
+    chunk = " ".join(documents[i:i+chunk_size])
 
 #Remove empty lines
 documents = [doc.strip() for doc in documents if doc.strip()]
@@ -29,4 +35,5 @@ top_indices = np.argsort(scores)[::-1][:3]
 print("\nTop results:")
 for idx in top_indices:
     print(documents[idx])
+    print(f"Score: {scores[idx]:.3f}")
 
