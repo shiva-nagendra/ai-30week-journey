@@ -9,19 +9,11 @@ import numpy as np
 with open("medical_notes.txt", "r") as file:
     text = file.read()
 
-print("\nFull document:\n")
-print(text)
-
 #Chunking
 documents = text.split("\n")
 
 #Remove empty lines
 documents = [doc.strip() for doc in documents if doc.strip()]
-
-print("\nChunks:\n")
-
-for doc in documents:
-    print(doc)
 
 #Embeddings
 model = SentenceTransformer("all-MiniLM-L6-v2")
