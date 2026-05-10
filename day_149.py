@@ -11,12 +11,7 @@ with open("medical_notes.txt", "r") as file:
 
 #Chunking
 
-documents = text.split()
-chunk_size = 50
-chunks = []
-
-for i in range(0, len(documents), chunk_size):
-    chunk = " ".join(documents[i:i+chunk_size])
+documents = text.split("\n")
 
 #Remove empty lines
 documents = [doc.strip() for doc in documents if doc.strip()]
