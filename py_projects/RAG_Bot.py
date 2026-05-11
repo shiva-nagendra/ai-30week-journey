@@ -46,4 +46,28 @@ vector_db = Chroma.from_documents(
 print("\nVector DB created\n")
 
 #Retriever
+retriever = vector_db.as_retriever()
+
+#Generator
+pipe = pipeline(
+    "text2text-generation",
+    model="google/flan-t5-small"
+)
+
+llm = HuggingFacePipeline(pipeline=pipe)
+
+#Query loop
+while True:
+
+    query = input("\nAsk question: (or type 'exit')")
+    if query.lower() == "exit":
+        break
+
+    retrieved_docs = retriever._get_relevant_documents(query)
+
+    context = "\n".join(
+        doc.page_content for doc in retrieved_docs
+    )
+
+
 
