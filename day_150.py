@@ -29,3 +29,12 @@ for i in range(0, len(words), chunk_size-overlap):
 
 for idx, chunk in enumerate(chunks):
     print(f"Chunk {idx+1}: \n{chunk}\n")
+
+model = SentenceTransformer("all-MiniLM-L6-v2")
+
+doc_emb = model.encode(chunks)
+
+#Query
+query = input("Enter your query: ")
+query_emb = model.encode([query])
+
