@@ -14,12 +14,21 @@ from transformers import pipeline
 
 #Load pdf
 
-loader = PyPDFLoader("py_projects/my_pdf.pdf")
+loader = PyPDFLoader("py_projects/AI Project Mentorship_ Research & Fine-Tuning - Google Docs.pdf")
 
 docs = loader.load()
 
 print(f"Loaded {len(docs)} pages\n")
 
 #Chunking
+splitter = RecursiveCharacterTextSplitter(
+    chunk_size=500,
+    chunk_overlap=100
+)
+
+chunks = splitter.split_documents(docs)
+
+print(f"Created {len(chunks)} chunks\n")
+
 
 
