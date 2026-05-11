@@ -41,3 +41,8 @@ query_emb = model.encode([query])
 scores = cosine_similarity(query_emb, doc_emb)[0]
 top_indices = np.argsort(scores)[::-1][:3]
 
+print("\nTop matches:\n")
+
+for idx in top_indices:
+    print(chunks[idx])
+    print(f"scores:{scores[idx]:.3f}\n")
