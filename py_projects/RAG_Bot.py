@@ -30,5 +30,20 @@ chunks = splitter.split_documents(docs)
 
 print(f"Created {len(chunks)} chunks\n")
 
+#Embeddings
+emb_model = HuggingFaceEmbeddings(
+    model_name="all-MiniLM-L6-v2"
+)
 
+#VectorDB
+
+vector_db = Chroma.from_documents(
+    chunks,
+    emb_model,
+    persist_directory="py_projects/chroma_db"
+)
+
+print("\nVector DB created\n")
+
+#Retriever
 
