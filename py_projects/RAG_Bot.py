@@ -63,11 +63,31 @@ while True:
     if query.lower() == "exit":
         break
 
-    retrieved_docs = retriever._get_relevant_documents(query)
+    retrieved_docs = retriever.invoke(query)
 
     context = "\n".join(
         doc.page_content for doc in retrieved_docs
     )
+     # Prompt
 
+    prompt = f"""
 
+Answer using ONLY the context below.
+
+Context:
+{context}
+
+Question:
+{query}
+
+Answer:
+"""
+
+    # Generation
+
+    answer = llm.invoke(prompt)
+
+    print("\nANSWER:\n")
+
+    print(answer)
 
