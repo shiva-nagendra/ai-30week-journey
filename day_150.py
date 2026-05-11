@@ -38,3 +38,6 @@ doc_emb = model.encode(chunks)
 query = input("Enter your query: ")
 query_emb = model.encode([query])
 
+scores = cosine_similarity(query_emb, doc_emb)[0]
+top_indices = np.argsort(scores)[::-1][:3]
+
