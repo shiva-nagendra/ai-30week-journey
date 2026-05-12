@@ -4,7 +4,7 @@
 from langchain_community.document_loaders import TextLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_huggingface import HuggingFaceEmbeddings
-from langchain_community.vectorstores import Chroma
+from langchain_chroma import Chroma
 
 import os
 
@@ -53,9 +53,24 @@ else:
 
 print(f"stored chunks: {vector_db._collection.count()}")
 
+#Retriever
+retriever = vector_db.as_retriever()
+
 while True:
     query = input("Enter your query (or 'exit')")
     if query.lower() == "exit":
         break
 
-    
+    #retrieve
+    retrieved_docs = retriever.invoke(query)
+
+    print("Top matches:\n")
+
+    for idx, docs in enumerate(retrieved_docs):
+        print(f" Match {idx+1}\n")
+
+        print(docs.page_content)
+
+        print("\n" + "-"*50 + "\n")
+
+        
