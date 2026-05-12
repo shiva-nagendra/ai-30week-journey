@@ -23,4 +23,13 @@ splitter = RecursiveCharacterTextSplitter(
 
 chunks = splitter.split_documents(documents)
 
-print(f"\nCreated {len(chunks)} num of chunks")
+print(f"\nCreated {len(chunks)} chunks")
+
+#Embedding model
+emb_model = HuggingFaceEmbeddings(
+    model_name="all-MiniLM-L6-v2"
+)
+
+#vector db path
+db_path = "ai-30week-journey/db_path"
+
