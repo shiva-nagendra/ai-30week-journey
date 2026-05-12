@@ -33,3 +33,29 @@ emb_model = HuggingFaceEmbeddings(
 #vector db path
 db_path = "ai-30week-journey/db_path"
 
+#create DB
+if os.path.exists(db_path):
+    print("Loading existing vector database..\n")
+
+    vector_db = Chroma(
+        persist_directory=db_path,
+        embedding_function=emb_model
+    )
+
+else:
+    print("Creating new vector databases..\n")
+
+    vector_db = Chroma.from_documents(
+        documents=chunks,
+        embedding=emb_model,
+        persist_directory=db_path
+    )
+
+print(f"stored chunks: {vector_db._collection.count()}")
+
+while True:
+    query = input("Enter your query (or 'exit')")
+    if query.lower() == "exit":
+        break
+
+    
