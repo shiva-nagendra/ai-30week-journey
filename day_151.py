@@ -8,3 +8,9 @@ from langchain_community.vectorstores import Chroma
 
 import os
 
+#Load document
+loader = TextLoader("medical_notes.txt")
+
+documents = loader.load()
+
+print(f"\nLoaded {len(documents)} doxument(s)\n")
