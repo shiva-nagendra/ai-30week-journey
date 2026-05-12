@@ -14,3 +14,13 @@ loader = TextLoader("medical_notes.txt")
 documents = loader.load()
 
 print(f"\nLoaded {len(documents)} doxument(s)\n")
+
+#chunking
+splitter = RecursiveCharacterTextSplitter(
+    chunk_size=120,
+    chunk_overlap=30
+)
+
+chunks = splitter.split_documents(documents)
+
+print(f"\nCreated {len(chunks)} num of chunks")
