@@ -43,7 +43,7 @@ if os.path.exists(db_path):
     )
 
 else:
-    print("Creating new vector databases..\n")
+    print("Creating new vector databases...\n")
 
     vector_db = Chroma.from_documents(
         documents=chunks,
