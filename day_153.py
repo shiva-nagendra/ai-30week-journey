@@ -25,3 +25,15 @@ model = SentenceTransformer("all-MiniLM-L6-v2")
 
 doc_embeddings = model.encode(documents)
 
+#query
+query = input("Ask question: ")
+
+query_embedding = model.encode([query])
+
+#semantic search
+
+semantic_scores = cosine_similarity(
+    query_embedding,
+    doc_embeddings
+)[0]
+
