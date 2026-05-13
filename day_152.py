@@ -29,5 +29,9 @@ documents = [
     )    
 ]
 
+#embeddings
+emb_model = HuggingFaceEmbeddings(
+    model_name="all-MiniLM-L6-v2"
+)
 
-
+#vector DB
