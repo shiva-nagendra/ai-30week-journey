@@ -35,3 +35,11 @@ emb_model = HuggingFaceEmbeddings(
 )
 
 #vector DB
+vector_db = Chroma.from_documents(
+    documents,
+    emb_model
+)
+
+#Retriever
+retriever = vector_db.as_retriever()
+
