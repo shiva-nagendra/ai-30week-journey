@@ -53,3 +53,12 @@ results = vector_db.similarity_search(
     filter={"topic":"healthcare"}
 )
 
+#output
+print("\nFiltered results:\n")
+
+for idx, doc in enumerate(results):
+    print(f"Result {idx+1}:\n")
+
+    print(doc.page_content)
+
+    print(f"\nMetadata: {doc.metadata}")
