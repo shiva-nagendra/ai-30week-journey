@@ -20,3 +20,8 @@ documents = [
 
 ]
 
+#embeddings
+model = SentenceTransformer("all-MiniLM-L6-v2")
+
+doc_embeddings = model.encode(documents)
+
