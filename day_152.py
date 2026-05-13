@@ -43,3 +43,13 @@ vector_db = Chroma.from_documents(
 #Retriever
 retriever = vector_db.as_retriever()
 
+#Query
+query = input("Ask question: ")
+
+#filtered search
+results = vector_db.similarity_search(
+    query,
+    k=3,
+    filter={"topic":"healthcare"}
+)
+
