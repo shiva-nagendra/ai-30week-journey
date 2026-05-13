@@ -50,7 +50,7 @@ query = input("Ask question: ")
 results = vector_db.similarity_search(
     query,
     k=3,
-    filter={"topic":"healthcare"}
+    filter={"topic":"finance"}
 )
 
 #output
