@@ -70,3 +70,18 @@ final_scores = (
 #top scores
 top_indices = np.argsort(final_scores)[::-1][:3]
 
+#output
+
+print("\nTOP MATCHES:\n")
+
+for idx in top_indices:
+
+    print(documents[idx])
+
+    print(f"\nSemantic Score: {semantic_scores[idx]:.3f}")
+
+    print(f"Keyword Score: {keyword_scores[idx]:.3f}")
+
+    print(f"Final Hybrid Score: {final_scores[idx]:.3f}")
+
+    print("\n" + "-"*50 + "\n")
