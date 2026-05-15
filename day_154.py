@@ -17,5 +17,13 @@ documents = [
     "Hospitals use AI for patient care"
 ]
 
+#Model
+model = SentenceTransformer("all-MiniLM-L6-v2")
+doc_emb = model.encode(documents)
+
+#Query
+query = input("Enter your query: ")
+query_emb = model.encode([query])
+
 
 
