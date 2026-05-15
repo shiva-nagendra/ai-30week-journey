@@ -36,7 +36,7 @@ print("\nIntial retrieval:\n")
 
 for idx in top_indices:
     print(documents[idx])
-    print(f"Intial score: {scores[idx]:.3f}")
+    print(f"\nIntial score: {scores[idx]:.3f}")
 
 #Rerank scores
 rerank_scores = []
