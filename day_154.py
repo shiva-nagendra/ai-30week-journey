@@ -59,5 +59,17 @@ for idx in top_indices:
     rerank_scores.append((idx, final_score))
 
 #sort reranked results
+rerank_scores.sort(
+    key=lambda x: x[1],
+    reverse=True
+)
 
+#Final output
+
+print("\nRERANKED RESULTS:\n")
+for idx, score in rerank_scores:
+
+    print(documents[idx])
+
+    print(f"Reranked Score: {score:.3f}\n")
 
