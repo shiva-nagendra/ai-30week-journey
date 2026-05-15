@@ -38,6 +38,26 @@ for idx in top_indices:
     print(documents[idx])
     print(f"Intial score: {scores[idx]:.3f}")
 
-    
+#Rerank scores
+rerank_scores = []
+
+query_words = query.lower().split()
+
+for idx in top_indices:
+    doc = documents[idx].lower()
+    overlap_score = 0
+
+    for word in query_words:
+        if word in doc:
+            overlap_score += 1
+
+    final_score = (
+        scores[idx] * 0.7
+        +
+        overlap_score * 0.3
+    )
+    rerank_scores.append((idx, final_score))
+
+#sort reranked results
 
 
