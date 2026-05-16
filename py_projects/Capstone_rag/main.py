@@ -37,7 +37,12 @@ emb_model = HuggingFaceEmbeddings(
     model_name="all-MiniLM-L6-v2"
 )
 
-db_path = "Capstone_rag/chroma_db"
+db_path = "py_projects/Capstone_rag/chroma_db"
+
+vector_db = Chroma(
+    persist_directory=db_path,
+    embedding_function=emb_model
+)
 
 
 
