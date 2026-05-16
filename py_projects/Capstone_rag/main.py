@@ -44,6 +44,19 @@ vector_db = Chroma(
     embedding_function=emb_model
 )
 
+print("Vector_db created")
+
+retriever = vector_db.as_retriever()
+
+pipe = pipeline(
+    "text2text-generation",
+    model="google/flan-t5-small"
+)
+
+llm = HuggingFacePipeline(
+    pipeline=pipe
+)
+
 
 
 
