@@ -57,7 +57,31 @@ llm = HuggingFacePipeline(
     pipeline=pipe
 )
 
+#API
+@app.post("/predict")
 
+async def predict(req: QueryRequest):
+    query = req.question
+
+    retrieved_docs = retriever.invoke(documents)
+
+    context = "\n".join(
+        doc.page_content for doc in retrieved_docs
+    )
+
+    prompt = f"""
+
+Answer only using the context below.
+
+Context: 
+{context}
+
+Question:
+{query}
+
+Answer:
+"""
+    
 
 
 
