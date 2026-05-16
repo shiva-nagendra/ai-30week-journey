@@ -39,10 +39,18 @@ emb_model = HuggingFaceEmbeddings(
 
 db_path = "py_projects/Capstone_rag/chroma_db"
 
-vector_db = Chroma(
-    persist_directory=db_path,
-    embedding_function=emb_model
-)
+if os.path.exists(db_path):
+    vector_db = Chroma(
+        persist_directory=db_path,
+        embedding_function=emb_model
+    )
+
+else:
+     vector_db = Chroma.from_documents(
+         chunks,
+         emb_model,
+         persist_directory=db_path
+     )
 
 print("Vector_db created")
 
@@ -61,9 +69,9 @@ llm = HuggingFacePipeline(
 @app.post("/predict")
 
 async def predict(req: QueryRequest):
-    query = req.question
+    query = req.query
 
-    retrieved_docs = retriever.invoke(documents)
+    retrieved_docs = retriever.invoke(query)
 
     context = "\n".join(
         doc.page_content for doc in retrieved_docs
@@ -81,7 +89,14 @@ Question:
 
 Answer:
 """
-    
+    #Generate
+    answer = llm.invoke(prompt)
+
+    #json response
+    return{
+        "question": query,
+        "answer": answer
+    }
 
 
 
