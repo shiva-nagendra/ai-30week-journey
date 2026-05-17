@@ -58,7 +58,7 @@ retriever = vector_db.as_retriever()
 
 pipe = pipeline(
     "text2text-generation",
-    model="google/flan-t5-small"
+    model="google/flan-t5-base"
 )
 
 llm = HuggingFacePipeline(
