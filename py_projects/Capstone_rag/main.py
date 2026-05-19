@@ -21,7 +21,7 @@ class QueryRequest(BaseModel):
     query:str
 
 loader = PyPDFLoader(
-    "py_projects/Capstone_rag/docs/ai_pdf.pdf"
+    "docs/ai_pdf.pdf"
     )
 
 documents = loader.load()
@@ -37,7 +37,7 @@ emb_model = HuggingFaceEmbeddings(
     model_name="all-MiniLM-L6-v2"
 )
 
-db_path = "py_projects/Capstone_rag/chroma_db"
+db_path = "chroma_db"
 
 if os.path.exists(db_path):
     vector_db = Chroma(
@@ -58,7 +58,7 @@ retriever = vector_db.as_retriever()
 
 pipe = pipeline(
     "text2text-generation",
-    model="google/flan-t5-base"
+    model="google/flan-t5-small"
 )
 
 llm = HuggingFacePipeline(
