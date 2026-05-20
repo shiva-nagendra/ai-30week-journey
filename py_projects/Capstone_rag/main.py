@@ -13,7 +13,10 @@ from langchain_chroma import Chroma
 from transformers import pipeline
 from langchain_huggingface import HuggingFacePipeline
 
+from dotenv import load_dotenv
 import os
+
+load_dotenv()
 
 app = FastAPI()
 
@@ -21,7 +24,7 @@ class QueryRequest(BaseModel):
     query:str
 
 loader = PyPDFLoader(
-    "docs/ai_pdf.pdf"
+    os.getenv("PDF_PATH")
     )
 
 documents = loader.load()
