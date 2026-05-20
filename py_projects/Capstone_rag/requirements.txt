@@ -1,6 +1,5 @@
 fastapi
 uvicorn
-python-dotenv
 langchain-text-splitters
 langchain-community
 langchain-huggingface

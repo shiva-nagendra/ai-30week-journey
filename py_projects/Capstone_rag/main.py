@@ -40,7 +40,7 @@ emb_model = HuggingFaceEmbeddings(
     model_name="all-MiniLM-L6-v2"
 )
 
-db_path = "chroma_db"
+db_path = os.getenv("CHROMA_DB")
 
 if os.path.exists(db_path):
     vector_db = Chroma(
@@ -61,7 +61,7 @@ retriever = vector_db.as_retriever()
 
 pipe = pipeline(
     "text2text-generation",
-    model="google/flan-t5-small"
+    model=os.getenv("MODEL_NAME")
 )
 
 llm = HuggingFacePipeline(
