@@ -18,6 +18,7 @@ import os
 
 load_dotenv()
 
+#API
 app = FastAPI()
 
 class QueryRequest(BaseModel):
