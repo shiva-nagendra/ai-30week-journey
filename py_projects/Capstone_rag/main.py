@@ -59,6 +59,7 @@ else:
 
 print("Vector_db created")
 
+#retriever
 retriever = vector_db.as_retriever()
 
 pipe = pipeline(
