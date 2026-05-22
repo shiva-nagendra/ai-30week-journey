@@ -12,4 +12,8 @@ if st.button("Submit"):
         json={"query": query}
     )
 
+    data = response.json()
+
+    st.write(data["answer"])
+
     
