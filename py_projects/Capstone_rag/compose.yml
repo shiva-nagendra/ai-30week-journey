@@ -1,6 +1,6 @@
 services:
 
-  rag-api:
+  backend:
 
     build: .
 
@@ -12,6 +12,18 @@ services:
 
     env_file:
       - .env
+
+  frontend:
+
+    build: .
+
+    command: streamlit run frontend.py --server.port 8501 --server.adress 0.0.0.0
+
+    ports:
+      -"8501:8501"
+
+    depends_on:
+      - backend
 
 volumes:
   chroma_storage:
