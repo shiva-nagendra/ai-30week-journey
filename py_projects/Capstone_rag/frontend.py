@@ -15,5 +15,3 @@ if st.button("Submit"):
     data = response.json()
 
     st.write(data["answer"])
-
-    
