@@ -44,7 +44,7 @@ emb_model = HuggingFaceEmbeddings(
 
 db_path = os.getenv("CHROMA_DB")
 
-if os.path.exists(db_path):
+if db_path and os.path.exists(db_path):
     vector_db = Chroma(
         persist_directory=db_path,
         embedding_function=emb_model
