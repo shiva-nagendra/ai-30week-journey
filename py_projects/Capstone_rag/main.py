@@ -65,7 +65,7 @@ retriever = vector_db.as_retriever()
 pipe = pipeline(
     "text2text-generation",
     model=os.getenv("MODEL_NAME"),
-    max_tokens=int(os.getenv("MAX_NEW_TOKENS"))
+    max_new_tokens=int(os.getenv("MAX_NEW_TOKENS"))
 )
 
 llm = HuggingFacePipeline(
@@ -105,6 +105,10 @@ Answer:
         "question": query,
         "answer": answer
     }
+
+@app.get("/health")
+def health():
+    return {"status":"healthy"}
 
 
 
