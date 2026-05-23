@@ -64,7 +64,8 @@ retriever = vector_db.as_retriever()
 
 pipe = pipeline(
     "text2text-generation",
-    model=os.getenv("MODEL_NAME")
+    model=os.getenv("MODEL_NAME"),
+    max_tokens=int(os.getenv("MAX_NEW_TOKENS"))
 )
 
 llm = HuggingFacePipeline(
