@@ -60,7 +60,9 @@ else:
 print("Vector_db created")
 
 #retriever
-retriever = vector_db.as_retriever()
+retriever = vector_db.as_retriever(
+    search_kwargs={"k":3}
+)
 
 pipe = pipeline(
     "text2text-generation",
