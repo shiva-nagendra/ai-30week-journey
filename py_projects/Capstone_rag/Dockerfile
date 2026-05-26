@@ -4,7 +4,7 @@ FROM python:3.11
 # Set working directory
 WORKDIR /app
 
-# Copy requirements
+# Copy requirements..
 COPY requirements.txt .
 
 # Install dependencies
