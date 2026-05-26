@@ -1,7 +1,7 @@
 # Base Python image
 FROM python:3.11
 
-# Set working directory
+# Set working directory..
 WORKDIR /app
 
 # Copy requirements..
