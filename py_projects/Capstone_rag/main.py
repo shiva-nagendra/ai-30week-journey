@@ -37,7 +37,7 @@ splitter = RecursiveCharacterTextSplitter(
 
 chunks = splitter.split_documents(documents)
 
-#Embedding Model
+#Embedding Model..
 emb_model = HuggingFaceEmbeddings(
     model_name="all-MiniLM-L6-v2"
 )
