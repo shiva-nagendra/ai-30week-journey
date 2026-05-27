@@ -64,6 +64,7 @@ retriever = vector_db.as_retriever(
     search_kwargs={"k":3}
 )
 
+#text generation
 pipe = pipeline(
     "text2text-generation",
     model=os.getenv("MODEL_NAME"),
